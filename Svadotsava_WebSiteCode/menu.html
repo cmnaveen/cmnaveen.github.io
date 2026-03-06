@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Svādotsava — Menu</title>
+  <meta name="description" content="Explore the Svādotsava menu — a celebration of South Indian flavours featuring golden idlies, crispy dosas, masala vadas, and handcrafted coffees and teas." />
+
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#f5f0e8;
+      --bg-muted:#ede8de;
+      --card:#ffffff;
+      --primary:#7C3A10;
+      --primary-dark:#8B4A1C;
+      --accent:#C8874A;
+      --hero:#0a0d14;
+      --text:#1a1a1a;
+      --muted:#5a5a5a;
+      --border:#DDD0BC;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Open Sans",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.7;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1060px;margin:0 auto;padding:0 20px}
+
+    /* NAV */
+    .nav{position:fixed;top:0;left:0;right:0;z-index:50;height:60px;background:var(--bg);border-bottom:1px solid rgba(0,0,0,.08);display:flex;align-items:center}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%}
+    .brand-box{display:flex;flex-direction:column;justify-content:center;background:transparent;text-decoration:none}
+    .brand-name{font-family:"Merriweather",serif;font-weight:900;font-size:1.2rem;letter-spacing:.02em;line-height:1.1}
+    .brand-tagline{font-size:.55rem;letter-spacing:.15em;text-transform:uppercase;color:#E1B46B;font-weight:700;margin-top:2px}
+    .nav-links{display:flex;gap:18px;align-items:center}
+    .nav-links a{font-size:.85rem;padding:8px 10px;border-radius:10px;transition:transform .2s ease, background .2s ease, color .2s ease;color:var(--text)}
+    .nav-links a:hover{background:rgba(124,58,16,.08);transform:translateY(-1px);color:var(--primary)}
+    .nav-links a.active{color:var(--primary);font-weight:600}
+    @media (max-width:480px){.nav-links{display:none}}
+
+    /* REVEAL */
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease}
+    .reveal.in{opacity:1;transform:translateY(0)}
+
+    /* HERO */
+    .hero{
+      min-height:52vh;
+      padding-top:60px;
+      background:var(--hero);
+      position:relative;
+      overflow:hidden;
+      display:flex;
+      align-items:center;
+      text-align:center;
+      color:#fff;
+    }
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(900px 500px at 55% 30%, rgba(200,135,74,.18), transparent 60%),
+        radial-gradient(900px 500px at 18% 80%, rgba(124,58,16,.18), transparent 55%);
+      pointer-events:none;
+    }
+    .hero-watermark{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none}
+    .hero-watermark img{width:min(720px, 90vw);height:auto;opacity:.15}
+    .hero-inner{position:relative;width:100%;padding:60px 0}
+    .hero .label{font-size:.7rem;letter-spacing:.35em;text-transform:uppercase;color:rgba(200,164,90,.78);margin-bottom:10px}
+    .hero h1{margin:0 0 10px;font-family:"Merriweather",serif;font-weight:900;font-size:clamp(34px, 5vw, 66px);line-height:1.12}
+    .hero .sub{margin:0 auto;max-width:680px;color:rgba(255,255,255,.74);font-size:1rem}
+
+    /* SECTION */
+    section{padding:72px 0}
+    .muted-section{background:var(--bg-muted)}
+    h2{margin:0 0 8px;font-family:"Merriweather",serif;font-weight:900;color:var(--primary);font-size:clamp(24px, 3.2vw, 34px)}
+    .center{text-align:center}
+    .lead{max-width:760px;margin:0 auto;color:var(--muted);font-size:1rem}
+
+    /* CATEGORY TABS */
+    .tab-bar{
+      display:flex;
+      gap:10px;
+      justify-content:center;
+      flex-wrap:wrap;
+      margin:22px 0 38px;
+    }
+    .tab{
+      padding:9px 18px;
+      border-radius:999px;
+      border:1.5px solid var(--border);
+      background:var(--card);
+      font-size:.85rem;
+      font-weight:600;
+      cursor:pointer;
+      color:var(--muted);
+      transition:all .2s ease;
+    }
+    .tab:hover{border-color:var(--accent);color:var(--primary);transform:translateY(-1px)}
+    .tab.active{background:var(--primary);border-color:var(--primary);color:#fff;box-shadow:0 4px 14px rgba(124,58,16,.28)}
+
+    /* MENU GRID */
+    .menu-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));
+      gap:22px;
+    }
+    .menu-card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:18px;
+      overflow:hidden;
+      box-shadow:0 8px 22px rgba(0,0,0,.05);
+      transition:transform .25s ease, box-shadow .25s ease;
+      display:flex;
+      flex-direction:column;
+    }
+    .menu-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,.10)}
+    .menu-card.hidden{display:none}
+    .card-img-wrap{
+      position:relative;
+      width:100%;
+      overflow:hidden;
+      background:var(--bg-muted);
+    }
+    .card-img-wrap img{
+      width:100%;
+      height:auto;
+      display:block;
+      transition:transform .4s ease;
+    }
+    .menu-card:hover .card-img-wrap img{transform:scale(1.04)}
+    .card-badge{
+      position:absolute;
+      top:10px;
+      left:10px;
+      padding:4px 10px;
+      border-radius:999px;
+      font-size:.65rem;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      backdrop-filter:blur(6px);
+    }
+    .badge-food{background:rgba(124,58,16,.82);color:#fff}
+    .badge-drink{background:rgba(10,13,20,.78);color:#E1B46B}
+    .card-body{padding:18px 20px 22px;flex:1;display:flex;flex-direction:column}
+    .card-body h3{
+      margin:0 0 6px;
+      font-family:"Merriweather",serif;
+      font-weight:900;
+      font-size:1.05rem;
+      color:var(--text);
+    }
+    .card-body p{margin:0;color:var(--muted);font-size:.9rem;flex:1}
+    .card-tag{
+      display:inline-block;
+      margin-top:12px;
+      padding:3px 10px;
+      border-radius:999px;
+      font-size:.7rem;
+      font-weight:600;
+      letter-spacing:.06em;
+      background:rgba(200,135,74,.14);
+      color:var(--primary-dark);
+      text-transform:uppercase;
+    }
+
+    /* DIVIDER */
+    .divider{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      margin:0 0 32px;
+    }
+    .divider-line{flex:1;height:1px;background:var(--border)}
+    .divider-label{
+      font-size:.7rem;
+      letter-spacing:.25em;
+      text-transform:uppercase;
+      font-weight:700;
+      color:var(--accent);
+    }
+
+    /* FOOTER */
+    footer{background:var(--bg);border-top:1px solid rgba(0,0,0,.08);padding:54px 0 26px}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1.5fr;gap:24px}
+    .f-brand{font-family:"Merriweather",serif;font-weight:900;font-size:1.05rem;margin-bottom:8px}
+    .f-small{color:var(--muted);font-size:.92rem}
+    .f-label{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,26,26,.55);margin-bottom:10px;font-weight:600}
+    .f-links a{display:block;padding:6px 0;color:var(--muted);transition:color .2s ease, transform .2s ease}
+    .f-links a:hover{color:var(--primary);transform:translateX(2px)}
+    .copyright{margin-top:22px;text-align:center;color:rgba(26,26,26,.55);font-size:.82rem}
+    @media (max-width:900px){.footer-grid{grid-template-columns:1fr}}
+    @media (max-width:600px){.menu-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand-box">
+        <div class="brand-name"><span style="color:var(--primary)">Svād</span><span style="color:var(--accent)">otsava</span></div>
+        <div class="brand-tagline">A Celebration of Taste</div>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a class="active" href="menu.html">Menu</a>
+        <a href="preview.html">Preview</a>
+        <a href="story.html">Our Story</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-watermark" aria-hidden="true">
+      <img src="black_logo_circle.png" alt="" />
+    </div>
+    <div class="container hero-inner">
+      <div class="label reveal" data-delay="0">OUR OFFERINGS</div>
+      <h1 class="reveal" data-delay="100">The Menu</h1>
+      <p class="sub reveal" data-delay="200">
+        Time-honoured South Indian flavours, made with honest ingredients and served with love.
+      </p>
+    </div>
+  </section>
+
+  <!-- MENU SECTION -->
+  <section>
+    <div class="container">
+
+      <!-- Filter tabs -->
+      <div class="tab-bar reveal" data-delay="0">
+        <button class="tab active" data-filter="all" id="tab-all">✨ All Items</button>
+        <button class="tab" data-filter="food" id="tab-food">🌾 Food</button>
+        <button class="tab" data-filter="drink" id="tab-drink">☕ Drinks</button>
+      </div>
+
+      <!-- Food -->
+      <div class="divider reveal" data-delay="80" id="divider-food">
+        <div class="divider-line"></div>
+        <div class="divider-label">🌾 Food</div>
+        <div class="divider-line"></div>
+      </div>
+
+      <div class="menu-grid" id="menu-grid">
+
+        <div class="menu-card reveal" data-delay="100" data-category="food">
+          <div class="card-img-wrap">
+            <img src="Menu/GheePodiIdly.jpg" alt="Ghee Podi Idly" loading="lazy" />
+            <span class="card-badge badge-food">Food</span>
+          </div>
+          <div class="card-body">
+            <h3>Ghee Podi Idly</h3>
+            <p>Soft, pillowy idlies generously coated in our house-made gunpowder podi and finished with a drizzle of golden ghee.</p>
+            <span class="card-tag">Signature</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-delay="160" data-category="food">
+          <div class="card-img-wrap">
+            <img src="Menu/miniGheePodiIdly.jpg" alt="Mini Ghee Podi Idly" loading="lazy" />
+            <span class="card-badge badge-food">Food</span>
+          </div>
+          <div class="card-body">
+            <h3>Mini Ghee Podi Idly</h3>
+            <p>Bite-sized mini idlies tossed in podi and ghee — perfect for snacking or as a light start to your meal.</p>
+            <span class="card-tag">Snack</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-delay="220" data-category="food">
+          <div class="card-img-wrap">
+            <img src="Menu/Masaladosa.jpg" alt="Masala Dosa" loading="lazy" />
+            <span class="card-badge badge-food">Food</span>
+          </div>
+          <div class="card-body">
+            <h3>Masala Dosa</h3>
+            <p>A classic golden-crisp dosa filled with a warmly spiced potato masala, served with chutneys and sambar.</p>
+            <span class="card-tag">Classic</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-delay="280" data-category="food">
+          <div class="card-img-wrap">
+            <img src="Menu/podiDosa.jpg" alt="Podi Dosa" loading="lazy" />
+            <span class="card-badge badge-food">Food</span>
+          </div>
+          <div class="card-body">
+            <h3>Podi Dosa</h3>
+            <p>A thin, lacy dosa layered with our signature gunpowder podi and ghee — simple, fiery, and utterly satisfying.</p>
+            <span class="card-tag">Spicy</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-delay="340" data-category="food">
+          <div class="card-img-wrap">
+            <img src="Menu/MasalaVada.jpg" alt="Masala Vada" loading="lazy" />
+            <span class="card-badge badge-food">Food</span>
+          </div>
+          <div class="card-body">
+            <h3>Masala Vada</h3>
+            <p>Crispy, hearty lentil fritters spiced with cumin, green chillies, and curry leaves — best enjoyed with a hot cup of tea.</p>
+            <span class="card-tag">Crispy</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-delay="400" data-category="food">
+          <div class="card-img-wrap">
+            <img src="Menu/PodiOnionUttapam.jpg" alt="Podi Onion Uttapam" loading="lazy" />
+            <span class="card-badge badge-food">Food</span>
+          </div>
+          <div class="card-body">
+            <h3>Podi Onion Uttapam</h3>
+            <p>A thick, soft uttapam topped with sweet onions and our house gunpowder podi — earthy, bold, and satisfying.</p>
+            <span class="card-tag">Hearty</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-delay="460" data-category="food">
+          <div class="card-img-wrap">
+            <img src="Menu/onionUttapam.jpg" alt="Onion Uttapam" loading="lazy" />
+            <span class="card-badge badge-food">Food</span>
+          </div>
+          <div class="card-body">
+            <h3>Onion Uttapam</h3>
+            <p>A classic fluffy uttapam with a generous topping of caramelised onions — comforting and deeply flavourful.</p>
+            <span class="card-tag">Classic</span>
+          </div>
+        </div>
+
+        <!-- DRINK DIVIDER (shown inline in grid via JS, handled by section divider above grid) -->
+
+      </div><!-- /#menu-grid -->
+
+      <!-- Drinks divider -->
+      <div class="divider reveal" data-delay="80" id="divider-drink" style="margin-top:40px;">
+        <div class="divider-line"></div>
+        <div class="divider-label">☕ Drinks</div>
+        <div class="divider-line"></div>
+      </div>
+
+      <div class="menu-grid" id="drinks-grid">
+
+        <div class="menu-card reveal" data-delay="100" data-category="drink">
+          <div class="card-img-wrap">
+            <img src="Menu/Coffe.jpg" alt="Filter Coffee" loading="lazy" />
+            <span class="card-badge badge-drink">Drink</span>
+          </div>
+          <div class="card-body">
+            <h3>Filter Coffee</h3>
+            <p>South India's beloved decoction-style coffee, frothy and aromatic — brewed strong, served in the traditional tumbler-davara style.</p>
+            <span class="card-tag">Signature</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-delay="160" data-category="drink">
+          <div class="card-img-wrap">
+            <img src="Menu/Tea.jpg" alt="Tea" loading="lazy" />
+            <span class="card-badge badge-drink">Drink</span>
+          </div>
+          <div class="card-body">
+            <h3>Tea</h3>
+            <p>A comforting cup of freshly brewed tea — light, warm, and perfectly balanced to accompany every bite.</p>
+            <span class="card-tag">Classic</span>
+          </div>
+        </div>
+
+        <div class="menu-card reveal" data-delay="220" data-category="drink">
+          <div class="card-img-wrap">
+            <img src="Menu/masalaTea.jpg" alt="Masala Tea" loading="lazy" />
+            <span class="card-badge badge-drink">Drink</span>
+          </div>
+          <div class="card-body">
+            <h3>Masala Tea</h3>
+            <p>Aromatic spiced tea brewed with ginger, cardamom, and a blend of warming spices — a celebration in every sip.</p>
+            <span class="card-tag">Spiced</span>
+          </div>
+        </div>
+
+      </div><!-- /#drinks-grid -->
+
+    </div>
+  </section>
+
+  <!-- NOTE SECTION -->
+  <section class="muted-section">
+    <div class="container center">
+      <h2 class="reveal">A Note on Our Menu</h2>
+      <p class="lead reveal" data-delay="100">
+        Our menu is a heartfelt celebration of South India's rich culinary heritage. Every item is prepared fresh
+        with quality ingredients, time-tested recipes, and the warmth of a home kitchen. Prices and full menu
+        details will be announced closer to opening.
+      </p>
+      <p class="lead reveal" data-delay="200" style="margin-top:12px;">
+        Have a question or a special request? <a href="mailto:cmnav33n@gmail.com" style="color:var(--primary);font-weight:600;">Reach out to us</a> — we'd love to hear from you.
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="f-brand"><span style="color:var(--primary)">Svād</span><span style="color:var(--accent)">otsava</span></div>
+          <div class="f-small">A Celebration of Taste</div>
+          <div class="f-small" style="margin-top:10px;">🌾 Golden Grains • ☕ Heart of Coffee • 🍵 Spirit of Tea</div>
+        </div>
+
+        <div>
+          <div class="f-label">Quick Links</div>
+          <div class="f-links">
+            <a href="index.html">Coming Soon</a>
+            <a href="menu.html">Menu</a>
+            <a href="preview.html">Preview</a>
+            <a href="story.html">Our Story</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="f-label">Opening Summer 2027</div>
+          <div class="f-small">We're preparing something extraordinary…</div>
+          <div class="f-small" style="margin-top:10px;">
+            Email: <a href="mailto:cmnav33n@gmail.com" style="color:var(--primary);font-weight:600;">cmnav33n@gmail.com</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright">© 2026 Svādotsava. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const revealEls = [...document.querySelectorAll('.reveal')];
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        const delay = parseInt(el.getAttribute('data-delay') || '0', 10);
+        setTimeout(() => el.classList.add('in'), delay);
+        io.unobserve(el);
+      });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => io.observe(el));
+    window.addEventListener('load', () => {
+      revealEls.forEach(el => {
+        if (el.getBoundingClientRect().top < window.innerHeight * 0.95) {
+          const delay = parseInt(el.getAttribute('data-delay') || '0', 10);
+          setTimeout(() => el.classList.add('in'), delay);
+        }
+      });
+    });
+
+    // Category filter tabs
+    const tabs = document.querySelectorAll('.tab');
+    const foodGrid = document.getElementById('menu-grid');
+    const drinksGrid = document.getElementById('drinks-grid');
+    const dividerFood = document.getElementById('divider-food');
+    const dividerDrink = document.getElementById('divider-drink');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const filter = tab.getAttribute('data-filter');
+
+        if (filter === 'all') {
+          foodGrid.style.display = '';
+          drinksGrid.style.display = '';
+          dividerFood.style.display = '';
+          dividerDrink.style.display = '';
+        } else if (filter === 'food') {
+          foodGrid.style.display = '';
+          drinksGrid.style.display = 'none';
+          dividerFood.style.display = '';
+          dividerDrink.style.display = 'none';
+        } else if (filter === 'drink') {
+          foodGrid.style.display = 'none';
+          drinksGrid.style.display = '';
+          dividerFood.style.display = 'none';
+          dividerDrink.style.display = '';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
