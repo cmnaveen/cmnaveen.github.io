@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Svādotsava — Coming Soon</title>
+  <title>Svādotsava — Our Farmers</title>
 
   <link
     href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Open+Sans:wght@400;600&display=swap"
@@ -37,7 +37,7 @@
       font-family: "Open Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.7;
+      line-height: 1.7
     }
 
     a {
@@ -46,7 +46,7 @@
     }
 
     .container {
-      max-width: 980px;
+      max-width: 1000px;
       margin: 0 auto;
       padding: 0 20px
     }
@@ -62,7 +62,7 @@
       background: var(--bg);
       border-bottom: 1px solid rgba(0, 0, 0, .08);
       display: flex;
-      align-items: center;
+      align-items: center
     }
 
     .nav-inner {
@@ -108,7 +108,7 @@
       padding: 8px 10px;
       border-radius: 10px;
       transition: transform .2s ease, background .2s ease, color .2s ease;
-      color: var(--text);
+      color: var(--text)
     }
 
     .nav-links a:hover {
@@ -142,13 +142,16 @@
 
     /* HERO */
     .hero {
-      min-height: 100vh;
+      height: 60vh;
+      min-height: 400px;
       padding-top: 60px;
       background: var(--hero);
       position: relative;
       overflow: hidden;
       display: flex;
       align-items: center;
+      text-align: center;
+      color: #fff;
     }
 
     .hero::before {
@@ -161,7 +164,7 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(900px 500px at 50% 30%, rgba(200, 135, 74, .18), transparent 60%),
+        radial-gradient(900px 500px at 50% 20%, rgba(200, 135, 74, .18), transparent 60%),
         radial-gradient(900px 500px at 20% 80%, rgba(124, 58, 16, .18), transparent 55%);
       pointer-events: none;
     }
@@ -176,7 +179,7 @@
     }
 
     .hero-watermark img {
-      width: min(720px, 90vw);
+      width: min(680px, 84vw);
       height: auto;
       opacity: .35;
     }
@@ -184,162 +187,73 @@
     .hero-inner {
       position: relative;
       width: 100%;
-      padding: 72px 0;
-      text-align: center;
-      color: #fff;
+      padding: 56px 0
     }
 
     .hero h1 {
       margin: 0 0 12px;
       font-family: "Merriweather", serif;
       font-weight: 900;
-      font-size: clamp(44px, 6vw, 84px);
-      letter-spacing: .01em;
-      line-height: 1.08;
+      font-size: clamp(34px, 4.8vw, 60px);
+      line-height: 1.12;
     }
 
-    .hero .tagline {
-      margin: 0 auto 18px;
-      max-width: 720px;
-      color: #E1B46B;
-      font-size: 1.15rem;
-      font-style: italic;
-      font-weight: 600;
+    .hero .sub {
+      max-width: 760px;
+      margin: 0 auto;
+      color: rgba(255, 255, 255, .72);
+      font-size: 1rem
     }
 
-    .trinity {
-      margin: 18px auto 18px;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-
-    .tri-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      width: 140px;
-    }
-
-    .tri-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 999px;
-      display: grid;
-      place-items: center;
-      background: rgba(255, 255, 255, .10);
-      font-size: 22px;
-    }
-
-    .tri-label {
-      font-size: .72rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, .7);
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin: 8px 0 18px;
-      padding: 10px 18px;
-      background: rgba(139, 74, 28, .85);
-      border: 1px solid rgba(255, 255, 255, .12);
-      border-radius: 999px;
-      font-size: .85rem;
-      color: #fff;
-    }
-
-    .hero p {
-      margin: 0 auto 18px;
-      max-width: 560px;
-      color: rgba(255, 255, 255, .7);
-      font-size: .98rem;
-    }
-
-    .tiny-gold {
-      margin: 10px 0 18px;
+    .hero .goldline {
+      margin-top: 18px;
       font-size: .7rem;
       letter-spacing: .35em;
       text-transform: uppercase;
-      color: rgba(200, 164, 90, .75);
+      color: rgba(200, 164, 90, .75)
     }
 
-    .signup {
-      margin: 10px auto 0;
-      max-width: 520px;
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .signup input {
-      flex: 1;
-      min-width: 220px;
-      padding: 12px 14px;
-      border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, .18);
-      background: rgba(255, 255, 255, .08);
-      color: #fff;
-      outline: none;
-      transition: border .2s ease, transform .2s ease, background .2s ease;
-    }
-
-    .signup input::placeholder {
-      color: rgba(255, 255, 255, .55)
-    }
-
-    .signup input:focus {
-      border-color: rgba(200, 135, 74, .6);
-      background: rgba(255, 255, 255, .10)
-    }
-
-    .btn {
-      padding: 12px 16px;
-      border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, .12);
-      background: var(--primary-dark);
-      color: #fff;
-      font-weight: 600;
-      cursor: pointer;
-      transition: transform .2s ease, filter .2s ease, background .2s ease;
-      white-space: nowrap;
-    }
-
-    .btn:hover {
-      transform: translateY(-1px);
-      filter: brightness(1.06)
-    }
-
-    .hint {
-      margin-top: 10px;
-      color: rgba(255, 255, 255, .55);
-      font-size: .85rem;
-    }
-
-    @media (max-width:520px) {
-      .tri-item {
-        width: 120px
-      }
-    }
-
-    /* INFO CARDS */
     section {
       padding: 76px 0
     }
 
+    h2 {
+      margin: 0 0 10px;
+      font-family: "Merriweather", serif;
+      font-weight: 900;
+      color: var(--primary);
+      font-size: clamp(26px, 3.2vw, 36px);
+    }
+
+    .center {
+      text-align: center
+    }
+
+    .lead {
+      max-width: 740px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1rem
+    }
+
+    .quote {
+      max-width: 820px;
+      margin: 22px auto 0;
+      background: #faf7f3;
+      border-left: 3px solid var(--primary-dark);
+      padding: 18px 18px;
+      border-radius: 12px;
+      color: rgba(26, 26, 26, .78);
+    }
+
+    /* CARDS */
     .muted-section {
       background: var(--bg-muted)
     }
 
     .cards {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 18px;
       margin-top: 22px;
     }
@@ -349,7 +263,7 @@
       border: 1px solid var(--border);
       border-radius: 16px;
       padding: 26px;
-      text-align: center;
+      text-align: left;
       box-shadow: 0 10px 24px rgba(0, 0, 0, .04);
     }
 
@@ -357,7 +271,7 @@
       width: 60px;
       height: 60px;
       border-radius: 999px;
-      margin: 0 auto 14px;
+      margin: 0 0 14px;
       display: grid;
       place-items: center;
       background: rgba(200, 135, 74, .18);
@@ -369,7 +283,8 @@
       margin: 0 0 8px;
       font-family: "Merriweather", serif;
       font-weight: 900;
-      font-size: 1.05rem;
+      font-size: 1.15rem;
+      color: var(--text);
     }
 
     .card p {
@@ -378,78 +293,90 @@
       font-size: .95rem
     }
 
-    .card a {
-      color: var(--primary);
-      font-weight: 600
-    }
-
-    .card a:hover {
-      text-decoration: underline
-    }
-
     @media (max-width:900px) {
       .cards {
         grid-template-columns: 1fr
       }
     }
 
-    /* WHAT IS */
-    .center {
-      text-align: center
+    /* CTA */
+    .cta {
+      background: var(--primary-dark);
+      color: #fff;
+      text-align: center;
+      padding: 68px 0;
     }
 
-    h2 {
-      font-family: "Merriweather", serif;
-      font-weight: 900;
-      font-size: clamp(26px, 3.2vw, 36px);
-      margin: 0 0 12px;
-      color: var(--primary);
+    .cta h2 {
+      color: #fff;
+      margin-bottom: 8px
     }
 
-    .lead {
+    .cta p {
       max-width: 760px;
       margin: 0 auto;
-      color: var(--muted);
-      font-size: 1rem;
+      color: rgba(255, 255, 255, .78)
     }
 
-    .outline-btn {
+    .btn-row {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 18px
+    }
+
+    .btn {
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-weight: 700;
+      border: 1px solid rgba(255, 255, 255, .18);
+      transition: transform .2s ease, filter .2s ease, background .2s ease, color .2s ease;
+      cursor: pointer;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      margin-top: 18px;
-      padding: 12px 18px;
-      border-radius: 12px;
-      border: 1.5px solid #1a1a1a;
-      color: #1a1a1a;
-      font-weight: 600;
-      transition: transform .2s ease, background .2s ease, color .2s ease;
     }
 
-    .outline-btn:hover {
-      background: #1a1a1a;
+    .btn:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.05)
+    }
+
+    .btn.white {
+      background: #fff;
+      color: var(--primary-dark)
+    }
+
+    .btn.outline {
+      background: transparent;
       color: #fff;
-      transform: translateY(-1px)
+      border: 1px solid rgba(255, 255, 255, .65)
+    }
+
+    .btn.outline:hover {
+      background: #fff;
+      color: var(--primary-dark)
     }
 
     /* FOOTER */
     footer {
       background: var(--bg);
       border-top: 1px solid rgba(0, 0, 0, .08);
-      padding: 54px 0 26px;
+      padding: 54px 0 26px
     }
 
     .footer-grid {
       display: grid;
       grid-template-columns: 2fr 1fr 1.5fr;
-      gap: 24px;
+      gap: 24px
     }
 
     .f-brand {
       font-family: "Merriweather", serif;
       font-weight: 900;
       font-size: 1.05rem;
-      margin-bottom: 8px;
+      margin-bottom: 8px
     }
 
     .f-small {
@@ -463,14 +390,14 @@
       text-transform: uppercase;
       color: rgba(26, 26, 26, .55);
       margin-bottom: 10px;
-      font-weight: 600;
+      font-weight: 600
     }
 
     .f-links a {
       display: block;
       padding: 6px 0;
       color: var(--muted);
-      transition: color .2s ease, transform .2s ease;
+      transition: color .2s ease, transform .2s ease
     }
 
     .f-links a:hover {
@@ -482,7 +409,7 @@
       margin-top: 22px;
       text-align: center;
       color: rgba(26, 26, 26, .55);
-      font-size: .82rem;
+      font-size: .82rem
     }
 
     @media (max-width:900px) {
@@ -495,7 +422,6 @@
 
 <body>
 
-  <!-- NAV -->
   <header class="nav">
     <div class="container nav-inner">
       <a href="index.html" class="brand-box">
@@ -504,104 +430,105 @@
         <div class="brand-tagline">A Celebration of Taste</div>
       </a>
       <nav class="nav-links" aria-label="Primary">
-        <a class="active" href="index.html">Home</a>
+        <a href="index.html">Home</a>
         <a href="menu.html">Menu</a>
         <a href="preview.html">Preview</a>
         <a href="story.html">Our Story</a>
-        <a href="farmers.html">Our Farmers</a>
+        <a class="active" href="farmers.html">Our Farmers</a>
       </nav>
     </div>
   </header>
 
-  <!-- HERO -->
   <section class="hero">
     <div class="hero-watermark" aria-hidden="true">
-      <!-- Put your logo as "logo.png" in the same folder -->
       <img src="black_logo_circle.png" alt="" />
     </div>
 
     <div class="container hero-inner">
-      <h1 class="reveal" data-delay="0">Svādotsava</h1>
-      <p class="tagline reveal" data-delay="100">A Celebration of Taste</p>
-
-      <div class="trinity reveal" data-delay="200">
-        <div class="tri-item">
-          <div class="tri-icon">🌾</div>
-          <div class="tri-label">Golden Grains</div>
-        </div>
-        <div class="tri-item">
-          <div class="tri-icon">☕</div>
-          <div class="tri-label">Heart of Coffee</div>
-        </div>
-        <div class="tri-item">
-          <div class="tri-icon">🍵</div>
-          <div class="tri-label">Spirit of Tea</div>
-        </div>
-      </div>
-
-      <div class="pill reveal" data-delay="300">📅 Opening Summer 2027</div>
-
-      <p class="reveal" data-delay="400">
-        Where every meal is an Utsava—a sacred festival that nourishes the body and delights the soul.
-        We're preparing something extraordinary.
-      </p>
-
-      <div class="tiny-gold reveal" data-delay="500">— A CELEBRATION OF TASTE —</div>
-
-      <form class="signup reveal" data-delay="600" onsubmit="return false;">
-        <input type="email" placeholder="Enter your email" aria-label="Email address" />
-        <button class="btn" type="submit">🔔 Notify Me</button>
-      </form>
-      <div class="hint reveal" data-delay="700">Be the first to know when we open our doors</div>
+      <h1 class="reveal" data-delay="0">Honoring Our Roots</h1>
+      <p class="sub reveal" data-delay="120">Meeting the hands that feed us.</p>
+      <div class="goldline reveal" data-delay="220">— SOURCED WITH LOVE —</div>
     </div>
   </section>
 
-  <!-- INFO CARDS -->
-  <section class="muted-section">
-    <div class="container center">
-      <h2 class="reveal">Stay Connected</h2>
-      <p class="lead reveal" data-delay="100">A simple way to track our opening and reach us anytime.</p>
-
-      <div class="cards">
-        <div class="card reveal" data-delay="150">
-          <div class="icircle">📅</div>
-          <h3>Opening Date</h3>
-          <p>Summer 2027 / Exact date to be announced</p>
-        </div>
-
-        <div class="card reveal" data-delay="250">
-          <div class="icircle">📍</div>
-          <h3>Location</h3>
-          <p>India / Specific address coming soon</p>
-        </div>
-
-        <div class="card reveal" data-delay="350">
-          <div class="icircle">✉️</div>
-          <h3>Get in Touch</h3>
-          <p><a href="mailto:cmnav33n@gmail.com">cmnav33n@gmail.com</a><br />We’d love to hear from you</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHAT IS -->
   <section>
     <div class="container center">
-      <h2 class="reveal">What is Svādotsava?</h2>
-      <p class="lead reveal" data-delay="100">
-        In the sacred Shastras, <em>Svāda</em> is more than taste—it is the soulful relishing of life’s essence.
-        Combined with <em>Utsava</em>, which means “a celebration that removes worldly sorrow,” our name is our mission.
+      <h2 class="reveal">The Earth's Bounty</h2>
+      <p class="lead reveal" data-delay="120">
+        We believe that true <em>Svāda</em> (taste) begins long before the kitchen. It starts in the soil.
+        Our journey led us to passionate farmers across the country who nurture the land with generational wisdom
+        and a deep reverence for nature.
       </p>
-      <p class="lead reveal" data-delay="200" style="margin-top:10px;">
-        We’re creating a sanctuary where food lovers, caffeine seekers, and tea connoisseurs unite in celebration.
-        A space where every meal lifts the spirit and every visit feels like coming home.
-      </p>
-
-      <a class="outline-btn reveal" data-delay="300" href="story.html">Learn More About Our Story</a>
+      <div class="quote reveal" data-delay="220">
+        “Every grain, every spice, every drop of oil has a story. By supporting honest farming, we bring you food that is full of life and flavor.”
+      </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <section class="muted-section">
+    <div class="container">
+      <div class="center">
+        <h2 class="reveal">Our Ingredients & Their Sources</h2>
+        <p class="lead reveal" data-delay="120">
+          We are proud to partner with farmers who share our commitment to purity and traditional practices.
+        </p>
+      </div>
+
+      <div class="cards">
+        <div class="card reveal" data-delay="200">
+          <div class="icircle">🌾</div>
+          <h3>Heritage Millets</h3>
+          <p>
+            Sourced directly from dryland farmers who cultivate drought-resistant, highly nutritious ancient grains.
+            These millets are grown without synthetic chemicals, preserving their robust flavor and health benefits
+            while supporting sustainable agriculture.
+          </p>
+        </div>
+
+        <div class="card reveal" data-delay="300">
+          <div class="icircle">🍚</div>
+          <h3>Traditional Rice</h3>
+          <p>
+            We choose heritage rice varieties from farmers who still use natural farming techniques in fertile river basins.
+            These grains are minimally processed to retain their essential nutrients, bringing back the authentic, sweet aroma of true rice.
+          </p>
+        </div>
+
+        <div class="card reveal" data-delay="400">
+          <div class="icircle">🌶️</div>
+          <h3>Honest Spices</h3>
+          <p>
+            Our spices come from small-holder spice estates nestled in the hills.
+            Hand-picked, sun-dried, and ground in small batches, our spices contain no fillers or artificial colors.
+            They are vibrant, aromatic, and rich in essential oils.
+          </p>
+        </div>
+
+        <div class="card reveal" data-delay="500">
+          <div class="icircle">🛢️</div>
+          <h3>Cold-Pressed Oils</h3>
+          <p>
+            We use only traditional cold-pressed (Wood Churn / Kacchi Ghani) oils for all our cooking.
+            Procured straight from artisans who crush seeds at low speeds to prevent heat generation, these oils retain their natural antioxidants and authentic flavor profiles.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2 class="reveal">Taste the Difference</h2>
+      <p class="reveal" data-delay="120">
+        Experience the pure flavors of these carefully sourced ingredients in our dishes.
+      </p>
+      <div class="btn-row reveal" data-delay="220">
+        <a class="btn white" href="menu.html">View Our Menu</a>
+        <a class="btn outline" href="story.html">Our Story</a>
+      </div>
+    </div>
+  </section>
+
   <footer>
     <div class="container">
       <div class="footer-grid">
@@ -611,7 +538,6 @@
           <div class="f-small">A Celebration of Taste</div>
           <div class="f-small" style="margin-top:10px;">🌾 Golden Grains • ☕ Heart of Coffee • 🍵 Spirit of Tea</div>
         </div>
-
         <div>
           <div class="f-label">Quick Links</div>
           <div class="f-links">
@@ -622,7 +548,6 @@
             <a href="farmers.html">Our Farmers</a>
           </div>
         </div>
-
         <div>
           <div class="f-label">Opening Summer 2027</div>
           <div class="f-small">We’re preparing something extraordinary…</div>
@@ -632,15 +557,12 @@
           </div>
         </div>
       </div>
-
       <div class="copyright">© 2026 Svādotsava. All rights reserved.</div>
     </div>
   </footer>
 
   <script>
-    // Smooth scroll-reveal animations (IntersectionObserver) + small stagger
     const revealEls = [...document.querySelectorAll('.reveal')];
-
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
         if (!e.isIntersecting) return;
@@ -650,10 +572,7 @@
         io.unobserve(el);
       });
     }, { threshold: 0.1 });
-
     revealEls.forEach(el => io.observe(el));
-
-    // Hero initial stagger (ensures fast fade even if already in view)
     window.addEventListener('load', () => {
       revealEls.forEach(el => {
         if (el.getBoundingClientRect().top < window.innerHeight * 0.95) {
