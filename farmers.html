@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Svādotsava — Our Farmers</title>
+  <title>Svādotsava&trade; — Our Farmers</title>
 
   <link
     href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Open+Sans:wght@400;600&display=swap"
@@ -171,7 +171,10 @@
 
     .hero-watermark {
       position: absolute;
-      inset: 0;
+      top: 60px;
+      right: 0;
+      bottom: 0;
+      left: 0;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -179,8 +182,11 @@
     }
 
     .hero-watermark img {
-      width: min(680px, 84vw);
-      height: auto;
+      width: auto;
+      max-width: calc(100% - 32px);
+      height: min(46vh, 440px);
+      max-height: calc(100% - 32px);
+      object-fit: contain;
       opacity: .35;
     }
 
@@ -426,7 +432,7 @@
     <div class="container nav-inner">
       <a href="index.html" class="brand-box">
         <div class="brand-name"><span style="color:var(--primary)">Svād</span><span
-            style="color:var(--accent)">otsava</span></div>
+            style="color:var(--accent)">otsava</span><sup style="color: var(--primary); font-size: 0.5em;">&trade;</sup></div>
         <div class="brand-tagline">A Celebration of Taste</div>
       </a>
       <nav class="nav-links" aria-label="Primary">
@@ -441,7 +447,7 @@
 
   <section class="hero">
     <div class="hero-watermark" aria-hidden="true">
-      <img src="black_logo_circle.png" alt="" />
+      <img src="black_logo_circle_nobg.png" alt="" />
     </div>
 
     <div class="container hero-inner">
@@ -534,7 +540,7 @@
       <div class="footer-grid">
         <div>
           <div class="f-brand"><span style="color:var(--primary)">Svād</span><span
-              style="color:var(--accent)">otsava</span></div>
+              style="color:var(--accent)">otsava</span><sup style="color: var(--primary); font-size: 0.5em;">&trade;</sup></div>
           <div class="f-small">A Celebration of Taste</div>
           <div class="f-small" style="margin-top:10px;">🌾 Golden Grains • ☕ Heart of Coffee • 🍵 Spirit of Tea</div>
         </div>
@@ -557,7 +563,7 @@
           </div>
         </div>
       </div>
-      <div class="copyright">© 2026 Svādotsava. All rights reserved.</div>
+      <div class="copyright">© 2026 Svādotsava<sup style="color: white; font-size: 0.5em;">&trade;</sup>. All rights reserved.</div>
     </div>
   </footer>
 

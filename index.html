@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Svādotsava — Coming Soon</title>
+  <title>Svādotsava&trade; — Coming Soon</title>
 
   <link
     href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Open+Sans:wght@400;600&display=swap"
@@ -176,8 +176,11 @@
     }
 
     .hero-watermark img {
-      width: min(720px, 90vw);
-      height: auto;
+      width: auto;
+      max-width: calc(100% - 32px);
+      height: min(78vh, 720px);
+      max-height: calc(100% - 32px);
+      object-fit: contain;
       opacity: .35;
     }
 
@@ -500,7 +503,7 @@
     <div class="container nav-inner">
       <a href="index.html" class="brand-box">
         <div class="brand-name"><span style="color:var(--primary)">Svād</span><span
-            style="color:var(--accent)">otsava</span></div>
+            style="color:var(--accent)">otsava</span><sup style="color: var(--primary); font-size: 0.5em;">&trade;</sup></div>
         <div class="brand-tagline">A Celebration of Taste</div>
       </a>
       <nav class="nav-links" aria-label="Primary">
@@ -517,11 +520,11 @@
   <section class="hero">
     <div class="hero-watermark" aria-hidden="true">
       <!-- Put your logo as "logo.png" in the same folder -->
-      <img src="black_logo_circle.png" alt="" />
+      <img src="black_logo_circle_nobg.png" alt="" />
     </div>
 
     <div class="container hero-inner">
-      <h1 class="reveal" data-delay="0">Svādotsava</h1>
+      <h1 class="reveal" data-delay="0">Svādotsava<sup style="color: white; font-size: 0.5em;">&trade;</sup></h1>
       <p class="tagline reveal" data-delay="100">A Celebration of Taste</p>
 
       <div class="trinity reveal" data-delay="200">
@@ -587,7 +590,7 @@
   <!-- WHAT IS -->
   <section>
     <div class="container center">
-      <h2 class="reveal">What is Svādotsava?</h2>
+      <h2 class="reveal">What is Svādotsava<sup style="color: white; font-size: 0.5em;">&trade;</sup>?</h2>
       <p class="lead reveal" data-delay="100">
         In the sacred Shastras, <em>Svāda</em> is more than taste—it is the soulful relishing of life’s essence.
         Combined with <em>Utsava</em>, which means “a celebration that removes worldly sorrow,” our name is our mission.
@@ -607,7 +610,7 @@
       <div class="footer-grid">
         <div>
           <div class="f-brand"><span style="color:var(--primary)">Svād</span><span
-              style="color:var(--accent)">otsava</span></div>
+              style="color:var(--accent)">otsava</span><sup style="color: var(--primary); font-size: 0.5em;">&trade;</sup></div>
           <div class="f-small">A Celebration of Taste</div>
           <div class="f-small" style="margin-top:10px;">🌾 Golden Grains • ☕ Heart of Coffee • 🍵 Spirit of Tea</div>
         </div>
@@ -633,7 +636,7 @@
         </div>
       </div>
 
-      <div class="copyright">© 2026 Svādotsava. All rights reserved.</div>
+      <div class="copyright">© 2026 Svādotsava<sup style="color: white; font-size: 0.5em;">&trade;</sup>. All rights reserved.</div>
     </div>
   </footer>
 

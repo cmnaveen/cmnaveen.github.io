@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Svādotsava — Menu</title>
-  <meta name="description" content="Explore the Svādotsava menu — a celebration of South Indian flavours featuring golden idlies, crispy dosas, masala vadas, and handcrafted coffees and teas." />
+  <title>Svādotsava&trade; — Menu</title>
+  <meta name="description" content="Explore the Svādotsava&trade; menu — a celebration of South Indian flavours featuring golden idlies, crispy dosas, masala vadas, and handcrafted coffees and teas." />
 
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
@@ -70,8 +70,8 @@
         radial-gradient(900px 500px at 18% 80%, rgba(124,58,16,.18), transparent 55%);
       pointer-events:none;
     }
-    .hero-watermark{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none}
-    .hero-watermark img{width:min(720px, 90vw);height:auto;opacity:.15}
+    .hero-watermark{position:absolute;top:60px;right:0;bottom:0;left:0;display:flex;align-items:center;justify-content:center;pointer-events:none}
+    .hero-watermark img{width:auto;max-width:calc(100% - 32px);height:min(44vh, 420px);max-height:calc(100% - 32px);object-fit:contain;opacity:.15}
     .hero-inner{position:relative;width:100%;padding:60px 0}
     .hero .label{font-size:.7rem;letter-spacing:.35em;text-transform:uppercase;color:rgba(200,164,90,.78);margin-bottom:10px}
     .hero h1{margin:0 0 10px;font-family:"Merriweather",serif;font-weight:900;font-size:clamp(34px, 5vw, 66px);line-height:1.12}
@@ -208,7 +208,7 @@
   <header class="nav">
     <div class="container nav-inner">
       <a href="index.html" class="brand-box">
-        <div class="brand-name"><span style="color:var(--primary)">Svād</span><span style="color:var(--accent)">otsava</span></div>
+        <div class="brand-name"><span style="color:var(--primary)">Svād</span><span style="color:var(--accent)">otsava</span><sup style="color: var(--primary); font-size: 0.5em;">&trade;</sup></div>
         <div class="brand-tagline">A Celebration of Taste</div>
       </a>
       <nav class="nav-links" aria-label="Primary">
@@ -224,7 +224,7 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-watermark" aria-hidden="true">
-      <img src="black_logo_circle.png" alt="" />
+      <img src="black_logo_circle_nobg.png" alt="" />
     </div>
     <div class="container hero-inner">
       <div class="label reveal" data-delay="0">OUR OFFERINGS</div>
@@ -413,7 +413,7 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <div class="f-brand"><span style="color:var(--primary)">Svād</span><span style="color:var(--accent)">otsava</span></div>
+          <div class="f-brand"><span style="color:var(--primary)">Svād</span><span style="color:var(--accent)">otsava</span><sup style="color: var(--primary); font-size: 0.5em;">&trade;</sup></div>
           <div class="f-small">A Celebration of Taste</div>
           <div class="f-small" style="margin-top:10px;">🌾 Golden Grains • ☕ Heart of Coffee • 🍵 Spirit of Tea</div>
         </div>
@@ -438,7 +438,7 @@
         </div>
       </div>
 
-      <div class="copyright">© 2026 Svādotsava. All rights reserved.</div>
+      <div class="copyright">© 2026 Svādotsava<sup style="color: white; font-size: 0.5em;">&trade;</sup>. All rights reserved.</div>
     </div>
   </footer>
 

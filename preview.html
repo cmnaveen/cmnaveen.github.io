@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Svādotsava — Preview</title>
-  <meta name="description" content="Preview the story, atmosphere, and signature offerings of Svādotsava — a celebration of taste rooted in coffee, tea, grains, and warm hospitality." />
+  <title>Svādotsava&trade; — Preview</title>
+  <meta name="description" content="Preview the story, atmosphere, and signature offerings of Svādotsava&trade; — a celebration of taste rooted in coffee, tea, grains, and warm hospitality." />
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -38,24 +38,23 @@
     .container{max-width:1100px;margin:0 auto;padding:0 20px}
 
     .nav{
-      position:fixed;top:0;left:0;right:0;z-index:100;
-      height:64px;display:flex;align-items:center;
-      background:rgba(246,241,232,.94);
-      backdrop-filter:blur(8px);
+      position:fixed;top:0;left:0;right:0;z-index:50;
+      height:60px;display:flex;align-items:center;
+      background:var(--bg);
       border-bottom:1px solid rgba(0,0,0,.08);
     }
     .nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%}
-    .brand-box{display:flex;flex-direction:column;justify-content:center}
-    .brand-name{font-family:"Merriweather",serif;font-weight:900;font-size:1.15rem;line-height:1.1}
-    .brand-tagline{font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-top:2px}
+    .brand-box{display:flex;flex-direction:column;justify-content:center;background:transparent;text-decoration:none}
+    .brand-name{font-family:"Merriweather",serif;font-weight:900;font-size:1.2rem;letter-spacing:.02em;line-height:1.1}
+    .brand-tagline{font-size:.55rem;letter-spacing:.15em;text-transform:uppercase;color:#E1B46B;font-weight:700;margin-top:2px}
     .nav-links{display:flex;gap:18px;align-items:center}
-    .nav-links a{font-size:.88rem;padding:8px 10px;border-radius:10px;transition:.2s ease}
-    .nav-links a:hover{background:rgba(122,62,22,.08);color:var(--primary)}
-    .nav-links a.active{color:var(--primary);font-weight:700}
-    @media (max-width:700px){.nav-links{display:none}}
+    .nav-links a{font-size:.85rem;padding:8px 10px;border-radius:10px;transition:transform .2s ease, background .2s ease, color .2s ease;color:var(--text)}
+    .nav-links a:hover{background:rgba(124,58,16,.08);transform:translateY(-1px);color:var(--primary)}
+    .nav-links a.active{color:var(--primary);font-weight:600}
+    @media (max-width:480px){.nav-links{display:none}}
 
     .hero{
-      min-height:100vh;padding-top:64px;color:#fff;position:relative;overflow:hidden;
+      min-height:100vh;padding-top:60px;color:#fff;position:relative;overflow:hidden;
       background:
         radial-gradient(circle at top, rgba(200,146,65,.16), transparent 32%),
         radial-gradient(circle at 20% 80%, rgba(122,62,22,.22), transparent 28%),
@@ -64,7 +63,7 @@
       display:flex;align-items:center;text-align:center;
     }
     .hero::before{
-      content:"Svādotsava";
+      content:"Svādotsava<sup style="color: white; font-size: 0.5em;">&trade;</sup>";
       position:absolute;left:50%;top:48%;transform:translate(-50%,-50%);
       font-family:"Merriweather",serif;font-weight:900;
       font-size:clamp(54px, 11vw, 170px);letter-spacing:.04em;
@@ -79,7 +78,7 @@
       position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
       pointer-events:none;opacity:.16;
     }
-    .hero-watermark img{width:min(560px, 78vw);height:auto;filter:drop-shadow(0 20px 50px rgba(0,0,0,.25))}
+    .hero-watermark img{width:auto;max-width:calc(100% - 32px);height:min(72vh, 640px);max-height:calc(100% - 32px);object-fit:contain;filter:drop-shadow(0 20px 50px rgba(0,0,0,.25))}
     .hero-inner{position:relative;width:100%;padding:68px 0}
     .eyebrow{font-size:.76rem;letter-spacing:.34em;text-transform:uppercase;color:rgba(216,176,102,.95);margin-bottom:12px}
     .hero h1{margin:0 0 14px;font-family:"Merriweather",serif;font-weight:900;font-size:clamp(38px, 5.6vw, 72px);line-height:1.12}
@@ -166,7 +165,7 @@
   <header class="nav">
     <div class="container nav-inner">
       <a href="index.html" class="brand-box">
-        <div class="brand-name"><span style="color:var(--primary)">Svād</span><span style="color:var(--accent)">otsava</span></div>
+        <div class="brand-name"><span style="color:var(--primary)">Svād</span><span style="color:var(--accent)">otsava</span><sup style="color: var(--primary); font-size: 0.5em;">&trade;</sup></div>
         <div class="brand-tagline">A Celebration of Taste</div>
       </a>
       <nav class="nav-links" aria-label="Primary">
@@ -181,14 +180,14 @@
 
   <section class="hero">
     <div class="hero-watermark" aria-hidden="true">
-      <img src="black_logo_circle.png" alt="" />
+      <img src="black_logo_circle_nobg.png" alt="" />
     </div>
 
     <div class="container hero-inner">
       <div class="eyebrow reveal">A Celebration of Taste</div>
-      <h1 class="reveal" data-delay="100">A soulful preview of<br>Svādotsava</h1>
+      <h1 class="reveal" data-delay="100">A soulful preview of<br>Svādotsava<sup style="color: white; font-size: 0.5em;">&trade;</sup></h1>
       <p class="reveal" data-delay="200">
-        More than a restaurant, Svādotsava is a warm gathering of flavors, tradition, coffee, tea,
+        More than a restaurant, Svādotsava<sup style="color: white; font-size: 0.5em;">&trade;</sup> is a warm gathering of flavors, tradition, coffee, tea,
         grains, and heartfelt hospitality — where every visit feels like a celebration.
       </p>
       <div class="hero-buttons reveal" data-delay="300">
@@ -200,7 +199,7 @@
 
   <section>
     <div class="container center">
-      <h2 class="reveal">What awaits you at Svādotsava</h2>
+      <h2 class="reveal">What awaits you at Svādotsava<sup style="color: white; font-size: 0.5em;">&trade;</sup></h2>
       <p class="lead reveal" data-delay="100">
         Our space is built around comfort, flavor, and meaning — inspired by the idea that food should nourish the body and delight the soul.
       </p>
@@ -232,7 +231,7 @@
       <div class="center">
         <h2 class="reveal">The meaning behind our name</h2>
         <p class="lead reveal" data-delay="100">
-          Svādotsava joins two beautiful ideas — taste and celebration.
+          Svādotsava<sup style="color: white; font-size: 0.5em;">&trade;</sup> joins two beautiful ideas — taste and celebration.
         </p>
       </div>
 
@@ -247,13 +246,13 @@
           <h3>Utsava</h3>
           <p>
             Utsava means celebration — a moment of joy, gathering, and upliftment.
-            Together, Svādotsava becomes a celebration of taste in its deepest sense.
+            Together, Svādotsava<sup style="color: white; font-size: 0.5em;">&trade;</sup> becomes a celebration of taste in its deepest sense.
           </p>
         </div>
 
         <div class="highlight-panel reveal" data-delay="250">
           <div class="big">
-            “At Svādotsava, every meal is meant to feel like an utsava — warm, memorable, and shared with joy.”
+            “At Svādotsava<sup style="color: white; font-size: 0.5em;">&trade;</sup>, every meal is meant to feel like an utsava — warm, memorable, and shared with joy.”
           </div>
           <p>
             From coffee and tea to comforting food rooted in tradition, our restaurant is designed
@@ -273,7 +272,7 @@
 
       <div class="showcase">
         <div class="visual-card reveal" data-delay="150">
-          <img src="spice_tree.jpg" alt="Svādotsava spice tree visual" />
+          <img src="spice_tree.jpg" alt="Svādotsava<sup style="color: white; font-size: 0.5em;">&trade;</sup> spice tree visual" />
         </div>
         <div class="feature-stack">
           <div class="feature reveal" data-delay="220">
@@ -297,7 +296,7 @@
     <div class="container center">
       <h2 class="reveal">Menu Preview</h2>
       <p class="lead reveal" data-delay="100">
-        A small glimpse of the flavors Svādotsava aims to be known for.
+        A small glimpse of the flavors Svādotsava<sup style="color: white; font-size: 0.5em;">&trade;</sup> aims to be known for.
       </p>
 
       <div class="items">
@@ -328,7 +327,7 @@
     <div class="container center">
       <h2 class="reveal">Stay connected</h2>
       <p class="lead reveal" data-delay="100">
-        We are building Svādotsava with care. Here is the current preview of our launch information.
+        We are building Svādotsava<sup style="color: white; font-size: 0.5em;">&trade;</sup> with care. Here is the current preview of our launch information.
       </p>
 
       <div class="contact-grid">
@@ -355,7 +354,7 @@
     <div class="container">
       <h2 class="reveal">Be part of the celebration</h2>
       <p class="reveal" data-delay="100">
-        We’re shaping Svādotsava into a place where taste, tradition, and warmth come together. Join the waitlist to follow the journey.
+        We’re shaping Svādotsava<sup style="color: white; font-size: 0.5em;">&trade;</sup> into a place where taste, tradition, and warmth come together. Join the waitlist to follow the journey.
       </p>
 
       <form class="signup reveal" data-delay="200" onsubmit="return false;">
@@ -369,7 +368,7 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <div class="footer-title"><span style="color:var(--primary)">Svād</span><span style="color:var(--accent)">otsava</span></div>
+          <div class="footer-title"><span style="color:var(--primary)">Svād</span><span style="color:var(--accent)">otsava</span><sup style="color: var(--primary); font-size: 0.5em;">&trade;</sup></div>
           <div class="footer-small">A Celebration of Taste</div>
           <div class="footer-small" style="margin-top:10px;">Coffee • Tea • Grains • Tradition • Warm Hospitality</div>
         </div>
@@ -391,7 +390,7 @@
         </div>
       </div>
 
-      <div class="copyright">© 2026 Svādotsava. All rights reserved.</div>
+      <div class="copyright">© 2026 Svādotsava<sup style="color: white; font-size: 0.5em;">&trade;</sup>. All rights reserved.</div>
     </div>
   </footer>
 

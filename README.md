@@ -1,2 +1,2 @@
 # cmnaveen.github.io
-Svādotsava website 
+Svādotsava&trade; website 
