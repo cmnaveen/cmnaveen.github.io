@@ -10,500 +10,17 @@
     href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Open+Sans:wght@400;600&display=swap"
     rel="stylesheet">
 
-  <style>
-    :root {
-      --bg: #f5f0e8;
-      --bg-muted: #ede8de;
-      --card: #ffffff;
-      --primary: #7C3A10;
-      --primary-dark: #8B4A1C;
-      --accent: #C8874A;
-      --hero: #0a0d14;
-      --text: #1a1a1a;
-      --muted: #5a5a5a;
-      --border: #DDD0BC;
-    }
-
-    * {
-      box-sizing: border-box
-    }
-
-    html {
-      scroll-behavior: smooth
-    }
-
-    body {
-      margin: 0;
-      font-family: "Open Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none
-    }
-
-    .container {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 0 20px
-    }
-
-    /* NAV */
-    .nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 50;
-      height: 60px;
-      background: var(--bg);
-      border-bottom: 1px solid rgba(0, 0, 0, .08);
-      display: flex;
-      align-items: center;
-    }
-
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%
-    }
-
-    .brand-box {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      background: transparent;
-      text-decoration: none
-    }
-
-    .brand-name {
-      font-family: "Merriweather", serif;
-      font-weight: 900;
-      font-size: 1.2rem;
-      letter-spacing: .02em;
-      line-height: 1.1
-    }
-
-    .brand-tagline {
-      font-size: .55rem;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-      color: #E1B46B;
-      font-weight: 700;
-      margin-top: 2px
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 18px;
-      align-items: center
-    }
-
-    .nav-links a {
-      font-size: .85rem;
-      padding: 8px 10px;
-      border-radius: 10px;
-      transition: transform .2s ease, background .2s ease, color .2s ease;
-      color: var(--text);
-    }
-
-    .nav-links a:hover {
-      background: rgba(124, 58, 16, .08);
-      transform: translateY(-1px);
-      color: var(--primary)
-    }
-
-    .nav-links a.active {
-      color: var(--primary);
-      font-weight: 600
-    }
-
-    @media (max-width:480px) {
-      .nav-links {
-        display: none
-      }
-    }
-
-    /* REVEAL */
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity .7s ease, transform .7s ease
-    }
-
-    .reveal.in {
-      opacity: 1;
-      transform: translateY(0)
-    }
-
-    /* HERO */
-    .hero {
-      min-height: 100vh;
-      padding-top: 60px;
-      background: var(--hero);
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-    }
-
-    .hero::before {
-      content: "";
-      pointer-events: none;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(900px 500px at 50% 30%, rgba(200, 135, 74, .18), transparent 60%),
-        radial-gradient(900px 500px at 20% 80%, rgba(124, 58, 16, .18), transparent 55%);
-      pointer-events: none;
-    }
-
-    .hero-watermark {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      pointer-events: none;
-    }
-
-    .hero-watermark img {
-      width: auto;
-      max-width: calc(100% - 32px);
-      height: min(78vh, 720px);
-      max-height: calc(100% - 32px);
-      object-fit: contain;
-      opacity: .35;
-    }
-
-    .hero-inner {
-      position: relative;
-      width: 100%;
-      padding: 72px 0;
-      text-align: center;
-      color: #fff;
-    }
-
-    .hero h1 {
-      margin: 0 0 12px;
-      font-family: "Merriweather", serif;
-      font-weight: 900;
-      font-size: clamp(44px, 6vw, 84px);
-      letter-spacing: .01em;
-      line-height: 1.08;
-    }
-
-    .hero .tagline {
-      margin: 0 auto 18px;
-      max-width: 720px;
-      color: #E1B46B;
-      font-size: 1.15rem;
-      font-style: italic;
-      font-weight: 600;
-    }
-
-    .trinity {
-      margin: 18px auto 18px;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-
-    .tri-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      width: 140px;
-    }
-
-    .tri-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 999px;
-      display: grid;
-      place-items: center;
-      background: rgba(255, 255, 255, .10);
-      font-size: 22px;
-    }
-
-    .tri-label {
-      font-size: .72rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, .7);
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin: 8px 0 18px;
-      padding: 10px 18px;
-      background: rgba(139, 74, 28, .85);
-      border: 1px solid rgba(255, 255, 255, .12);
-      border-radius: 999px;
-      font-size: .85rem;
-      color: #fff;
-    }
-
-    .hero p {
-      margin: 0 auto 18px;
-      max-width: 560px;
-      color: rgba(255, 255, 255, .7);
-      font-size: .98rem;
-    }
-
-    .tiny-gold {
-      margin: 10px 0 18px;
-      font-size: .7rem;
-      letter-spacing: .35em;
-      text-transform: uppercase;
-      color: rgba(200, 164, 90, .75);
-    }
-
-    .signup {
-      margin: 10px auto 0;
-      max-width: 520px;
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .signup input {
-      flex: 1;
-      min-width: 220px;
-      padding: 12px 14px;
-      border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, .18);
-      background: rgba(255, 255, 255, .08);
-      color: #fff;
-      outline: none;
-      transition: border .2s ease, transform .2s ease, background .2s ease;
-    }
-
-    .signup input::placeholder {
-      color: rgba(255, 255, 255, .55)
-    }
-
-    .signup input:focus {
-      border-color: rgba(200, 135, 74, .6);
-      background: rgba(255, 255, 255, .10)
-    }
-
-    .btn {
-      padding: 12px 16px;
-      border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, .12);
-      background: var(--primary-dark);
-      color: #fff;
-      font-weight: 600;
-      cursor: pointer;
-      transition: transform .2s ease, filter .2s ease, background .2s ease;
-      white-space: nowrap;
-    }
-
-    .btn:hover {
-      transform: translateY(-1px);
-      filter: brightness(1.06)
-    }
-
-    .hint {
-      margin-top: 10px;
-      color: rgba(255, 255, 255, .55);
-      font-size: .85rem;
-    }
-
-    @media (max-width:520px) {
-      .tri-item {
-        width: 120px
-      }
-    }
-
-    /* INFO CARDS */
-    section {
-      padding: 76px 0
-    }
-
-    .muted-section {
-      background: var(--bg-muted)
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin-top: 22px;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 26px;
-      text-align: center;
-      box-shadow: 0 10px 24px rgba(0, 0, 0, .04);
-    }
-
-    .icircle {
-      width: 60px;
-      height: 60px;
-      border-radius: 999px;
-      margin: 0 auto 14px;
-      display: grid;
-      place-items: center;
-      background: rgba(200, 135, 74, .18);
-      color: var(--accent);
-      font-size: 24px;
-    }
-
-    .card h3 {
-      margin: 0 0 8px;
-      font-family: "Merriweather", serif;
-      font-weight: 900;
-      font-size: 1.05rem;
-    }
-
-    .card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: .95rem
-    }
-
-    .card a {
-      color: var(--primary);
-      font-weight: 600
-    }
-
-    .card a:hover {
-      text-decoration: underline
-    }
-
-    @media (max-width:900px) {
-      .cards {
-        grid-template-columns: 1fr
-      }
-    }
-
-    /* WHAT IS */
-    .center {
-      text-align: center
-    }
-
-    h2 {
-      font-family: "Merriweather", serif;
-      font-weight: 900;
-      font-size: clamp(26px, 3.2vw, 36px);
-      margin: 0 0 12px;
-      color: var(--primary);
-    }
-
-    .lead {
-      max-width: 760px;
-      margin: 0 auto;
-      color: var(--muted);
-      font-size: 1rem;
-    }
-
-    .outline-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 18px;
-      padding: 12px 18px;
-      border-radius: 12px;
-      border: 1.5px solid #1a1a1a;
-      color: #1a1a1a;
-      font-weight: 600;
-      transition: transform .2s ease, background .2s ease, color .2s ease;
-    }
-
-    .outline-btn:hover {
-      background: #1a1a1a;
-      color: #fff;
-      transform: translateY(-1px)
-    }
-
-    /* FOOTER */
-    footer {
-      background: var(--bg);
-      border-top: 1px solid rgba(0, 0, 0, .08);
-      padding: 54px 0 26px;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1.5fr;
-      gap: 24px;
-    }
-
-    .f-brand {
-      font-family: "Merriweather", serif;
-      font-weight: 900;
-      font-size: 1.05rem;
-      margin-bottom: 8px;
-    }
-
-    .f-small {
-      color: var(--muted);
-      font-size: .92rem
-    }
-
-    .f-label {
-      font-size: .7rem;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: rgba(26, 26, 26, .55);
-      margin-bottom: 10px;
-      font-weight: 600;
-    }
-
-    .f-links a {
-      display: block;
-      padding: 6px 0;
-      color: var(--muted);
-      transition: color .2s ease, transform .2s ease;
-    }
-
-    .f-links a:hover {
-      color: var(--primary);
-      transform: translateX(2px)
-    }
-
-    .copyright {
-      margin-top: 22px;
-      text-align: center;
-      color: rgba(26, 26, 26, .55);
-      font-size: .82rem;
-    }
-
-    @media (max-width:900px) {
-      .footer-grid {
-        grid-template-columns: 1fr
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body class="page-home">
 
   <!-- NAV -->
   <header class="nav">
     <div class="container nav-inner">
       <a href="index.html" class="brand-box">
         <div class="brand-name"><span style="color:var(--primary)">Svād</span><span
-            style="color:var(--accent)">otsava</span><sup style="color: var(--primary); font-size: 0.5em;">&trade;</sup></div>
+            style="color:var(--accent)">otsava</span><sup class="tm">&trade;</sup></div>
         <div class="brand-tagline">A Celebration of Taste</div>
       </a>
       <nav class="nav-links" aria-label="Primary">
@@ -516,6 +33,8 @@
     </div>
   </header>
 
+  <main>
+
   <!-- HERO -->
   <section class="hero">
     <div class="hero-watermark" aria-hidden="true">
@@ -524,7 +43,7 @@
     </div>
 
     <div class="container hero-inner">
-      <h1 class="reveal" data-delay="0">Svādotsava<sup style="color: white; font-size: 0.5em;">&trade;</sup></h1>
+      <h1 class="reveal" data-delay="0">Svādotsava<sup class="tm">&trade;</sup></h1>
       <p class="tagline reveal" data-delay="100">A Celebration of Taste</p>
 
       <div class="trinity reveal" data-delay="200">
@@ -590,7 +109,7 @@
   <!-- WHAT IS -->
   <section>
     <div class="container center">
-      <h2 class="reveal">What is Svādotsava<sup style="color: white; font-size: 0.5em;">&trade;</sup>?</h2>
+      <h2 class="reveal">What is Svādotsava<sup class="tm">&trade;</sup>?</h2>
       <p class="lead reveal" data-delay="100">
         In the sacred Shastras, <em>Svāda</em> is more than taste—it is the soulful relishing of life’s essence.
         Combined with <em>Utsava</em>, which means “a celebration that removes worldly sorrow,” our name is our mission.
@@ -605,12 +124,14 @@
   </section>
 
   <!-- FOOTER -->
+  </main>
+
   <footer>
     <div class="container">
       <div class="footer-grid">
         <div>
           <div class="f-brand"><span style="color:var(--primary)">Svād</span><span
-              style="color:var(--accent)">otsava</span><sup style="color: var(--primary); font-size: 0.5em;">&trade;</sup></div>
+              style="color:var(--accent)">otsava</span><sup class="tm">&trade;</sup></div>
           <div class="f-small">A Celebration of Taste</div>
           <div class="f-small" style="margin-top:10px;">🌾 Golden Grains • ☕ Heart of Coffee • 🍵 Spirit of Tea</div>
         </div>
@@ -636,7 +157,7 @@
         </div>
       </div>
 
-      <div class="copyright">© 2026 Svādotsava<sup style="color: white; font-size: 0.5em;">&trade;</sup>. All rights reserved.</div>
+      <div class="copyright">© 2026 Svādotsava<sup class="tm">&trade;</sup>. All rights reserved.</div>
     </div>
   </footer>
 

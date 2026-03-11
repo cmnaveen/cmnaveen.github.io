@@ -10,522 +10,16 @@
     href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Open+Sans:wght@400;600&display=swap"
     rel="stylesheet">
 
-  <style>
-    :root {
-      --bg: #f5f0e8;
-      --bg-muted: #ede8de;
-      --card: #ffffff;
-      --primary: #7C3A10;
-      --primary-dark: #8B4A1C;
-      --accent: #C8874A;
-      --hero: #0a0d14;
-      --text: #1a1a1a;
-      --muted: #5a5a5a;
-      --border: #DDD0BC;
-    }
-
-    * {
-      box-sizing: border-box
-    }
-
-    html {
-      scroll-behavior: smooth
-    }
-
-    body {
-      margin: 0;
-      font-family: "Open Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 0 20px
-    }
-
-    /* NAV */
-    .nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 50;
-      height: 60px;
-      background: var(--bg);
-      border-bottom: 1px solid rgba(0, 0, 0, .08);
-      display: flex;
-      align-items: center
-    }
-
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%
-    }
-
-    .brand-box {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      background: transparent;
-      text-decoration: none
-    }
-
-    .brand-name {
-      font-family: "Merriweather", serif;
-      font-weight: 900;
-      font-size: 1.2rem;
-      letter-spacing: .02em;
-      line-height: 1.1
-    }
-
-    .brand-tagline {
-      font-size: .55rem;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-      color: #E1B46B;
-      font-weight: 700;
-      margin-top: 2px
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 18px
-    }
-
-    .nav-links a {
-      font-size: .85rem;
-      padding: 8px 10px;
-      border-radius: 10px;
-      transition: transform .2s ease, background .2s ease, color .2s ease;
-      color: var(--text)
-    }
-
-    .nav-links a:hover {
-      background: rgba(124, 58, 16, .08);
-      transform: translateY(-1px);
-      color: var(--primary)
-    }
-
-    .nav-links a.active {
-      color: var(--primary);
-      font-weight: 600
-    }
-
-    @media (max-width:480px) {
-      .nav-links {
-        display: none
-      }
-    }
-
-    /* REVEAL */
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity .7s ease, transform .7s ease
-    }
-
-    .reveal.in {
-      opacity: 1;
-      transform: translateY(0)
-    }
-
-    /* HERO */
-    .hero {
-      height: 80vh;
-      min-height: 520px;
-      padding-top: 60px;
-      background: var(--hero);
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      text-align: center;
-      color: #fff;
-    }
-
-    .hero::before {
-      content: "";
-      pointer-events: none;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(900px 500px at 50% 20%, rgba(200, 135, 74, .18), transparent 60%),
-        radial-gradient(900px 500px at 20% 80%, rgba(124, 58, 16, .18), transparent 55%);
-      pointer-events: none;
-    }
-
-    .hero-watermark {
-      position: absolute;
-      top: 60px;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      pointer-events: none;
-    }
-
-    .hero-watermark img {
-      width: auto;
-      max-width: calc(100% - 32px);
-      height: min(46vh, 440px);
-      max-height: calc(100% - 32px);
-      object-fit: contain;
-      opacity: .35;
-    }
-
-    .hero-inner {
-      position: relative;
-      width: 100%;
-      padding: 56px 0
-    }
-
-    .hero h1 {
-      margin: 0 0 12px;
-      font-family: "Merriweather", serif;
-      font-weight: 900;
-      font-size: clamp(34px, 4.8vw, 60px);
-      line-height: 1.12;
-    }
-
-    .hero .sub {
-      max-width: 760px;
-      margin: 0 auto;
-      color: rgba(255, 255, 255, .72);
-      font-size: 1rem
-    }
-
-    .hero .goldline {
-      margin-top: 18px;
-      font-size: .7rem;
-      letter-spacing: .35em;
-      text-transform: uppercase;
-      color: rgba(200, 164, 90, .75)
-    }
-
-    section {
-      padding: 76px 0
-    }
-
-    h2 {
-      margin: 0 0 10px;
-      font-family: "Merriweather", serif;
-      font-weight: 900;
-      color: var(--primary);
-      font-size: clamp(26px, 3.2vw, 36px);
-    }
-
-    .center {
-      text-align: center
-    }
-
-    .lead {
-      max-width: 740px;
-      margin: 0 auto;
-      color: var(--muted);
-      font-size: 1rem
-    }
-
-    .quote {
-      max-width: 820px;
-      margin: 22px auto 0;
-      background: #faf7f3;
-      border-left: 3px solid var(--primary-dark);
-      padding: 18px 18px;
-      border-radius: 12px;
-      color: rgba(26, 26, 26, .78);
-    }
-
-    /* CARDS */
-    .muted-section {
-      background: var(--bg-muted)
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin-top: 22px;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 26px;
-      text-align: center;
-      box-shadow: 0 10px 24px rgba(0, 0, 0, .04);
-    }
-
-    .icircle {
-      width: 60px;
-      height: 60px;
-      border-radius: 999px;
-      margin: 0 auto 14px;
-      display: grid;
-      place-items: center;
-      background: rgba(200, 135, 74, .18);
-      color: var(--accent);
-      font-size: 24px;
-    }
-
-    .card h3 {
-      margin: 0 0 8px;
-      font-family: "Merriweather", serif;
-      font-weight: 900;
-      font-size: 1.05rem;
-      color: var(--text);
-    }
-
-    .card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: .95rem
-    }
-
-    @media (max-width:900px) {
-      .cards {
-        grid-template-columns: 1fr
-      }
-    }
-
-    /* 2-col */
-    .two-col {
-      display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 44px;
-      align-items: center;
-      margin-top: 28px;
-    }
-
-    .pillars {
-      display: grid;
-      gap: 18px;
-    }
-
-    .pillar {
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
-      padding: 14px 14px;
-      border-radius: 14px;
-      border: 1px solid rgba(0, 0, 0, .06);
-      background: #fff;
-    }
-
-    .p-ic {
-      width: 44px;
-      height: 44px;
-      border-radius: 999px;
-      display: grid;
-      place-items: center;
-      background: rgba(200, 135, 74, .18);
-      color: var(--primary);
-      flex: 0 0 auto;
-      font-size: 18px;
-    }
-
-    .pillar h4 {
-      margin: 0 0 4px;
-      font-size: .85rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--primary);
-      font-weight: 700;
-    }
-
-    .pillar p {
-      margin: 0;
-      color: var(--muted);
-      font-size: .94rem
-    }
-
-    .photo {
-      width: 100%;
-      height: 400px;
-      border-radius: 14px;
-      object-fit: cover;
-      border: 1px solid rgba(0, 0, 0, .08);
-      box-shadow: 0 16px 34px rgba(0, 0, 0, .06);
-    }
-
-    @media (max-width:900px) {
-      .two-col {
-        grid-template-columns: 1fr
-      }
-
-      .photo {
-        height: 320px
-      }
-    }
-
-    /* Telugu */
-    .telugu {
-      background: var(--bg);
-      text-align: center
-    }
-
-    .telugu .tel-title {
-      font-family: "Merriweather", serif;
-      font-weight: 900;
-      font-size: clamp(30px, 3.6vw, 44px);
-      color: var(--primary)
-    }
-
-    .telugu p {
-      max-width: 840px;
-      margin: 10px auto 0;
-      color: var(--muted)
-    }
-
-    .telugu em {
-      color: var(--primary);
-      font-style: italic
-    }
-
-    /* CTA */
-    .cta {
-      background: var(--primary-dark);
-      color: #fff;
-      text-align: center;
-      padding: 68px 0;
-    }
-
-    .cta h2 {
-      color: #fff;
-      margin-bottom: 8px
-    }
-
-    .cta p {
-      max-width: 760px;
-      margin: 0 auto;
-      color: rgba(255, 255, 255, .78)
-    }
-
-    .btn-row {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 18px
-    }
-
-    .btn {
-      padding: 12px 18px;
-      border-radius: 12px;
-      font-weight: 700;
-      border: 1px solid rgba(255, 255, 255, .18);
-      transition: transform .2s ease, filter .2s ease, background .2s ease, color .2s ease;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .btn:hover {
-      transform: translateY(-1px);
-      filter: brightness(1.05)
-    }
-
-    .btn.white {
-      background: #fff;
-      color: var(--primary-dark)
-    }
-
-    .btn.outline {
-      background: transparent;
-      color: #fff;
-      border: 1px solid rgba(255, 255, 255, .65)
-    }
-
-    .btn.outline:hover {
-      background: #fff;
-      color: var(--primary-dark)
-    }
-
-    /* FOOTER */
-    footer {
-      background: var(--bg);
-      border-top: 1px solid rgba(0, 0, 0, .08);
-      padding: 54px 0 26px
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1.5fr;
-      gap: 24px
-    }
-
-    .f-brand {
-      font-family: "Merriweather", serif;
-      font-weight: 900;
-      font-size: 1.05rem;
-      margin-bottom: 8px
-    }
-
-    .f-small {
-      color: var(--muted);
-      font-size: .92rem
-    }
-
-    .f-label {
-      font-size: .7rem;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: rgba(26, 26, 26, .55);
-      margin-bottom: 10px;
-      font-weight: 600
-    }
-
-    .f-links a {
-      display: block;
-      padding: 6px 0;
-      color: var(--muted);
-      transition: color .2s ease, transform .2s ease
-    }
-
-    .f-links a:hover {
-      color: var(--primary);
-      transform: translateX(2px)
-    }
-
-    .copyright {
-      margin-top: 22px;
-      text-align: center;
-      color: rgba(26, 26, 26, .55);
-      font-size: .82rem
-    }
-
-    @media (max-width:900px) {
-      .footer-grid {
-        grid-template-columns: 1fr
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body class="page-story">
 
   <header class="nav">
     <div class="container nav-inner">
       <a href="index.html" class="brand-box">
         <div class="brand-name"><span style="color:var(--primary)">Svād</span><span
-            style="color:var(--accent)">otsava</span><sup style="color: var(--primary); font-size: 0.5em;">&trade;</sup></div>
+            style="color:var(--accent)">otsava</span><sup class="tm">&trade;</sup></div>
         <div class="brand-tagline">A Celebration of Taste</div>
       </a>
       <nav class="nav-links" aria-label="Primary">
@@ -538,6 +32,8 @@
     </div>
   </header>
 
+  <main>
+
   <section class="hero">
     <div class="hero-watermark" aria-hidden="true">
       <img src="black_logo_circle_nobg.png" alt="" />
@@ -545,14 +41,14 @@
 
     <div class="container hero-inner">
       <h1 class="reveal" data-delay="0">A Festival in Every Flavor.<br />A Celebration in Every Sip.</h1>
-      <p class="sub reveal" data-delay="120">Welcome to Svādotsava<sup style="color: white; font-size: 0.5em;">&trade;</sup>—where ancient wisdom meets the modern palate</p>
+      <p class="sub reveal" data-delay="120">Welcome to Svādotsava<sup class="tm">&trade;</sup>—where ancient wisdom meets the modern palate</p>
       <div class="goldline reveal" data-delay="220">— A CELEBRATION OF TASTE —</div>
     </div>
   </section>
 
   <section>
     <div class="container center">
-      <h2 class="reveal">The Spirit of Svādotsava<sup style="color: white; font-size: 0.5em;">&trade;</sup></h2>
+      <h2 class="reveal">The Spirit of Svādotsava<sup class="tm">&trade;</sup></h2>
       <p class="lead reveal" data-delay="120">
         In the sacred Shastras, <em>Svāda</em> is more than taste—it is the soulful relishing of life’s essence.
         Combined with <em>Utsava</em>, which the Shiva Purana defines as a “celebration that removes worldly sorrow,”
@@ -563,7 +59,7 @@
         that leaves you lighter than when you arrived.
       </p>
       <div class="quote reveal" data-delay="320">
-        “At Svādotsava<sup style="color: white; font-size: 0.5em;">&trade;</sup>, we don’t just serve food—we invite you to a celebration that removes the day’s weary
+        “At Svādotsava<sup class="tm">&trade;</sup>, we don’t just serve food—we invite you to a celebration that removes the day’s weary
         through exceptional hospitality.”
       </div>
     </div>
@@ -604,7 +100,7 @@
       </div>
 
       <p class="lead reveal" data-delay="460" style="margin-top:18px;">
-        At Svādotsava<sup style="color: white; font-size: 0.5em;">&trade;</sup>, these three worlds collide to create a sanctuary for food lovers, caffeine seekers,
+        At Svādotsava<sup class="tm">&trade;</sup>, these three worlds collide to create a sanctuary for food lovers, caffeine seekers,
         and tea connoisseurs alike.
       </p>
     </div>
@@ -661,7 +157,7 @@
         మా కాఫీ పరిమళం, తేయాకు స్వచ్ఛత, మరియు వరి కంకుల సమృద్ధి…
       </p>
       <p class="reveal" data-delay="220" style="font-style:italic;">
-        “Svādotsava<sup style="color: white; font-size: 0.5em;">&trade;</sup> is not just a meal; it is a celebration that delights the soul…”
+        “Svādotsava<sup class="tm">&trade;</sup> is not just a meal; it is a celebration that delights the soul…”
       </p>
     </div>
   </section>
@@ -678,13 +174,14 @@
       </div>
     </div>
   </section>
+  </main>
 
   <footer>
     <div class="container">
       <div class="footer-grid">
         <div>
           <div class="f-brand"><span style="color:var(--primary)">Svād</span><span
-              style="color:var(--accent)">otsava</span><sup style="color: var(--primary); font-size: 0.5em;">&trade;</sup></div>
+              style="color:var(--accent)">otsava</span><sup class="tm">&trade;</sup></div>
           <div class="f-small">A Celebration of Taste</div>
           <div class="f-small" style="margin-top:10px;">🌾 Golden Grains • ☕ Heart of Coffee • 🍵 Spirit of Tea</div>
         </div>
@@ -707,7 +204,7 @@
           </div>
         </div>
       </div>
-      <div class="copyright">© 2026 Svādotsava<sup style="color: white; font-size: 0.5em;">&trade;</sup>. All rights reserved.</div>
+      <div class="copyright">© 2026 Svādotsava<sup class="tm">&trade;</sup>. All rights reserved.</div>
     </div>
   </footer>
 

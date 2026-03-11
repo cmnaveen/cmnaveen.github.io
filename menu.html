@@ -8,207 +8,15 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --bg:#f5f0e8;
-      --bg-muted:#ede8de;
-      --card:#ffffff;
-      --primary:#7C3A10;
-      --primary-dark:#8B4A1C;
-      --accent:#C8874A;
-      --hero:#0a0d14;
-      --text:#1a1a1a;
-      --muted:#5a5a5a;
-      --border:#DDD0BC;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:"Open Sans",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.7;
-    }
-    a{color:inherit;text-decoration:none}
-    .container{max-width:1060px;margin:0 auto;padding:0 20px}
-
-    /* NAV */
-    .nav{position:fixed;top:0;left:0;right:0;z-index:50;height:60px;background:var(--bg);border-bottom:1px solid rgba(0,0,0,.08);display:flex;align-items:center}
-    .nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%}
-    .brand-box{display:flex;flex-direction:column;justify-content:center;background:transparent;text-decoration:none}
-    .brand-name{font-family:"Merriweather",serif;font-weight:900;font-size:1.2rem;letter-spacing:.02em;line-height:1.1}
-    .brand-tagline{font-size:.55rem;letter-spacing:.15em;text-transform:uppercase;color:#E1B46B;font-weight:700;margin-top:2px}
-    .nav-links{display:flex;gap:18px;align-items:center}
-    .nav-links a{font-size:.85rem;padding:8px 10px;border-radius:10px;transition:transform .2s ease, background .2s ease, color .2s ease;color:var(--text)}
-    .nav-links a:hover{background:rgba(124,58,16,.08);transform:translateY(-1px);color:var(--primary)}
-    .nav-links a.active{color:var(--primary);font-weight:600}
-    @media (max-width:480px){.nav-links{display:none}}
-
-    /* REVEAL */
-    .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease}
-    .reveal.in{opacity:1;transform:translateY(0)}
-
-    /* HERO */
-    .hero{
-      min-height:52vh;
-      padding-top:60px;
-      background:var(--hero);
-      position:relative;
-      overflow:hidden;
-      display:flex;
-      align-items:center;
-      text-align:center;
-      color:#fff;
-    }
-    .hero::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:
-        radial-gradient(900px 500px at 55% 30%, rgba(200,135,74,.18), transparent 60%),
-        radial-gradient(900px 500px at 18% 80%, rgba(124,58,16,.18), transparent 55%);
-      pointer-events:none;
-    }
-    .hero-watermark{position:absolute;top:60px;right:0;bottom:0;left:0;display:flex;align-items:center;justify-content:center;pointer-events:none}
-    .hero-watermark img{width:auto;max-width:calc(100% - 32px);height:min(44vh, 420px);max-height:calc(100% - 32px);object-fit:contain;opacity:.15}
-    .hero-inner{position:relative;width:100%;padding:60px 0}
-    .hero .label{font-size:.7rem;letter-spacing:.35em;text-transform:uppercase;color:rgba(200,164,90,.78);margin-bottom:10px}
-    .hero h1{margin:0 0 10px;font-family:"Merriweather",serif;font-weight:900;font-size:clamp(34px, 5vw, 66px);line-height:1.12}
-    .hero .sub{margin:0 auto;max-width:680px;color:rgba(255,255,255,.74);font-size:1rem}
-
-    /* SECTION */
-    section{padding:72px 0}
-    .muted-section{background:var(--bg-muted)}
-    h2{margin:0 0 8px;font-family:"Merriweather",serif;font-weight:900;color:var(--primary);font-size:clamp(24px, 3.2vw, 34px)}
-    .center{text-align:center}
-    .lead{max-width:760px;margin:0 auto;color:var(--muted);font-size:1rem}
-
-    /* CATEGORY TABS */
-    .tab-bar{
-      display:flex;
-      gap:10px;
-      justify-content:center;
-      flex-wrap:wrap;
-      margin:22px 0 38px;
-    }
-    .tab{
-      padding:9px 18px;
-      border-radius:999px;
-      border:1.5px solid var(--border);
-      background:var(--card);
-      font-size:.85rem;
-      font-weight:600;
-      cursor:pointer;
-      color:var(--muted);
-      transition:all .2s ease;
-    }
-    .tab:hover{border-color:var(--accent);color:var(--primary);transform:translateY(-1px)}
-    .tab.active{background:var(--primary);border-color:var(--primary);color:#fff;box-shadow:0 4px 14px rgba(124,58,16,.28)}
-
-    /* MENU GRID */
-    .menu-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));
-      gap:22px;
-    }
-    .menu-card{
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:18px;
-      overflow:hidden;
-      box-shadow:0 8px 22px rgba(0,0,0,.05);
-      transition:transform .25s ease, box-shadow .25s ease;
-      display:flex;
-      flex-direction:column;
-    }
-    .menu-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,.10)}
-    .menu-card.hidden{display:none}
-    .card-img-wrap{
-      position:relative;
-      width:100%;
-      overflow:hidden;
-      background:var(--bg-muted);
-    }
-    .card-img-wrap img{
-      width:100%;
-      height:auto;
-      display:block;
-      transition:transform .4s ease;
-    }
-    .menu-card:hover .card-img-wrap img{transform:scale(1.04)}
-    .card-badge{
-      position:absolute;
-      top:10px;
-      left:10px;
-      padding:4px 10px;
-      border-radius:999px;
-      font-size:.65rem;
-      font-weight:700;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      backdrop-filter:blur(6px);
-    }
-    .badge-food{background:rgba(124,58,16,.82);color:#fff}
-    .badge-drink{background:rgba(10,13,20,.78);color:#E1B46B}
-    .card-body{padding:18px 20px 22px;flex:1;display:flex;flex-direction:column}
-    .card-body h3{
-      margin:0 0 6px;
-      font-family:"Merriweather",serif;
-      font-weight:900;
-      font-size:1.05rem;
-      color:var(--text);
-    }
-    .card-body p{margin:0;color:var(--muted);font-size:.9rem;flex:1}
-    .card-tag{
-      display:inline-block;
-      margin-top:12px;
-      padding:3px 10px;
-      border-radius:999px;
-      font-size:.7rem;
-      font-weight:600;
-      letter-spacing:.06em;
-      background:rgba(200,135,74,.14);
-      color:var(--primary-dark);
-      text-transform:uppercase;
-    }
-
-    /* DIVIDER */
-    .divider{
-      display:flex;
-      align-items:center;
-      gap:14px;
-      margin:0 0 32px;
-    }
-    .divider-line{flex:1;height:1px;background:var(--border)}
-    .divider-label{
-      font-size:.7rem;
-      letter-spacing:.25em;
-      text-transform:uppercase;
-      font-weight:700;
-      color:var(--accent);
-    }
-
-    /* FOOTER */
-    footer{background:var(--bg);border-top:1px solid rgba(0,0,0,.08);padding:54px 0 26px}
-    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1.5fr;gap:24px}
-    .f-brand{font-family:"Merriweather",serif;font-weight:900;font-size:1.05rem;margin-bottom:8px}
-    .f-small{color:var(--muted);font-size:.92rem}
-    .f-label{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,26,26,.55);margin-bottom:10px;font-weight:600}
-    .f-links a{display:block;padding:6px 0;color:var(--muted);transition:color .2s ease, transform .2s ease}
-    .f-links a:hover{color:var(--primary);transform:translateX(2px)}
-    .copyright{margin-top:22px;text-align:center;color:rgba(26,26,26,.55);font-size:.82rem}
-    @media (max-width:900px){.footer-grid{grid-template-columns:1fr}}
-    @media (max-width:600px){.menu-grid{grid-template-columns:1fr}}
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="page-menu">
 
   <!-- NAV -->
   <header class="nav">
     <div class="container nav-inner">
       <a href="index.html" class="brand-box">
-        <div class="brand-name"><span style="color:var(--primary)">Svād</span><span style="color:var(--accent)">otsava</span><sup style="color: var(--primary); font-size: 0.5em;">&trade;</sup></div>
+        <div class="brand-name"><span style="color:var(--primary)">Svād</span><span style="color:var(--accent)">otsava</span><sup class="tm">&trade;</sup></div>
         <div class="brand-tagline">A Celebration of Taste</div>
       </a>
       <nav class="nav-links" aria-label="Primary">
@@ -220,6 +28,8 @@
       </nav>
     </div>
   </header>
+
+  <main>
 
   <!-- HERO -->
   <section class="hero">
@@ -409,11 +219,13 @@
   </section>
 
   <!-- FOOTER -->
+  </main>
+
   <footer>
     <div class="container">
       <div class="footer-grid">
         <div>
-          <div class="f-brand"><span style="color:var(--primary)">Svād</span><span style="color:var(--accent)">otsava</span><sup style="color: var(--primary); font-size: 0.5em;">&trade;</sup></div>
+          <div class="f-brand"><span style="color:var(--primary)">Svād</span><span style="color:var(--accent)">otsava</span><sup class="tm">&trade;</sup></div>
           <div class="f-small">A Celebration of Taste</div>
           <div class="f-small" style="margin-top:10px;">🌾 Golden Grains • ☕ Heart of Coffee • 🍵 Spirit of Tea</div>
         </div>
@@ -438,7 +250,7 @@
         </div>
       </div>
 
-      <div class="copyright">© 2026 Svādotsava<sup style="color: white; font-size: 0.5em;">&trade;</sup>. All rights reserved.</div>
+      <div class="copyright">© 2026 Svādotsava<sup class="tm">&trade;</sup>. All rights reserved.</div>
     </div>
   </footer>
 

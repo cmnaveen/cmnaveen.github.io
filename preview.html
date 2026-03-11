@@ -7,165 +7,13 @@
   <meta name="description" content="Preview the story, atmosphere, and signature offerings of Svādotsava&trade; — a celebration of taste rooted in coffee, tea, grains, and warm hospitality." />
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --bg:#f6f1e8;
-      --bg-muted:#efe6d8;
-      --card:#ffffff;
-      --primary:#7a3e16;
-      --primary-dark:#5f2f12;
-      --accent:#c89241;
-      --accent-soft:#f2dfbf;
-      --hero:#110e0a;
-      --text:#1d1a17;
-      --muted:#5c554d;
-      --border:#dcccb6;
-      --shadow:0 14px 34px rgba(0,0,0,.06);
-      --radius:18px;
-    }
-
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:"Open Sans",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.7;
-    }
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
-    .container{max-width:1100px;margin:0 auto;padding:0 20px}
-
-    .nav{
-      position:fixed;top:0;left:0;right:0;z-index:50;
-      height:60px;display:flex;align-items:center;
-      background:var(--bg);
-      border-bottom:1px solid rgba(0,0,0,.08);
-    }
-    .nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%}
-    .brand-box{display:flex;flex-direction:column;justify-content:center;background:transparent;text-decoration:none}
-    .brand-name{font-family:"Merriweather",serif;font-weight:900;font-size:1.2rem;letter-spacing:.02em;line-height:1.1}
-    .brand-tagline{font-size:.55rem;letter-spacing:.15em;text-transform:uppercase;color:#E1B46B;font-weight:700;margin-top:2px}
-    .nav-links{display:flex;gap:18px;align-items:center}
-    .nav-links a{font-size:.85rem;padding:8px 10px;border-radius:10px;transition:transform .2s ease, background .2s ease, color .2s ease;color:var(--text)}
-    .nav-links a:hover{background:rgba(124,58,16,.08);transform:translateY(-1px);color:var(--primary)}
-    .nav-links a.active{color:var(--primary);font-weight:600}
-    @media (max-width:480px){.nav-links{display:none}}
-
-    .hero{
-      min-height:100vh;padding-top:60px;color:#fff;position:relative;overflow:hidden;
-      background:
-        radial-gradient(circle at top, rgba(200,146,65,.16), transparent 32%),
-        radial-gradient(circle at 20% 80%, rgba(122,62,22,.22), transparent 28%),
-        linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.22)),
-        var(--hero);
-      display:flex;align-items:center;text-align:center;
-    }
-    .hero::before{
-      content:"Svādotsava<sup style="color: white; font-size: 0.5em;">&trade;</sup>";
-      position:absolute;left:50%;top:48%;transform:translate(-50%,-50%);
-      font-family:"Merriweather",serif;font-weight:900;
-      font-size:clamp(54px, 11vw, 170px);letter-spacing:.04em;
-      color:rgba(200,146,65,.07);white-space:nowrap;pointer-events:none;
-    }
-    .hero::after{
-      content:"";position:absolute;inset:0;
-      background:linear-gradient(180deg, transparent 60%, rgba(246,241,232,.06) 100%);
-      pointer-events:none;
-    }
-    .hero-watermark{
-      position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-      pointer-events:none;opacity:.16;
-    }
-    .hero-watermark img{width:auto;max-width:calc(100% - 32px);height:min(72vh, 640px);max-height:calc(100% - 32px);object-fit:contain;filter:drop-shadow(0 20px 50px rgba(0,0,0,.25))}
-    .hero-inner{position:relative;width:100%;padding:68px 0}
-    .eyebrow{font-size:.76rem;letter-spacing:.34em;text-transform:uppercase;color:rgba(216,176,102,.95);margin-bottom:12px}
-    .hero h1{margin:0 0 14px;font-family:"Merriweather",serif;font-weight:900;font-size:clamp(38px, 5.6vw, 72px);line-height:1.12}
-    .hero p{margin:0 auto 26px;max-width:800px;color:rgba(255,255,255,.82);font-size:1.04rem}
-    .hero-buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:12px;font-weight:700;transition:.2s ease;border:1px solid transparent}
-    .btn:hover{transform:translateY(-1px)}
-    .btn.primary{background:var(--accent);color:#23160c;box-shadow:0 10px 26px rgba(200,146,65,.22)}
-    .btn.primary:hover{filter:brightness(1.04)}
-    .btn.outline{background:transparent;color:#fff;border-color:rgba(255,255,255,.38)}
-    .btn.outline:hover{background:#fff;color:var(--primary-dark)}
-
-    section{padding:82px 0}
-    .center{text-align:center}
-    h2{margin:0 0 12px;font-family:"Merriweather",serif;font-weight:900;color:var(--primary);font-size:clamp(28px, 3.6vw, 40px)}
-    .lead{max-width:800px;margin:0 auto;color:var(--muted);font-size:1rem}
-
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:30px}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:28px 24px;box-shadow:var(--shadow);transition:.2s ease}
-    .card:hover{transform:translateY(-3px)}
-    .icon{width:60px;height:60px;border-radius:50%;display:grid;place-items:center;margin:0 auto 14px;background:rgba(200,146,65,.14);color:var(--primary);font-size:24px}
-    .card h3{margin:0 0 8px;text-align:center;font-family:"Merriweather",serif;font-size:1.08rem;color:var(--text)}
-    .card p{margin:0;text-align:center;color:var(--muted);font-size:.96rem}
-    @media (max-width:900px){.grid{grid-template-columns:1fr}}
-
-    .story-block{background:var(--bg-muted)}
-    .split{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:stretch;margin-top:30px}
-    .story-box,.highlight-panel,.visual-card,.menu-card,.contact-card{background:#fff;border:1px solid var(--border);border-radius:22px;padding:28px;box-shadow:var(--shadow)}
-    .story-box h3,.menu-card h3{margin:0 0 10px;font-family:"Merriweather",serif;color:var(--primary);font-size:1.22rem}
-    .story-box p{margin:0 0 14px;color:var(--muted)}
-    .story-box p:last-child{margin-bottom:0}
-    .highlight-panel{background:linear-gradient(135deg, #fff8ee, #f4ead8)}
-    .highlight-panel .big{font-family:"Merriweather",serif;color:var(--primary);font-size:1.48rem;line-height:1.45;margin-bottom:14px}
-    .highlight-panel p{margin:0;color:var(--muted)}
-    @media (max-width:900px){.split{grid-template-columns:1fr}}
-
-    .showcase{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:stretch;margin-top:30px}
-    .visual-card{padding:0;overflow:hidden}
-    .visual-card img{width:100%;height:100%;min-height:360px;object-fit:cover}
-    .feature-stack{display:grid;gap:18px}
-    .feature{padding:18px 18px;border:1px solid rgba(0,0,0,.07);border-radius:16px;background:#fff8ef}
-    .feature h3{margin:0 0 6px;font-family:"Merriweather",serif;color:var(--primary);font-size:1.06rem}
-    .feature p{margin:0;color:var(--muted)}
-    @media (max-width:900px){.showcase{grid-template-columns:1fr}}
-
-    .menu-preview .items{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:28px}
-    .menu-row{display:flex;justify-content:space-between;gap:14px;padding:10px 0;border-bottom:1px dashed rgba(0,0,0,.12);color:var(--muted)}
-    .menu-row:last-child{border-bottom:none}
-    .menu-row strong{color:var(--text)}
-    .menu-note{margin-top:18px;color:var(--muted);font-size:.95rem}
-    @media (max-width:900px){.menu-preview .items{grid-template-columns:1fr}}
-
-    .contact-band{background:linear-gradient(180deg, #fffaf2, #f6ede0)}
-    .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:28px}
-    .contact-card{text-align:center}
-    .contact-card .icon{margin-bottom:12px}
-    .contact-card h3{margin:0 0 8px;font-family:"Merriweather",serif;font-size:1.02rem}
-    .contact-card p{margin:0;color:var(--muted)}
-    .contact-card a{color:var(--primary);font-weight:700}
-    @media (max-width:900px){.contact-grid{grid-template-columns:1fr}}
-
-    .notify{background:var(--primary-dark);color:#fff;text-align:center}
-    .notify h2{color:#fff}
-    .notify p{max-width:760px;margin:0 auto 22px;color:rgba(255,255,255,.82)}
-    .signup{max-width:580px;margin:0 auto;display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
-    .signup input{flex:1;min-width:230px;padding:13px 14px;border:none;outline:none;border-radius:12px}
-    .signup button{padding:13px 18px;border:none;border-radius:12px;background:var(--accent);color:#24170c;font-weight:700;cursor:pointer}
-
-    footer{background:var(--bg);border-top:1px solid rgba(0,0,0,.08);padding:52px 0 24px}
-    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1.4fr;gap:24px}
-    .footer-title{font-family:"Merriweather",serif;font-weight:900;color:var(--primary);font-size:1.05rem;margin-bottom:8px}
-    .footer-small{color:var(--muted);font-size:.93rem}
-    .footer-label{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(0,0,0,.5);margin-bottom:10px;font-weight:700}
-    .footer-links a{display:block;padding:6px 0;color:var(--muted)}
-    .footer-links a:hover{color:var(--primary)}
-    .copyright{margin-top:22px;text-align:center;color:rgba(0,0,0,.5);font-size:.84rem}
-    @media (max-width:900px){.footer-grid{grid-template-columns:1fr}}
-
-    .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s ease}
-    .reveal.in{opacity:1;transform:translateY(0)}
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="page-preview">
   <header class="nav">
     <div class="container nav-inner">
       <a href="index.html" class="brand-box">
-        <div class="brand-name"><span style="color:var(--primary)">Svād</span><span style="color:var(--accent)">otsava</span><sup style="color: var(--primary); font-size: 0.5em;">&trade;</sup></div>
+        <div class="brand-name"><span style="color:var(--primary)">Svād</span><span style="color:var(--accent)">otsava</span><sup class="tm">&trade;</sup></div>
         <div class="brand-tagline">A Celebration of Taste</div>
       </a>
       <nav class="nav-links" aria-label="Primary">
@@ -178,6 +26,8 @@
     </div>
   </header>
 
+  <main>
+
   <section class="hero">
     <div class="hero-watermark" aria-hidden="true">
       <img src="black_logo_circle_nobg.png" alt="" />
@@ -185,9 +35,9 @@
 
     <div class="container hero-inner">
       <div class="eyebrow reveal">A Celebration of Taste</div>
-      <h1 class="reveal" data-delay="100">A soulful preview of<br>Svādotsava<sup style="color: white; font-size: 0.5em;">&trade;</sup></h1>
+      <h1 class="reveal" data-delay="100">A soulful preview of<br>Svādotsava<sup class="tm">&trade;</sup></h1>
       <p class="reveal" data-delay="200">
-        More than a restaurant, Svādotsava<sup style="color: white; font-size: 0.5em;">&trade;</sup> is a warm gathering of flavors, tradition, coffee, tea,
+        More than a restaurant, Svādotsava<sup class="tm">&trade;</sup> is a warm gathering of flavors, tradition, coffee, tea,
         grains, and heartfelt hospitality — where every visit feels like a celebration.
       </p>
       <div class="hero-buttons reveal" data-delay="300">
@@ -199,7 +49,7 @@
 
   <section>
     <div class="container center">
-      <h2 class="reveal">What awaits you at Svādotsava<sup style="color: white; font-size: 0.5em;">&trade;</sup></h2>
+      <h2 class="reveal">What awaits you at Svādotsava<sup class="tm">&trade;</sup></h2>
       <p class="lead reveal" data-delay="100">
         Our space is built around comfort, flavor, and meaning — inspired by the idea that food should nourish the body and delight the soul.
       </p>
@@ -231,7 +81,7 @@
       <div class="center">
         <h2 class="reveal">The meaning behind our name</h2>
         <p class="lead reveal" data-delay="100">
-          Svādotsava<sup style="color: white; font-size: 0.5em;">&trade;</sup> joins two beautiful ideas — taste and celebration.
+          Svādotsava<sup class="tm">&trade;</sup> joins two beautiful ideas — taste and celebration.
         </p>
       </div>
 
@@ -246,13 +96,13 @@
           <h3>Utsava</h3>
           <p>
             Utsava means celebration — a moment of joy, gathering, and upliftment.
-            Together, Svādotsava<sup style="color: white; font-size: 0.5em;">&trade;</sup> becomes a celebration of taste in its deepest sense.
+            Together, Svādotsava<sup class="tm">&trade;</sup> becomes a celebration of taste in its deepest sense.
           </p>
         </div>
 
         <div class="highlight-panel reveal" data-delay="250">
           <div class="big">
-            “At Svādotsava<sup style="color: white; font-size: 0.5em;">&trade;</sup>, every meal is meant to feel like an utsava — warm, memorable, and shared with joy.”
+            “At Svādotsava<sup class="tm">&trade;</sup>, every meal is meant to feel like an utsava — warm, memorable, and shared with joy.”
           </div>
           <p>
             From coffee and tea to comforting food rooted in tradition, our restaurant is designed
@@ -272,7 +122,7 @@
 
       <div class="showcase">
         <div class="visual-card reveal" data-delay="150">
-          <img src="spice_tree.jpg" alt="Svādotsava<sup style="color: white; font-size: 0.5em;">&trade;</sup> spice tree visual" />
+          <img src="spice_tree.jpg" alt="Svādotsava™ spice tree visual" />
         </div>
         <div class="feature-stack">
           <div class="feature reveal" data-delay="220">
@@ -296,7 +146,7 @@
     <div class="container center">
       <h2 class="reveal">Menu Preview</h2>
       <p class="lead reveal" data-delay="100">
-        A small glimpse of the flavors Svādotsava<sup style="color: white; font-size: 0.5em;">&trade;</sup> aims to be known for.
+        A small glimpse of the flavors Svādotsava<sup class="tm">&trade;</sup> aims to be known for.
       </p>
 
       <div class="items">
@@ -327,7 +177,7 @@
     <div class="container center">
       <h2 class="reveal">Stay connected</h2>
       <p class="lead reveal" data-delay="100">
-        We are building Svādotsava<sup style="color: white; font-size: 0.5em;">&trade;</sup> with care. Here is the current preview of our launch information.
+        We are building Svādotsava<sup class="tm">&trade;</sup> with care. Here is the current preview of our launch information.
       </p>
 
       <div class="contact-grid">
@@ -354,7 +204,7 @@
     <div class="container">
       <h2 class="reveal">Be part of the celebration</h2>
       <p class="reveal" data-delay="100">
-        We’re shaping Svādotsava<sup style="color: white; font-size: 0.5em;">&trade;</sup> into a place where taste, tradition, and warmth come together. Join the waitlist to follow the journey.
+        We’re shaping Svādotsava<sup class="tm">&trade;</sup> into a place where taste, tradition, and warmth come together. Join the waitlist to follow the journey.
       </p>
 
       <form class="signup reveal" data-delay="200" onsubmit="return false;">
@@ -363,12 +213,13 @@
       </form>
     </div>
   </section>
+  </main>
 
   <footer>
     <div class="container">
       <div class="footer-grid">
         <div>
-          <div class="footer-title"><span style="color:var(--primary)">Svād</span><span style="color:var(--accent)">otsava</span><sup style="color: var(--primary); font-size: 0.5em;">&trade;</sup></div>
+          <div class="footer-title"><span style="color:var(--primary)">Svād</span><span style="color:var(--accent)">otsava</span><sup class="tm">&trade;</sup></div>
           <div class="footer-small">A Celebration of Taste</div>
           <div class="footer-small" style="margin-top:10px;">Coffee • Tea • Grains • Tradition • Warm Hospitality</div>
         </div>
@@ -390,7 +241,7 @@
         </div>
       </div>
 
-      <div class="copyright">© 2026 Svādotsava<sup style="color: white; font-size: 0.5em;">&trade;</sup>. All rights reserved.</div>
+      <div class="copyright">© 2026 Svādotsava<sup class="tm">&trade;</sup>. All rights reserved.</div>
     </div>
   </footer>
 
