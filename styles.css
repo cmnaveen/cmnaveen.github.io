@@ -154,7 +154,7 @@ sup[style*="font-size: 0.5em"] {
 }
 
 .hero {
-  min-height: 56vh;
+  min-height: 85vh;
   padding-top: 60px;
   background: var(--hero);
   position: relative;
@@ -240,30 +240,6 @@ sup[style*="font-size: 0.5em"] {
   margin-bottom: 10px;
 }
 
-.page-home .hero {
-  min-height: 100vh;
-}
-
-.page-story .hero {
-  min-height: 78vh;
-}
-
-.page-farmers .hero {
-  min-height: 60vh;
-}
-
-.page-preview .hero {
-  min-height: 100vh;
-  background:
-    radial-gradient(circle at top, rgba(200, 146, 65, 0.16), transparent 32%),
-    radial-gradient(circle at 20% 80%, rgba(122, 62, 22, 0.22), transparent 28%),
-    linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.22)),
-    var(--hero);
-}
-
-.page-menu .hero {
-  min-height: 52vh;
-}
 
 section {
   padding: 72px 0;
