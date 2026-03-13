@@ -25,6 +25,27 @@ body {
   background: var(--bg);
   color: var(--text);
   line-height: 1.7;
+  position: relative;
+}
+
+.page-symbol-field {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.page-symbol-field span {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  transform: rotate(var(--r));
+  font-family: "Merriweather", serif;
+  font-size: var(--s);
+  color: rgba(124, 58, 16, 0.12);
+  text-shadow: 0 0 22px rgba(200, 135, 74, 0.08);
+  user-select: none;
 }
 
 a {
@@ -88,6 +109,13 @@ sup[style*="font-size: 0.5em"] {
   justify-content: space-between;
 }
 
+.nav,
+main,
+footer {
+  position: relative;
+  z-index: 1;
+}
+
 .brand-box {
   display: flex;
   flex-direction: column;
@@ -139,6 +167,10 @@ sup[style*="font-size: 0.5em"] {
 @media (max-width: 640px) {
   .nav-links {
     display: none;
+  }
+
+  .page-symbol-field span {
+    font-size: calc(var(--s) * 0.8);
   }
 }
 

@@ -15,6 +15,460 @@
 
 <body class="page-home">
 
+<div class="page-symbol-field" aria-hidden="true">
+  <span style="--x:8%;--y:12%;--r:-18deg;--s:1.9rem;">ॐ</span>
+  <span style="--x:22%;--y:30%;--r:12deg;--s:2.2rem;">श्री</span>
+  <span style="--x:15%;--y:22%;--r:0deg;--s:1.5rem;">卐</span>
+  <span style="--x:41%;--y:10%;--r:-8deg;--s:1.7rem;">ॐ</span>
+  <span style="--x:63%;--y:24%;--r:10deg;--s:2rem;">श्री</span>
+  <span style="--x:72%;--y:9%;--r:0deg;--s:1.45rem;">卐</span>
+  <span style="--x:82%;--y:14%;--r:-14deg;--s:1.8rem;">ॐ</span>
+  <span style="--x:12%;--y:52%;--r:14deg;--s:2.1rem;">श्री</span>
+  <span style="--x:24%;--y:46%;--r:0deg;--s:1.55rem;">卐</span>
+  <span style="--x:31%;--y:66%;--r:-10deg;--s:1.8rem;">ॐ</span>
+  <span style="--x:53%;--y:48%;--r:8deg;--s:2.3rem;">श्री</span>
+  <span style="--x:61%;--y:62%;--r:0deg;--s:1.5rem;">卐</span>
+  <span style="--x:76%;--y:58%;--r:-16deg;--s:1.9rem;">ॐ</span>
+  <span style="--x:88%;--y:74%;--r:11deg;--s:2.1rem;">श्री</span>
+  <span style="--x:18%;--y:84%;--r:-12deg;--s:2rem;">ॐ</span>
+  <span style="--x:34%;--y:80%;--r:0deg;--s:1.5rem;">卐</span>
+  <span style="--x:47%;--y:88%;--r:9deg;--s:2.2rem;">श्री</span>
+  <span style="--x:69%;--y:82%;--r:-9deg;--s:1.8rem;">ॐ</span>
+  <span style="--x:81%;--y:86%;--r:0deg;--s:1.45rem;">卐</span>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     SRI CHAKRA COUNTDOWN OVERLAY
+     Target: March 19, 2026 — 08:09:21.108 AM IST
+     ══════════════════════════════════════════════ -->
+<div id="countdown-overlay" style="
+  position:fixed;inset:0;z-index:99999;
+  background:radial-gradient(ellipse at center, #1a0a00 0%, #0d0500 60%, #000 100%);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  font-family:'Merriweather',Georgia,serif;
+  transition:opacity 1.2s ease, visibility 1.2s ease;
+">
+
+  <!-- Gold shimmer top text -->
+  <div style="
+    font-size:clamp(0.65rem,1.8vw,0.9rem);
+    letter-spacing:0.35em;text-transform:uppercase;
+    color:#c09050;opacity:0.75;margin-bottom:28px;
+    animation:fadeSlide 1.4s ease both;
+  ">
+    ✦ &nbsp; A Celebration of Taste &nbsp; ✦
+  </div>
+
+  <!-- Sacred mandala container -->
+  <div id="sri-chakra-wrap" style="
+    position:relative;width:min(52vmin,320px);height:min(52vmin,320px);
+    margin-bottom:32px;
+    filter:drop-shadow(0 0 30px rgba(192,144,80,0.45));
+  ">
+    <div class="overlay-symbol-orbit" aria-hidden="true">
+      <span style="--a:0deg">ॐ</span>
+      <span style="--a:30deg">श्री</span>
+      <span style="--a:60deg">卐</span>
+      <span style="--a:90deg">ॐ</span>
+      <span style="--a:120deg">श्री</span>
+      <span style="--a:150deg">卐</span>
+      <span style="--a:180deg">ॐ</span>
+      <span style="--a:210deg">श्री</span>
+      <span style="--a:240deg">卐</span>
+      <span style="--a:270deg">ॐ</span>
+      <span style="--a:300deg">श्री</span>
+      <span style="--a:330deg">卐</span>
+    </div>
+    <!-- Outer mandala rings (slow reverse spin) -->
+    <svg style="position:absolute;inset:0;width:100%;height:100%;animation:spinReverse 40s linear infinite;" viewBox="0 0 320 320">
+      <defs>
+        <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#f0d080"/>
+          <stop offset="50%" stop-color="#c09050"/>
+          <stop offset="100%" stop-color="#f0d080"/>
+        </linearGradient>
+        <path id="outerPetal" d="M160 12 C172 28 180 52 160 76 C140 52 148 28 160 12Z"/>
+        <path id="diamondPetal" d="M160 44 L171 60 L160 78 L149 60 Z"/>
+        <circle id="outerDot" cx="160" cy="16" r="3.7"/>
+      </defs>
+      <g fill="none" stroke="url(#ringGrad)" opacity="0.45">
+        <circle cx="160" cy="160" r="154" stroke-width="1.6"/>
+        <circle cx="160" cy="160" r="146" stroke-width="0.8" stroke-dasharray="2 7"/>
+        <circle cx="160" cy="160" r="136" stroke-width="1"/>
+      </g>
+      <g opacity="0.52" fill="none" stroke="#c79242" stroke-width="0.95">
+        <use href="#outerPetal"/>
+        <use href="#outerPetal" transform="rotate(15,160,160)"/>
+        <use href="#outerPetal" transform="rotate(30,160,160)"/>
+        <use href="#outerPetal" transform="rotate(45,160,160)"/>
+        <use href="#outerPetal" transform="rotate(60,160,160)"/>
+        <use href="#outerPetal" transform="rotate(75,160,160)"/>
+        <use href="#outerPetal" transform="rotate(90,160,160)"/>
+        <use href="#outerPetal" transform="rotate(105,160,160)"/>
+        <use href="#outerPetal" transform="rotate(120,160,160)"/>
+        <use href="#outerPetal" transform="rotate(135,160,160)"/>
+        <use href="#outerPetal" transform="rotate(150,160,160)"/>
+        <use href="#outerPetal" transform="rotate(165,160,160)"/>
+        <use href="#outerPetal" transform="rotate(180,160,160)"/>
+        <use href="#outerPetal" transform="rotate(195,160,160)"/>
+        <use href="#outerPetal" transform="rotate(210,160,160)"/>
+        <use href="#outerPetal" transform="rotate(225,160,160)"/>
+        <use href="#outerPetal" transform="rotate(240,160,160)"/>
+        <use href="#outerPetal" transform="rotate(255,160,160)"/>
+        <use href="#outerPetal" transform="rotate(270,160,160)"/>
+        <use href="#outerPetal" transform="rotate(285,160,160)"/>
+        <use href="#outerPetal" transform="rotate(300,160,160)"/>
+        <use href="#outerPetal" transform="rotate(315,160,160)"/>
+        <use href="#outerPetal" transform="rotate(330,160,160)"/>
+        <use href="#outerPetal" transform="rotate(345,160,160)"/>
+      </g>
+      <g opacity="0.55" fill="none" stroke="#e3b86a" stroke-width="0.9">
+        <use href="#diamondPetal"/>
+        <use href="#diamondPetal" transform="rotate(11.25,160,160)"/>
+        <use href="#diamondPetal" transform="rotate(22.5,160,160)"/>
+        <use href="#diamondPetal" transform="rotate(33.75,160,160)"/>
+        <use href="#diamondPetal" transform="rotate(45,160,160)"/>
+        <use href="#diamondPetal" transform="rotate(56.25,160,160)"/>
+        <use href="#diamondPetal" transform="rotate(67.5,160,160)"/>
+        <use href="#diamondPetal" transform="rotate(78.75,160,160)"/>
+        <use href="#diamondPetal" transform="rotate(90,160,160)"/>
+        <use href="#diamondPetal" transform="rotate(101.25,160,160)"/>
+        <use href="#diamondPetal" transform="rotate(112.5,160,160)"/>
+        <use href="#diamondPetal" transform="rotate(123.75,160,160)"/>
+        <use href="#diamondPetal" transform="rotate(135,160,160)"/>
+        <use href="#diamondPetal" transform="rotate(146.25,160,160)"/>
+        <use href="#diamondPetal" transform="rotate(157.5,160,160)"/>
+        <use href="#diamondPetal" transform="rotate(168.75,160,160)"/>
+        <use href="#diamondPetal" transform="rotate(180,160,160)"/>
+        <use href="#diamondPetal" transform="rotate(191.25,160,160)"/>
+        <use href="#diamondPetal" transform="rotate(202.5,160,160)"/>
+        <use href="#diamondPetal" transform="rotate(213.75,160,160)"/>
+        <use href="#diamondPetal" transform="rotate(225,160,160)"/>
+        <use href="#diamondPetal" transform="rotate(236.25,160,160)"/>
+        <use href="#diamondPetal" transform="rotate(247.5,160,160)"/>
+        <use href="#diamondPetal" transform="rotate(258.75,160,160)"/>
+        <use href="#diamondPetal" transform="rotate(270,160,160)"/>
+        <use href="#diamondPetal" transform="rotate(281.25,160,160)"/>
+        <use href="#diamondPetal" transform="rotate(292.5,160,160)"/>
+        <use href="#diamondPetal" transform="rotate(303.75,160,160)"/>
+        <use href="#diamondPetal" transform="rotate(315,160,160)"/>
+        <use href="#diamondPetal" transform="rotate(326.25,160,160)"/>
+        <use href="#diamondPetal" transform="rotate(337.5,160,160)"/>
+        <use href="#diamondPetal" transform="rotate(348.75,160,160)"/>
+      </g>
+      <g fill="#c08a3e" opacity="0.78">
+        <use href="#outerDot"/>
+        <use href="#outerDot" transform="rotate(15,160,160)"/>
+        <use href="#outerDot" transform="rotate(30,160,160)"/>
+        <use href="#outerDot" transform="rotate(45,160,160)"/>
+        <use href="#outerDot" transform="rotate(60,160,160)"/>
+        <use href="#outerDot" transform="rotate(75,160,160)"/>
+        <use href="#outerDot" transform="rotate(90,160,160)"/>
+        <use href="#outerDot" transform="rotate(105,160,160)"/>
+        <use href="#outerDot" transform="rotate(120,160,160)"/>
+        <use href="#outerDot" transform="rotate(135,160,160)"/>
+        <use href="#outerDot" transform="rotate(150,160,160)"/>
+        <use href="#outerDot" transform="rotate(165,160,160)"/>
+        <use href="#outerDot" transform="rotate(180,160,160)"/>
+        <use href="#outerDot" transform="rotate(195,160,160)"/>
+        <use href="#outerDot" transform="rotate(210,160,160)"/>
+        <use href="#outerDot" transform="rotate(225,160,160)"/>
+        <use href="#outerDot" transform="rotate(240,160,160)"/>
+        <use href="#outerDot" transform="rotate(255,160,160)"/>
+        <use href="#outerDot" transform="rotate(270,160,160)"/>
+        <use href="#outerDot" transform="rotate(285,160,160)"/>
+        <use href="#outerDot" transform="rotate(300,160,160)"/>
+        <use href="#outerDot" transform="rotate(315,160,160)"/>
+        <use href="#outerDot" transform="rotate(330,160,160)"/>
+        <use href="#outerDot" transform="rotate(345,160,160)"/>
+      </g>
+    </svg>
+
+    <!-- Main mandala disc (forward spin) -->
+    <svg id="chakra-spin" style="position:absolute;inset:0;width:100%;height:100%;animation:spinFwd 22s linear infinite;" viewBox="0 0 320 320">
+      <defs>
+        <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#fff5d0" stop-opacity="0.9"/>
+          <stop offset="40%" stop-color="#e8a830" stop-opacity="0.6"/>
+          <stop offset="100%" stop-color="#7a4a10" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="goldLine" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#f7d980"/>
+          <stop offset="50%" stop-color="#c28a39"/>
+          <stop offset="100%" stop-color="#f2c86a"/>
+        </linearGradient>
+        <path id="lotusLarge" d="M160 46 C176 66 184 98 160 122 C136 98 144 66 160 46Z"/>
+        <path id="lotusSmall" d="M160 98 C171 112 174 132 160 146 C146 132 149 112 160 98Z"/>
+        <path id="scallop" d="M160 72 C168 78 173 88 160 96 C147 88 152 78 160 72Z"/>
+        <circle id="midDot" cx="160" cy="78" r="2.8"/>
+      </defs>
+
+      <circle cx="160" cy="160" r="122" fill="none" stroke="url(#goldLine)" stroke-width="1.4" opacity="0.42"/>
+      <circle cx="160" cy="160" r="109" fill="none" stroke="#dca95a" stroke-width="0.85" stroke-dasharray="1 7" opacity="0.72"/>
+      <circle cx="160" cy="160" r="101" fill="none" stroke="#b97f33" stroke-width="1" opacity="0.38"/>
+
+      <g opacity="0.76" stroke="url(#goldLine)" stroke-width="1.05" fill="none">
+        <use href="#lotusLarge"/>
+        <use href="#lotusLarge" transform="rotate(22.5,160,160)"/>
+        <use href="#lotusLarge" transform="rotate(45,160,160)"/>
+        <use href="#lotusLarge" transform="rotate(67.5,160,160)"/>
+        <use href="#lotusLarge" transform="rotate(90,160,160)"/>
+        <use href="#lotusLarge" transform="rotate(112.5,160,160)"/>
+        <use href="#lotusLarge" transform="rotate(135,160,160)"/>
+        <use href="#lotusLarge" transform="rotate(157.5,160,160)"/>
+        <use href="#lotusLarge" transform="rotate(180,160,160)"/>
+        <use href="#lotusLarge" transform="rotate(202.5,160,160)"/>
+        <use href="#lotusLarge" transform="rotate(225,160,160)"/>
+        <use href="#lotusLarge" transform="rotate(247.5,160,160)"/>
+        <use href="#lotusLarge" transform="rotate(270,160,160)"/>
+        <use href="#lotusLarge" transform="rotate(292.5,160,160)"/>
+        <use href="#lotusLarge" transform="rotate(315,160,160)"/>
+        <use href="#lotusLarge" transform="rotate(337.5,160,160)"/>
+      </g>
+      <circle cx="160" cy="160" r="88" fill="none" stroke="#f1ca79" stroke-width="0.95" opacity="0.68"/>
+      <g opacity="0.64" stroke="#d4a55b" stroke-width="0.85" fill="none">
+        <use href="#scallop"/>
+        <use href="#scallop" transform="rotate(15,160,160)"/>
+        <use href="#scallop" transform="rotate(30,160,160)"/>
+        <use href="#scallop" transform="rotate(45,160,160)"/>
+        <use href="#scallop" transform="rotate(60,160,160)"/>
+        <use href="#scallop" transform="rotate(75,160,160)"/>
+        <use href="#scallop" transform="rotate(90,160,160)"/>
+        <use href="#scallop" transform="rotate(105,160,160)"/>
+        <use href="#scallop" transform="rotate(120,160,160)"/>
+        <use href="#scallop" transform="rotate(135,160,160)"/>
+        <use href="#scallop" transform="rotate(150,160,160)"/>
+        <use href="#scallop" transform="rotate(165,160,160)"/>
+        <use href="#scallop" transform="rotate(180,160,160)"/>
+        <use href="#scallop" transform="rotate(195,160,160)"/>
+        <use href="#scallop" transform="rotate(210,160,160)"/>
+        <use href="#scallop" transform="rotate(225,160,160)"/>
+        <use href="#scallop" transform="rotate(240,160,160)"/>
+        <use href="#scallop" transform="rotate(255,160,160)"/>
+        <use href="#scallop" transform="rotate(270,160,160)"/>
+        <use href="#scallop" transform="rotate(285,160,160)"/>
+        <use href="#scallop" transform="rotate(300,160,160)"/>
+        <use href="#scallop" transform="rotate(315,160,160)"/>
+        <use href="#scallop" transform="rotate(330,160,160)"/>
+        <use href="#scallop" transform="rotate(345,160,160)"/>
+      </g>
+      <g fill="#f3cf82" opacity="0.72">
+        <use href="#midDot"/>
+        <use href="#midDot" transform="rotate(15,160,160)"/>
+        <use href="#midDot" transform="rotate(30,160,160)"/>
+        <use href="#midDot" transform="rotate(45,160,160)"/>
+        <use href="#midDot" transform="rotate(60,160,160)"/>
+        <use href="#midDot" transform="rotate(75,160,160)"/>
+        <use href="#midDot" transform="rotate(90,160,160)"/>
+        <use href="#midDot" transform="rotate(105,160,160)"/>
+        <use href="#midDot" transform="rotate(120,160,160)"/>
+        <use href="#midDot" transform="rotate(135,160,160)"/>
+        <use href="#midDot" transform="rotate(150,160,160)"/>
+        <use href="#midDot" transform="rotate(165,160,160)"/>
+        <use href="#midDot" transform="rotate(180,160,160)"/>
+        <use href="#midDot" transform="rotate(195,160,160)"/>
+        <use href="#midDot" transform="rotate(210,160,160)"/>
+        <use href="#midDot" transform="rotate(225,160,160)"/>
+        <use href="#midDot" transform="rotate(240,160,160)"/>
+        <use href="#midDot" transform="rotate(255,160,160)"/>
+        <use href="#midDot" transform="rotate(270,160,160)"/>
+        <use href="#midDot" transform="rotate(285,160,160)"/>
+        <use href="#midDot" transform="rotate(300,160,160)"/>
+        <use href="#midDot" transform="rotate(315,160,160)"/>
+        <use href="#midDot" transform="rotate(330,160,160)"/>
+        <use href="#midDot" transform="rotate(345,160,160)"/>
+      </g>
+
+      <circle cx="160" cy="160" r="68" fill="none" stroke="url(#goldLine)" stroke-width="1.2" opacity="0.72"/>
+      <g opacity="0.78" stroke="url(#goldLine)" stroke-width="0.95" fill="none">
+        <use href="#lotusSmall"/>
+        <use href="#lotusSmall" transform="rotate(30,160,160)"/>
+        <use href="#lotusSmall" transform="rotate(60,160,160)"/>
+        <use href="#lotusSmall" transform="rotate(90,160,160)"/>
+        <use href="#lotusSmall" transform="rotate(120,160,160)"/>
+        <use href="#lotusSmall" transform="rotate(150,160,160)"/>
+        <use href="#lotusSmall" transform="rotate(180,160,160)"/>
+        <use href="#lotusSmall" transform="rotate(210,160,160)"/>
+        <use href="#lotusSmall" transform="rotate(240,160,160)"/>
+        <use href="#lotusSmall" transform="rotate(270,160,160)"/>
+        <use href="#lotusSmall" transform="rotate(300,160,160)"/>
+        <use href="#lotusSmall" transform="rotate(330,160,160)"/>
+      </g>
+
+      <circle cx="160" cy="160" r="44" fill="none" stroke="#f2d28b" stroke-width="1.05" opacity="0.74"/>
+      <circle cx="160" cy="160" r="31" fill="none" stroke="#ca913f" stroke-width="0.9" opacity="0.7"/>
+      <circle cx="160" cy="160" r="18" fill="none" stroke="#f2cf83" stroke-width="0.95" opacity="0.82"/>
+
+      <!-- Bindu (central dot) -->
+      <circle cx="160" cy="160" r="8" fill="#f3c96b" opacity="0.95"/>
+      <circle cx="160" cy="160" r="4" fill="#fff8e0"/>
+      <circle cx="160" cy="160" r="42" fill="url(#centerGlow)" opacity="0.32"/>
+    </svg>
+  </div>
+
+  <!-- Brand name -->
+  <div style="
+    font-size:clamp(1.4rem,4.5vw,2.2rem);
+    background:linear-gradient(135deg,#f7e090,#c09050,#f7e090);
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+    background-clip:text;
+    letter-spacing:0.08em;margin-bottom:6px;
+    animation:fadeSlide 1.6s ease 0.3s both;
+    font-weight:900;
+  ">Svādotsava<sup style="font-size:0.45em;-webkit-text-fill-color:#c09050;">™</sup></div>
+  <div style="
+    font-size:clamp(0.55rem,1.5vw,0.75rem);letter-spacing:0.3em;
+    color:#a07030;text-transform:uppercase;margin-bottom:36px;
+    animation:fadeSlide 1.6s ease 0.5s both;
+  ">A Celebration of Taste</div>
+  <div style="
+    font-size:clamp(0.62rem,1.7vw,0.88rem);
+    letter-spacing:0.14em;
+    color:#ddb167;
+    margin:-18px 0 28px;
+    animation:fadeSlide 1.6s ease 0.6s both;
+    text-align:center;
+  ">ॐ ऐं ह्रीं श्रीं श्री मात्रे नमः</div>
+
+  <!-- Countdown timer -->
+  <div id="countdown-timer" style="
+    display:flex;gap:clamp(12px,3vw,28px);
+    animation:fadeSlide 1.6s ease 0.7s both;
+  ">
+    <div class="cd-unit"><span id="cd-days">00</span><label>Days</label></div>
+    <div class="cd-sep">:</div>
+    <div class="cd-unit"><span id="cd-hours">00</span><label>Hours</label></div>
+    <div class="cd-sep">:</div>
+    <div class="cd-unit"><span id="cd-minutes">00</span><label>Minutes</label></div>
+    <div class="cd-sep">:</div>
+    <div class="cd-unit"><span id="cd-seconds">00</span><label>Seconds</label></div>
+    <div class="cd-sep">:</div>
+    <div class="cd-unit"><span id="cd-milliseconds">000</span><label>Millisec</label></div>
+  </div>
+
+  <!-- Opening hint -->
+  <div style="
+    margin-top:30px;font-size:clamp(0.6rem,1.6vw,0.78rem);
+    color:#7a5520;letter-spacing:0.15em;text-transform:uppercase;
+    animation:fadeSlide 1.8s ease 1s both;
+  ">Opening · 19 March 2026</div>
+
+</div><!-- /countdown-overlay -->
+
+<style>
+  @keyframes spinFwd    { to { transform:rotate(360deg); } }
+  @keyframes spinReverse { to { transform:rotate(-360deg); } }
+  @keyframes fadeSlide  { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:none; } }
+  @keyframes pulse      { 0%,100% { opacity:1; } 50% { opacity:0.6; } }
+  @keyframes orbitDrift { to { transform:rotate(360deg); } }
+
+  .overlay-symbol-orbit {
+    position:absolute;
+    inset:-32px;
+    animation:orbitDrift 42s linear infinite;
+    pointer-events:none;
+  }
+  .overlay-symbol-orbit span {
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:
+      rotate(var(--a))
+      translateY(-176px)
+      rotate(calc(var(--a) * -1));
+    transform-origin:center;
+    margin:-12px 0 0 -12px;
+    font-size:clamp(1rem,2.1vw,1.35rem);
+    color:rgba(232,184,96,0.62);
+    text-shadow:0 0 12px rgba(192,144,80,0.35);
+    letter-spacing:0.04em;
+  }
+
+  .cd-unit {
+    display:flex;flex-direction:column;align-items:center;
+    background:rgba(192,144,80,0.08);
+    border:1px solid rgba(192,144,80,0.25);
+    border-radius:10px;
+    padding:clamp(10px,2.5vw,18px) clamp(12px,3vw,22px);
+    min-width:clamp(58px,12vw,90px);
+    backdrop-filter:blur(6px);
+  }
+  .cd-unit span {
+    font-size:clamp(1.5rem,5vw,2.8rem);
+    font-weight:900;
+    background:linear-gradient(180deg,#f7e090,#c09050);
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+    background-clip:text;
+    line-height:1;letter-spacing:0.05em;
+    font-variant-numeric:tabular-nums;
+  }
+  .cd-unit label {
+    font-size:clamp(0.5rem,1.3vw,0.65rem);
+    letter-spacing:0.2em;text-transform:uppercase;
+    color:#a07030;margin-top:6px;
+    font-family:'Open Sans',sans-serif;font-weight:600;
+  }
+  .cd-sep {
+    font-size:clamp(1.2rem,4vw,2.2rem);
+    color:#c09050;opacity:0.7;
+    align-self:center;padding-bottom:14px;
+    animation:pulse 1s ease infinite;
+  }
+  #countdown-overlay.hidden { opacity:0;visibility:hidden;pointer-events:none; }
+</style>
+
+<script>
+(function(){
+  // Target: March 19 2026, 08:09:21.108 AM — treat as IST (UTC+5:30)
+  // IST offset = +5:30 => subtract 5.5h from local IST to get UTC
+  // UTC equivalent: March 19 2026, 02:39:21.108 UTC
+  var TARGET = new Date('2026-03-19T02:39:21.108Z').getTime();
+
+  function pad(n){ return String(Math.floor(n)).padStart(2,'0'); }
+  function padMs(n){ return String(Math.floor(n)).padStart(3,'0'); }
+
+  function tick(){
+    var now  = Date.now();
+    var diff = TARGET - now;
+
+    if(diff <= 0){
+      reveal();
+      return;
+    }
+
+    var days  = diff / 86400000;
+    var hours = (diff % 86400000) / 3600000;
+    var mins  = (diff % 3600000)  / 60000;
+    var secs  = (diff % 60000)    / 1000;
+    var ms    = diff % 1000;
+
+    document.getElementById('cd-days').textContent    = pad(days);
+    document.getElementById('cd-hours').textContent   = pad(hours);
+    document.getElementById('cd-minutes').textContent = pad(mins);
+    document.getElementById('cd-seconds').textContent = pad(secs);
+    document.getElementById('cd-milliseconds').textContent = padMs(ms);
+
+    // Sync chakra spin speed to secs remaining (faster near zero)
+    var progress = Math.max(0, Math.min(1, 1 - diff / (6*86400000)));
+    var duration = Math.max(4, 22 - progress * 18);
+    var el = document.getElementById('chakra-spin');
+    if(el) el.style.animationDuration = duration.toFixed(1) + 's';
+  }
+
+  function reveal(){
+    var overlay = document.getElementById('countdown-overlay');
+    overlay.classList.add('hidden');
+    setTimeout(function(){ overlay.style.display='none'; }, 1300);
+  }
+
+  // Check immediately
+  if(Date.now() >= TARGET){ reveal(); return; }
+
+  tick();
+  setInterval(tick, 43);
+})();
+</script>
+
   <!-- NAV -->
   <header class="nav">
     <div class="container nav-inner">
@@ -26,7 +480,7 @@
       <nav class="nav-links" aria-label="Primary">
         <a class="active" href="index.html">Home</a>
         <a href="menu.html">Menu</a>
-        <a href="preview.html">Preview</a>
+        <a href="cafe.html">Cafe</a>
         <a href="story.html">Our Story</a>
         <a href="farmers.html">Our Farmers</a>
       </nav>
@@ -141,7 +595,7 @@
           <div class="f-links">
             <a href="index.html">Coming Soon</a>
             <a href="menu.html">Menu</a>
-            <a href="preview.html">Preview</a>
+            <a href="cafe.html">Cafe</a>
             <a href="story.html">Our Story</a>
             <a href="farmers.html">Our Farmers</a>
           </div>
@@ -188,40 +642,7 @@
     });
   </script>
   
-  <!-- CART UI --> 
-  <button class="cart-toggle-btn" onclick="toggleCart()" aria-label="Open Cart"> 
-    🛒 
-    <span class="cart-count-badge" style="display:none;">0</span> 
-  </button> 
- 
-  <div class="cart-overlay" id="cart-overlay"></div> 
- 
-  <div class="cart-drawer" id="cart-drawer"> 
-    <div class="cart-header"> 
-      <h2>🛒 Your Order</h2> 
-      <button class="close-cart-btn" onclick="toggleCart()" aria-label="Close Cart">×</button> 
-    </div> 
-    <div class="cart-body"> 
-      <div class="cart-empty-state" id="cart-empty-state"> 
-        <div class="icon">🍽️</div> 
-        <p>Your cart is empty.</p> 
-        <button class="btn primary" onclick="toggleCart()">Browse Menu</button> 
-      </div> 
-      <div class="cart-items" id="cart-items"></div> 
-    </div> 
-    <div class="cart-footer"> 
-      <div class="cart-subtotal-row"> 
-        <span>Subtotal</span> 
-        <strong id="cart-subtotal">₹0.00</strong> 
-      </div> 
-      <button class="cart-checkout-btn" id="cart-checkout-btn" onclick="handleCheckout()" disabled> 
-        Checkout <span style="font-size:1.2em">→</span> 
-      </button> 
-    </div> 
-  </div> 
-
+  <!-- CART UI -->
 </body>
 
 </html>
-
-<script src="cart.js"></script>
