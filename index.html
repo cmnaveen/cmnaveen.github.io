@@ -64,7 +64,6 @@
   <div id="sri-chakra-wrap" style="
     position:relative;width:min(52vmin,320px);height:min(52vmin,320px);
     margin-bottom:32px;
-    filter:drop-shadow(0 0 30px rgba(192,144,80,0.45));
     overflow:visible;
   ">
     <div class="overlay-symbol-orbit" aria-hidden="true">
@@ -82,7 +81,7 @@
       <span style="--a:330deg">卐</span>
     </div>
     <!-- Outer mandala rings (slow reverse spin) -->
-    <svg style="position:absolute;inset:0;width:100%;height:100%;animation:spinReverse 40s linear infinite;" viewBox="0 0 320 320">
+    <svg style="position:absolute;inset:0;width:100%;height:100%;animation:spinReverse 40s linear infinite;filter:drop-shadow(0 0 30px rgba(192,144,80,0.45));" viewBox="0 0 320 320">
       <defs>
         <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stop-color="#f0d080"/>
@@ -366,7 +365,7 @@
 
   .overlay-symbol-orbit {
     position:absolute;
-    inset:-32px;
+    inset:0;
     animation:orbitDrift 42s linear infinite;
     pointer-events:none;
   }
@@ -376,7 +375,7 @@
     top:50%;
     transform:
       rotate(var(--a))
-      translateY(-176px)
+      translateY(-120px)
       rotate(calc(var(--a) * -1));
     transform-origin:center;
     margin:-12px 0 0 -12px;
