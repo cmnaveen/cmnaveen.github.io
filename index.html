@@ -780,6 +780,12 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
+      // Hides the modal after 23:59  IST on Sri Rama Navami (March 27, 2026)
+      const expiryTime = new Date('2026-03-28T23:59:00+05:30').getTime();
+      if (Date.now() > expiryTime) {
+        return;
+      }
+
       // Show the modal after a short delay
       setTimeout(function() {
         const modal = document.getElementById('rama-navami-modal');
