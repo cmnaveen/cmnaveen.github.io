@@ -17,6 +17,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -26,6 +27,7 @@ body {
   color: var(--text);
   line-height: 1.7;
   position: relative;
+  overflow-x: hidden;
 }
 
 .page-symbol-field {
@@ -247,8 +249,8 @@ footer {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(900px 500px at 50% 20%, rgba(200, 135, 74, 0.18), transparent 60%),
-    radial-gradient(900px 500px at 20% 80%, rgba(124, 58, 16, 0.18), transparent 55%);
+    radial-gradient(100% 100% at 50% 20%, rgba(200, 135, 74, 0.18), transparent 60%),
+    radial-gradient(100% 100% at 20% 80%, rgba(124, 58, 16, 0.18), transparent 55%);
   pointer-events: none;
 }
 
