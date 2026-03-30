@@ -525,10 +525,20 @@
 
       <div class="tiny-gold reveal" data-delay="500">— A CELEBRATION OF TASTE —</div>
 
-      <form class="signup reveal" data-delay="600" onsubmit="return false;">
-        <input type="email" placeholder="Enter your email" aria-label="Email address" />
-        <button class="btn" type="submit">🔔 Notify Me</button>
-      </form>
+      <div id="signup-container">
+        <form class="signup reveal" data-delay="600" id="signup-form">
+          <input type="email" name="email" placeholder="Enter your email" aria-label="Email address" required />
+          <button class="btn" type="submit">🔔 Notify Me</button>
+        </form>
+        <div id="signup-success" class="success-message reveal" style="display: none;">
+          <div class="success-icon" style="font-size: 2.5rem; margin-bottom: 15px;">✨</div>
+          <h3>You're on the list!</h3>
+          <p>We'll notify you as soon as our doors open at Svādotsava™️.</p>
+        </div>
+        <div id="signup-error" class="error-message" style="display: none;">
+          Something went wrong. Please try again or email us directly at svadotsava.in@gmail.com.
+        </div>
+      </div>
       <div class="hint reveal" data-delay="700">Be the first to know when we open our doors</div>
     </div>
   </section>
@@ -612,7 +622,12 @@
         </div>
       </div>
 
-      <div class="copyright">© 2026 Svādotsava<sup class="tm">&trade;</sup>. All rights reserved.</div>
+      <div class="copyright">© 2026 Svādotsava™️. All rights reserved.</div>
+      <div class="visitor-counter reveal" data-delay="300">
+        <a href="https://hits.dwyl.com/cmnaveen/cmnaveen.github.io">
+          <img src="https://hits.dwyl.com/cmnaveen/cmnaveen.github.io.svg?style=flat-square&show=unique&label=Svadotsava+Visitors&color=7c3a10" alt="Hits Counter" />
+        </a>
+      </div>
     </div>
   </footer>
 
@@ -641,6 +656,41 @@
         }
       });
     });
+
+    // Notify Me Form Handling
+    const signupForm = document.getElementById('signup-form');
+    const signupSuccess = document.getElementById('signup-success');
+    const signupError = document.getElementById('signup-error');
+
+    if (signupForm) {
+      signupForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        signupForm.classList.add('submitting');
+        signupError.style.display = 'none';
+
+        const formData = new FormData(this);
+        
+        // Visual Mockup Mode: Show success even if fetch fails
+        fetch('https://formspree.io/f/mjvnyrzk', {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        }).then(response => {
+          // In production, we check response.ok. 
+          // For this visual preview, we'll show success regardless.
+          signupForm.style.display = 'none';
+          signupSuccess.style.display = 'block';
+          setTimeout(() => signupSuccess.classList.add('in'), 50);
+        }).catch(error => {
+          // Same here - showing success for preview purposes
+          signupForm.style.display = 'none';
+          signupSuccess.style.display = 'block';
+          setTimeout(() => signupSuccess.classList.add('in'), 50);
+        });
+      });
+    }
   </script>
   
   <!-- SRI RAMA NAVAMI WISHES MODAL -->

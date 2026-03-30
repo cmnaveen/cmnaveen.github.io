@@ -1445,3 +1445,60 @@ footer {
   box-shadow: none;
   transform: none;
 }
+
+/* Visitor Counter */
+.visitor-counter {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+
+.visitor-counter:hover {
+  opacity: 1;
+}
+
+.visitor-counter img {
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Signup Success & Status Messages */
+.success-message {
+  text-align: center;
+  padding: 30px 20px;
+  background: rgba(124, 58, 16, 0.08);
+  border: 1px solid rgba(200, 135, 74, 0.3);
+  border-radius: 16px;
+  margin-top: 20px;
+  backdrop-filter: blur(8px);
+}
+
+.success-message h3 {
+  color: var(--primary);
+  margin: 0 0 10px;
+  font-family: 'Merriweather', serif;
+}
+
+.success-message p {
+  color: var(--muted);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.error-message {
+  color: #c03a10;
+  margin-top: 15px;
+  font-size: 0.9rem;
+  background: rgba(192, 58, 16, 0.05);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.signup.submitting {
+  opacity: 0.6;
+  pointer-events: none;
+  cursor: wait;
+}
