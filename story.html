@@ -5,7 +5,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Svādotsava&trade; — Our Story</title>
-
+  <meta name="description" content="Read the story of Svādotsava™️. Where ancient wisdom meets the modern palate in a celebration of taste." />
+  <meta property="og:title" content="Svādotsava™️ — Our Story" />
+  <meta property="og:description" content="Read the story of Svādotsava™️. Where ancient wisdom meets the modern palate." />
+  <meta property="og:image" content="https://cmnaveen.github.io/black_logo_circle_nobg.png" />
+  <meta property="og:url" content="https://cmnaveen.github.io/story.html" />
+  <link rel="icon" type="image/png" href="black_logo_circle_nobg.png" />
   <link
     href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Open+Sans:wght@400;600&display=swap"
     rel="stylesheet">
@@ -22,7 +27,8 @@
             style="color:var(--accent)">otsava</span><sup class="tm">&trade;</sup></div>
         <div class="brand-tagline">A Celebration of Taste</div>
       </a>
-      <nav class="nav-links" aria-label="Primary">
+      <button class="mobile-menu-toggle" aria-label="Toggle Menu" onclick="document.getElementById('nav-links').classList.toggle('open')">☰</button>
+      <nav id="nav-links" class="nav-links" aria-label="Primary">
         <a href="index.html">Home</a>
         <a href="menu.html">Menu</a>
         <a href="cafe.html">Cafe</a>

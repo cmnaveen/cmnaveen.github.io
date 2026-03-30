@@ -96,7 +96,9 @@ sup[style*="font-size: 0.5em"] {
   right: 0;
   z-index: 50;
   height: 60px;
-  background: var(--bg);
+  background: rgba(245, 240, 232, 0.85); /* Semitransparent var(--bg) */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   display: flex;
   align-items: center;
@@ -164,9 +166,51 @@ footer {
   font-weight: 600;
 }
 
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 26px;
+  color: var(--primary);
+  cursor: pointer;
+  padding: 5px;
+  line-height: 1;
+}
+
 @media (max-width: 640px) {
+  .mobile-menu-toggle {
+    display: block;
+  }
+
   .nav-links {
-    display: none;
+    position: fixed;
+    top: 60px;
+    right: -100%;
+    width: 260px;
+    height: calc(100vh - 60px);
+    background: rgba(245, 240, 232, 0.98);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    flex-direction: column;
+    padding: 30px 20px;
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+    transition: right 0.35s ease-in-out;
+  }
+
+  .nav-links.open {
+    right: 0;
+  }
+
+  .nav-links a {
+    width: 100%;
+    text-align: center;
+    padding: 14px 10px;
+    font-size: 1.05rem;
+    border-radius: 8px;
+  }
+
+  .nav-links a:hover {
+    background: rgba(124, 58, 16, 0.1);
   }
 
   .page-symbol-field span {

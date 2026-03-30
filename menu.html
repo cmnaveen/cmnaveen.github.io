@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Svādotsava&trade; — Menu</title>
   <meta name="description" content="Explore the Svādotsava&trade; menu — a celebration of South Indian flavours featuring golden idlies, crispy dosas, masala vadas, and handcrafted coffees and teas." />
+  <meta property="og:title" content="Svādotsava™️ — Menu" />
+  <meta property="og:description" content="Explore our menu of authentic South Indian flavors, specialty coffee, and artisan teas." />
+  <meta property="og:image" content="https://cmnaveen.github.io/black_logo_circle_nobg.png" />
+  <meta property="og:url" content="https://cmnaveen.github.io/menu.html" />
+  <link rel="icon" type="image/png" href="black_logo_circle_nobg.png" />
 
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
@@ -19,7 +24,8 @@
         <div class="brand-name"><span style="color:var(--primary)">Svād</span><span style="color:var(--accent)">otsava</span><sup class="tm">&trade;</sup></div>
         <div class="brand-tagline">A Celebration of Taste</div>
       </a>
-      <nav class="nav-links" aria-label="Primary">
+      <button class="mobile-menu-toggle" aria-label="Toggle Menu" onclick="document.getElementById('nav-links').classList.toggle('open')">☰</button>
+      <nav id="nav-links" class="nav-links" aria-label="Primary">
         <a href="index.html">Home</a>
         <a class="active" href="menu.html">Menu</a>
         <a href="cafe.html">Cafe</a>
