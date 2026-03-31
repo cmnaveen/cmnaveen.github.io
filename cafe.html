@@ -11,11 +11,13 @@
   <meta property="og:image" content="https://cmnaveen.github.io/black_logo_circle_nobg.png" />
   <meta property="og:url" content="https://cmnaveen.github.io/cafe.html" />
   <link rel="icon" type="image/png" href="black_logo_circle_nobg.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Open+Sans:wght@400;600&display=swap"
     rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css?v=2">
+  <link rel="stylesheet" href="styles.css?v=3">
 </head>
 
 <body class="page-cafe">
@@ -27,7 +29,8 @@
             style="color:var(--accent)">otsava</span><sup class="tm">&trade;</sup></div>
         <div class="brand-tagline">A Celebration of Taste</div>
       </a>
-      <button class="mobile-menu-toggle" aria-label="Toggle Menu" onclick="document.getElementById('nav-links').classList.toggle('open')">☰</button>
+      <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Toggle Menu" aria-expanded="false" onclick="(function(b){const n=document.getElementById('nav-links'),d=document.getElementById('nav-backdrop'),o=n.classList.toggle('open');d.classList.toggle('open',o);b.setAttribute('aria-expanded',o);})(this)">☰</button>
+      <div id="nav-backdrop" class="nav-backdrop" onclick="document.getElementById('nav-links').classList.remove('open');document.getElementById('mobile-toggle').setAttribute('aria-expanded','false');this.classList.remove('open');"></div>
       <nav id="nav-links" class="nav-links" aria-label="Primary">
         <a href="index.html">Home</a>
         <a href="menu.html">Menu</a>
@@ -545,10 +548,10 @@
   <!-- CTA SECTION -->
   <section class="cta">
     <div class="container">
-      <h2 class="reveal">Ready for the Experience?</h2>
-      <p class="reveal" data-delay="120">Join our exclusive opening list and be the first to taste the magic.</p>
+      <h2 class="reveal">Your First Sip Awaits.</h2>
+      <p class="reveal" data-delay="120">Reserve your place on the exclusive opening list — be there on Day One.</p>
       <div class="btn-row reveal" data-delay="220">
-        <a class="btn primary white" href="index.html#signup-container">Join the Inner Circle <span class="arrow">→</span></a>
+        <a class="btn primary white" href="index.html#signup-container">Notify Me When We Open <span class="arrow">→</span></a>
       </div>
     </div>
   </section>
@@ -562,12 +565,17 @@
           <div class="f-brand"><span style="color:var(--primary)">Svād</span><span
               style="color:var(--accent)">otsava</span><sup class="tm">&trade;</sup></div>
           <div class="f-small">A Celebration of Taste</div>
-          <div class="f-small" style="margin-top:10px;">🌾 Golden Grains • ☕ Heart of Coffee • 🍵 Spirit of Tea</div>
+          <div class="f-small" style="margin-top:10px;">Golden Grains · Heart of Coffee · Spirit of Tea</div>
+          <div class="social-links">
+            <a href="https://instagram.com/svadotsava" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="18" cy="6" r="1" fill="currentColor" stroke="none"/></svg>
+            </a>
+          </div>
         </div>
         <div>
           <div class="f-label">Quick Links</div>
           <div class="f-links">
-            <a href="index.html">Coming Soon</a>
+            <a href="index.html">Home</a>
             <a href="menu.html">Menu</a>
             <a href="cafe.html">Cafe</a>
             <a href="story.html">Our Story</a>

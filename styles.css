@@ -142,7 +142,7 @@ footer {
 
 .brand-tagline {
   margin-top: 2px;
-  font-size: 0.55rem;
+  font-size: 0.65rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: #e1b46b;
@@ -369,6 +369,12 @@ h2 {
   padding: 26px;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.04);
   text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.1);
 }
 
 .icircle {
@@ -442,6 +448,13 @@ h2 {
   place-items: center;
   background: rgba(255, 255, 255, 0.1);
   font-size: 22px;
+  transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tri-item:hover .tri-icon {
+  transform: scale(1.12);
+  background: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 0 20px rgba(200, 164, 90, 0.3);
 }
 
 .tri-label {
@@ -568,14 +581,14 @@ h2 {
   margin-top: 18px;
   padding: 12px 18px;
   border-radius: 12px;
-  border: 1.5px solid #1a1a1a;
-  color: #1a1a1a;
+  border: 1.5px solid var(--primary);
+  color: var(--primary);
   font-weight: 600;
   transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
 }
 
 .outline-btn:hover {
-  background: #1a1a1a;
+  background: var(--primary);
   color: #fff;
   transform: translateY(-1px);
 }
@@ -968,13 +981,15 @@ h2 {
 .card-img-wrap {
   position: relative;
   width: 100%;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
   background: var(--bg-muted);
 }
 
 .card-img-wrap img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   transition: transform 0.4s ease;
 }
 
@@ -1122,9 +1137,12 @@ footer {
 
 @media (max-width: 900px) {
   .cards,
-  .grid,
-  .footer-grid,
   .contact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .grid,
+  .footer-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1145,6 +1163,8 @@ footer {
 }
 
 @media (max-width: 600px) {
+  .cards,
+  .contact-grid,
   .menu-grid {
     grid-template-columns: 1fr;
   }
@@ -1161,6 +1181,52 @@ footer {
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* ============================================
+   NAV BACKDROP (mobile menu overlay)
+   ============================================ */
+.nav-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 45;
+  background: rgba(10, 13, 20, 0.4);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+.nav-backdrop.open {
+  display: block;
+}
+
+/* ============================================
+   SOCIAL LINKS (footer)
+   ============================================ */
+.social-links {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+  align-items: center;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(124, 58, 16, 0.1);
+  color: var(--primary);
+  border: 1px solid rgba(124, 58, 16, 0.2);
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.social-link:hover {
+  background: var(--primary);
+  color: #fff;
+  transform: translateY(-2px);
 }
 
 /* =========================================
