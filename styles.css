@@ -280,6 +280,8 @@ footer {
   max-height: min(72vh, 680px);
   object-fit: contain;
   opacity: 0.15;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 .hero-inner {
