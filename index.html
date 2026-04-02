@@ -882,6 +882,56 @@
     }
   </script>
 
+  <!-- HANUMAN JAYANTHI WISHES MODAL -->
+  <div id="hanuman-jayanthi-modal" class="festival-modal" style="display: none;">
+    <div class="festival-modal-content">
+      <button class="festival-close-btn" onclick="closeHanumanModal()" aria-label="Close">&times;</button>
+      <img src="hanuman_jayanthi.png" alt="Lord Hanuman" class="festival-img" />
+      <div class="festival-gold-subtitle">✦ STRENGTH · DEVOTION · SERVICE ✦</div>
+      <h2 class="festival-title">Happy Hanuman Jayanthi</h2>
+      <p class="festival-msg">He carried a mountain. He crossed an ocean. He bowed only to Ram.<br/>May His fearless devotion ignite that same fire in you. 🚩</p>
+      <div class="festival-chant" style="display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;">
+        <span>॥ जय हनुमान ॥</span>
+        <span style="opacity:0.45;font-size:1.2rem;">✦</span>
+        <span>॥ जय श्री राम ॥</span>
+      </div>
+      <button class="festival-enter-btn" onclick="closeHanumanModal()">Enter Site</button>
+    </div>
+  </div>
+
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Hides the modal after 23:59:59 IST on Hanuman Jayanthi (April 2, 2026)
+      const expiryTime = new Date('2026-04-02T23:59:59+05:30').getTime();
+      if (Date.now() > expiryTime) {
+        return;
+      }
+
+      // Show the modal after a short delay
+      setTimeout(function() {
+        const modal = document.getElementById('hanuman-jayanthi-modal');
+        if(modal) {
+          modal.style.display = 'flex';
+          // Trigger reflow
+          void modal.offsetWidth;
+          modal.classList.add('show');
+        }
+      }, 500);
+    });
+
+    function closeHanumanModal() {
+      const modal = document.getElementById('hanuman-jayanthi-modal');
+      if(modal) {
+        modal.classList.remove('show');
+        setTimeout(function() {
+          modal.style.display = 'none';
+        }, 600);
+      }
+    }
+  </script>
+
   <!-- CART UI -->
 </body>
 
