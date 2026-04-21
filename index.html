@@ -1110,6 +1110,44 @@
   </script>
 
 
+  <!-- ADI SHANKARACHARYA JAYANTI MODAL -->
+  <div id="adi-shankaracharya-modal" class="festival-modal" style="display: none;">
+    <div class="festival-modal-content">
+      <button class="festival-close-btn" onclick="closeAdiShankaracharyaModal()" aria-label="Close">&times;</button>
+      <img src="assets/images/festivals/adi_shankaracharya.png" alt="Adi Shankaracharya" class="festival-img" />
+      <div class="festival-gold-subtitle">✦ WISDOM · ADVAITA · DIVINE CONSCIOUSNESS ✦</div>
+      <h2 class="festival-title">Happy Adi Shankaracharya Jayanti</h2>
+      <p class="festival-msg">Tuesday, April 21, 2026, marks the 1238th birth anniversary (Jayanti) of Adi Shankaracharya.<br/>May his teachings of Advaita Vedanta inspire wisdom, inner peace, and spiritual awakening in your life. 🙏</p>
+      <div class="festival-chant">॥ शिवोऽहम् ॥</div>
+      <button class="festival-enter-btn" onclick="closeAdiShankaracharyaModal()">Enter Site</button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Hides the modal after 23:59:59 IST on Adi Shankaracharya Jayanti (April 21, 2026)
+      const expiryTime = new Date('2026-04-21T23:59:59+05:30').getTime();
+      if (Date.now() > expiryTime) { return; }
+      const startTime = new Date('2026-04-20T00:00:00+05:30').getTime();
+      if (Date.now() < startTime) { return; }
+      setTimeout(function () {
+        const modal = document.getElementById('adi-shankaracharya-modal');
+        if (modal) {
+          modal.style.display = 'flex';
+          void modal.offsetWidth;
+          modal.classList.add('show');
+        }
+      }, 500);
+    });
+    function closeAdiShankaracharyaModal() {
+      const modal = document.getElementById('adi-shankaracharya-modal');
+      if (modal) {
+        modal.classList.remove('show');
+        setTimeout(function () { modal.style.display = 'none'; }, 600);
+      }
+    }
+  </script>
+
   <!-- PURI RATH YATRA MODAL -->
   <div id="rath-yatra-modal" class="festival-modal" style="display: none;">
     <div class="festival-modal-content">
