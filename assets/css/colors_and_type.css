@@ -1,0 +1,321 @@
+/*
+ * Svādotsava™ Design System
+ * colors_and_type.css
+ * ─────────────────────────────────────────────
+ * Base color + type tokens + semantic mappings.
+ * Import Google Fonts before this file, or use
+ * the @import below.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Merriweather:wght@400;700&display=swap');
+
+/* ═══════════════════════════════════════════
+   RAW COLOR TOKENS
+   ═══════════════════════════════════════════ */
+:root {
+  /* Brand palette */
+  --color-cream:          #f5f0e8;   /* warm parchment page bg */
+  --color-cream-muted:    #ede8de;   /* alternating section bg */
+  --color-white:          #ffffff;   /* card surface */
+  --color-near-black:     #0a0d14;   /* hero bg */
+
+  /* Primary — deep terracotta brown */
+  --color-primary-900:    #5a2808;
+  --color-primary-700:    #7c3a10;   /* --primary */
+  --color-primary-600:    #8b4a1c;   /* --primary-dark */
+  --color-primary-400:    #b06030;
+
+  /* Accent — warm amber */
+  --color-accent-700:     #a06030;
+  --color-accent-500:     #c8874a;   /* --accent */
+  --color-accent-300:     #e1b46b;
+  --color-accent-100:     #f5e4c8;
+
+  /* Gold — used on dark overlays only */
+  --color-gold-bright:    #f7e090;
+  --color-gold-mid:       #e8c87a;
+  --color-gold-base:      #c09050;
+  --color-gold-deep:      #8c6230;
+
+  /* Neutral text */
+  --color-text:           #1a1a1a;
+  --color-muted:          #5a5a5a;
+  --color-border:         #ddd0bc;
+  --color-border-light:   rgba(221, 208, 188, 0.55);
+
+  /* Utility */
+  --color-overlay-dark:   rgba(10, 13, 20, 0.6);
+  --color-white-faint:    rgba(255, 255, 255, 0.08);
+
+  /* Gradients */
+  --gradient-gold:        linear-gradient(135deg, #f7e090, #c09050, #f7e090);
+  --gradient-gold-text:   linear-gradient(180deg, #f7e090, #c09050);
+  --gradient-hero-glow:
+    radial-gradient(100% 100% at 50% 20%, rgba(200, 135, 74, 0.18), transparent 60%),
+    radial-gradient(100% 100% at 20% 80%, rgba(124,  58, 16, 0.18), transparent 55%);
+  --gradient-highlight:   linear-gradient(135deg, #fff8ee, #f4ead8);
+  --gradient-contact:     linear-gradient(180deg, #fffaf2, #f6ede0);
+  --gradient-festival-bg: radial-gradient(ellipse at center, #1a0a00 0%, #0d0500 60%, #000 100%);
+  --gradient-festival-card: linear-gradient(145deg, #2a0b00, #140500);
+
+/* ═══════════════════════════════════════════
+   SEMANTIC COLOR TOKENS
+   ═══════════════════════════════════════════ */
+
+  /* Surfaces */
+  --bg:           var(--color-cream);
+  --bg-muted:     var(--color-cream-muted);
+  --card:         var(--color-white);
+  --hero-bg:      var(--color-near-black);
+
+  /* Brand */
+  --primary:      var(--color-primary-700);
+  --primary-dark: var(--color-primary-600);
+  --accent:       var(--color-accent-500);
+
+  /* Text */
+  --fg1:          var(--color-text);
+  --fg2:          var(--color-muted);
+  --fg-brand:     var(--color-primary-700);
+  --fg-accent:    var(--color-accent-500);
+  --fg-gold:      var(--color-gold-base);
+  --fg-on-dark:   rgba(255, 255, 255, 0.74);
+  --fg-tagline:   var(--color-accent-300);   /* italic tagline on dark */
+
+  /* Borders */
+  --border:       var(--color-border);
+
+  /* Interactive */
+  --btn-primary-bg:     var(--color-primary-600);
+  --btn-primary-fg:     #ffffff;
+  --btn-accent-bg:      var(--color-accent-500);
+  --btn-accent-fg:      #23160c;
+  --btn-outline-border: var(--color-primary-700);
+  --btn-outline-fg:     var(--color-primary-700);
+
+  /* Icon circles */
+  --icon-circle-bg:     rgba(200, 135, 74, 0.18);
+  --icon-circle-fg:     var(--color-accent-500);
+
+/* ═══════════════════════════════════════════
+   TYPOGRAPHY TOKENS
+   ═══════════════════════════════════════════ */
+
+  /* Font families */
+  --font-display:  "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-body:     "Open Sans", system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+  --font-serif-accent: "Merriweather", Georgia, serif;  /* festival UI only */
+  --font-devanagari: "Noto Serif Devanagari", "Playfair Display", serif; /* OM/Shri symbols */
+
+  /* Base scale */
+  --text-xs:      0.65rem;   /* 10.4px — eyebrows, labels, badges */
+  --text-sm:      0.75rem;   /* 12px   — tagline, small meta */
+  --text-base:    1rem;      /* 16px   — body, lead */
+  --text-lg:      1.1rem;    /* 17.6px — card titles, quotes */
+  --text-xl:      1.2rem;    /* 19.2px — brand name in nav */
+  --text-2xl:     1.4rem;    /* 22.4px — cart total, callout */
+  --text-3xl:     clamp(26px, 3.2vw, 36px);  /* section h2 */
+  --text-4xl:     clamp(34px, 5vw, 72px);    /* hero h1 */
+  --text-display: clamp(30px, 3.6vw, 44px);  /* Telugu/script display */
+
+  /* Line heights */
+  --lh-tight:  1.1;
+  --lh-snug:   1.3;
+  --lh-normal: 1.7;
+  --lh-loose:  1.9;
+
+  /* Letter spacing */
+  --ls-tight:   0.02em;
+  --ls-normal:  0.05em;
+  --ls-wide:    0.12em;
+  --ls-wider:   0.18em;
+  --ls-widest:  0.35em;
+
+  /* Font weights */
+  --fw-regular:  400;
+  --fw-semibold: 600;
+  --fw-bold:     700;
+  --fw-black:    900;
+
+/* ═══════════════════════════════════════════
+   SPACING TOKENS
+   ═══════════════════════════════════════════ */
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:   12px;
+  --space-4:   16px;
+  --space-5:   18px;
+  --space-6:   22px;
+  --space-7:   26px;
+  --space-8:   28px;
+  --space-10:  40px;
+  --space-12:  48px;
+  --space-14:  54px;
+  --space-16:  60px; /* nav height */
+  --space-18:  72px; /* section padding */
+
+/* ═══════════════════════════════════════════
+   BORDER RADIUS TOKENS
+   ═══════════════════════════════════════════ */
+  --radius-sm:   8px;
+  --radius-md:   12px;
+  --radius-lg:   14px;
+  --radius-xl:   16px;
+  --radius-2xl:  18px;
+  --radius-3xl:  22px;
+  --radius-full: 999px;
+
+/* ═══════════════════════════════════════════
+   SHADOW TOKENS
+   ═══════════════════════════════════════════ */
+  --shadow-card:        0 10px 24px rgba(0,0,0,0.04);
+  --shadow-card-hover:  0 18px 40px rgba(0,0,0,0.10);
+  --shadow-box:         0 14px 34px rgba(0,0,0,0.06);
+  --shadow-photo:       0 16px 34px rgba(0,0,0,0.06);
+  --shadow-cart-btn:    0 10px 25px rgba(124,58,16,0.40);
+  --shadow-tab-active:  0 4px 14px rgba(124,58,16,0.28);
+  --shadow-menu-card:   0 8px 22px rgba(0,0,0,0.05);
+
+/* ═══════════════════════════════════════════
+   TRANSITION TOKENS
+   ═══════════════════════════════════════════ */
+  --transition-fast:    0.2s ease;
+  --transition-base:    0.25s ease;
+  --transition-reveal:  0.7s ease;
+  --transition-spring:  0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --transition-slide:   0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-drawer:  0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+
+/* ═══════════════════════════════════════════
+   Z-INDEX SCALE
+   ═══════════════════════════════════════════ */
+  --z-symbol-field: 0;
+  --z-content:      1;
+  --z-nav-backdrop: 45;
+  --z-nav:          50;
+  --z-cart-overlay: 1000;
+  --z-cart-drawer:  1001;
+  --z-festival:     100000;
+}
+
+/* ═══════════════════════════════════════════
+   SEMANTIC ELEMENT STYLES
+   ═══════════════════════════════════════════ */
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--lh-normal);
+  color: var(--fg1);
+  background: var(--bg);
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-black);
+  font-size: var(--text-4xl);
+  line-height: var(--lh-tight);
+  color: inherit;
+  margin: 0 0 12px;
+}
+
+h2 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-black);
+  font-size: var(--text-3xl);
+  line-height: var(--lh-snug);
+  color: var(--fg-brand);
+  margin: 0 0 12px;
+}
+
+h3 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-black);
+  font-size: var(--text-lg);
+  color: var(--fg1);
+  margin: 0 0 8px;
+}
+
+h4 {
+  font-family: var(--font-body);
+  font-weight: var(--fw-bold);
+  font-size: var(--text-xs);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--fg-brand);
+  margin: 0 0 4px;
+}
+
+p {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--lh-normal);
+  color: var(--fg2);
+  margin: 0 0 14px;
+}
+
+p:last-child { margin-bottom: 0; }
+
+em {
+  font-style: italic;
+  color: var(--fg-brand);
+}
+
+a {
+  color: var(--fg-brand);
+  font-weight: var(--fw-semibold);
+  text-decoration: none;
+}
+
+a:hover { text-decoration: underline; }
+
+/* Eyebrow / section label */
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+  color: rgba(200, 164, 90, 0.78);
+}
+
+/* Lead paragraph */
+.lead {
+  font-size: var(--text-base);
+  color: var(--fg2);
+  max-width: 780px;
+  margin: 0 auto;
+  line-height: var(--lh-normal);
+}
+
+/* Brand trademark superscript */
+.tm {
+  font-size: 0.55em;
+  line-height: 0;
+  vertical-align: super;
+  color: inherit;
+}
+
+/* Pull quote */
+blockquote, .quote {
+  font-family: var(--font-body);
+  border-left: 3px solid var(--primary-dark);
+  padding: 18px;
+  border-radius: var(--radius-md);
+  background: #faf7f3;
+  color: rgba(26,26,26,0.78);
+  font-size: var(--text-base);
+  line-height: var(--lh-loose);
+  max-width: 820px;
+  margin: 22px auto 0;
+}
+
+/* Code */
+code {
+  font-family: "JetBrains Mono", "Fira Code", "Courier New", monospace;
+  font-size: 0.9em;
+  background: var(--bg-muted);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--primary);
+}
