@@ -1,0 +1,1193 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Svādotsava&trade; — Millet Marvels</title>
+  <meta
+    name="description"
+    content="Discover Millet Marvels by Svādotsava™️ — handcrafted millet biscuits and laddus inspired by Indian tradition, modern cafe elegance, and everyday wellness." />
+  <meta property="og:title" content="Svādotsava™️ — Millet Marvels" />
+  <meta
+    property="og:description"
+    content="Ancient grains, modern taste, and pure wellness — explore handcrafted millet delights by Svādotsava™️." />
+  <meta property="og:image" content="https://cmnaveen.github.io/assets/images/millets/hero_grains.png" />
+  <meta property="og:url" content="https://cmnaveen.github.io/millets.html" />
+  <link rel="canonical" href="https://cmnaveen.github.io/millets.html" />
+  <link rel="icon" type="image/png" href="assets/images/brand/black_logo_circle_nobg.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Open+Sans:wght@400;600;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/styles.css?v=3">
+  <link rel="stylesheet" href="assets/css/festivals.css">
+  <script data-goatcounter="https://svadotsava.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+  <style>
+    .page-millets {
+      --millet-cream: #fbf6ef;
+      --millet-sand: #eadbc8;
+      --millet-warm: #f4e6d5;
+      --millet-bark: #4c2d1b;
+      --millet-ink: #2d2118;
+      --millet-muted: #6d6055;
+      --millet-gold: #d0a05b;
+      --millet-leaf: #6f7d5b;
+      background:
+        radial-gradient(circle at top left, rgba(208, 160, 91, 0.16), transparent 24%),
+        linear-gradient(180deg, #fbf5ec 0%, #f2e5d3 42%, #fbf4eb 100%);
+      color: var(--millet-ink);
+    }
+
+    .page-millets .nav::before {
+      background: rgba(251, 246, 239, 0.88);
+    }
+
+    .page-millets .nav-links a.active {
+      color: var(--primary);
+      background: rgba(124, 58, 16, 0.08);
+    }
+
+    .page-millets .nav-links {
+      gap: 14px;
+    }
+
+    .page-millets section[id] {
+      scroll-margin-top: 90px;
+    }
+
+    .page-millets main {
+      overflow: clip;
+    }
+
+    .millet-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 20px;
+      border-radius: 14px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .millet-btn .arrow {
+      transition: transform 0.2s ease;
+    }
+
+    .millet-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .millet-btn:hover .arrow {
+      transform: translateX(4px);
+    }
+
+    .millet-btn.is-dark {
+      background: var(--millet-bark);
+      color: #fff;
+      box-shadow: 0 16px 34px rgba(76, 45, 27, 0.18);
+    }
+
+    .millet-btn.is-dark:hover {
+      background: #5e3924;
+    }
+
+    .millet-btn.is-light {
+      background: rgba(255, 252, 248, 0.78);
+      color: var(--millet-bark);
+      border-color: rgba(76, 45, 27, 0.12);
+    }
+
+    .millet-btn.is-light:hover {
+      background: #fff;
+    }
+
+    .millet-btn.is-gold {
+      background: var(--millet-gold);
+      color: #2d1b0f;
+      box-shadow: 0 16px 30px rgba(208, 160, 91, 0.24);
+    }
+
+    .millet-btn.is-gold:hover {
+      background: #d9aa66;
+    }
+
+    .millet-btn.is-outline {
+      background: transparent;
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.42);
+    }
+
+    .millet-btn.is-outline:hover {
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .millet-btn.full {
+      width: 100%;
+    }
+
+
+    .section-kicker {
+      display: inline-block;
+      margin-bottom: 14px;
+      font-size: 0.72rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(124, 58, 16, 0.76);
+      font-weight: 700;
+    }
+
+    .section-kicker.light {
+      color: rgba(241, 210, 153, 0.92);
+    }
+
+    .grain-chip-grid,
+    .cta-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .grain-chip-grid span,
+    .cta-points span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(76, 45, 27, 0.1);
+      background: rgba(255, 252, 248, 0.78);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05);
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: var(--millet-bark);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin: 0 auto 30px;
+    }
+
+    .section-head p {
+      margin: 0 auto;
+      color: var(--millet-muted);
+      font-size: 1rem;
+    }
+
+    .grain-glow,
+    .benefits-shell,
+    .story-mural {
+      position: relative;
+    }
+
+    .grain-glow::before,
+    .story-mural::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 16% 22%, rgba(208, 160, 91, 0.14), transparent 14%),
+        radial-gradient(circle at 82% 40%, rgba(124, 58, 16, 0.08), transparent 18%);
+      pointer-events: none;
+    }
+
+    .grain-glow > .container,
+    .story-mural > .container,
+    .benefits-shell > .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .panel,
+    .product-card,
+    .benefit-card,
+    .story-copy {
+      background: rgba(255, 251, 246, 0.82);
+      border: 1px solid rgba(76, 45, 27, 0.08);
+      border-radius: 28px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.06);
+    }
+
+    .panel {
+      padding: clamp(24px, 3vw, 34px);
+    }
+
+    .about-grid {
+      gap: 24px;
+      align-items: stretch;
+      margin-top: 36px;
+    }
+
+    .about-pillar-list,
+    .special-points {
+      display: grid;
+      gap: 18px;
+    }
+
+    .about-pillar {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+
+    .about-icon,
+    .benefit-icon {
+      width: 56px;
+      height: 56px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      background: rgba(208, 160, 91, 0.18);
+      color: var(--primary);
+      flex: 0 0 auto;
+    }
+
+    .about-pillar h3,
+    .grain-board h3,
+    .benefit-card h3,
+    .category-header h3,
+    .special-copy h2 {
+      margin: 0 0 8px;
+      font-family: "Playfair Display", serif;
+      color: var(--millet-bark);
+    }
+
+    .about-pillar h3 {
+      font-size: 1.14rem;
+    }
+
+    .about-pillar p,
+    .grain-board p,
+    .benefit-card p,
+    .story-copy p,
+    .category-header p {
+      margin: 0;
+      color: var(--millet-muted);
+    }
+
+    .grain-board {
+      background: linear-gradient(180deg, #fffaf2 0%, #f1e3d1 100%);
+    }
+
+    .grain-board h3 {
+      font-size: clamp(1.45rem, 2.8vw, 2rem);
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .grain-chip-grid {
+      margin-top: 18px;
+    }
+
+    .mini-stat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .mini-stat {
+      padding: 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(76, 45, 27, 0.08);
+      background: rgba(255, 255, 255, 0.82);
+    }
+
+    .mini-stat strong {
+      display: block;
+      color: var(--millet-bark);
+      font-size: 0.92rem;
+    }
+
+    .mini-stat span {
+      display: block;
+      margin-top: 6px;
+      color: var(--millet-muted);
+      font-size: 0.84rem;
+    }
+
+    .special-band {
+      padding-top: 10px;
+    }
+
+    .special-card {
+      display: grid;
+      grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+      border-radius: 34px;
+      overflow: hidden;
+      border: 1px solid rgba(76, 45, 27, 0.08);
+      box-shadow: 0 24px 52px rgba(0, 0, 0, 0.08);
+      background: #fff8f0;
+    }
+
+    .special-copy {
+      padding: clamp(28px, 4vw, 42px);
+      background: linear-gradient(160deg, #4a2c1b 0%, #6f4328 100%);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .special-copy h2 {
+      color: #fff;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.05;
+      margin-bottom: 12px;
+    }
+
+    .special-copy > p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .special-point {
+      padding: 14px 0 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .special-point strong {
+      display: block;
+      color: #fff;
+      margin-bottom: 4px;
+      font-size: 0.95rem;
+    }
+
+    .special-point span {
+      display: block;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    .special-image img,
+    .cta-visual img {
+      width: 100%;
+      height: 100%;
+      min-height: 390px;
+      object-fit: cover;
+    }
+
+    .category-block + .category-block {
+      margin-top: 54px;
+    }
+
+    .category-header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+
+    .category-label {
+      display: inline-block;
+      margin-bottom: 8px;
+      font-size: 0.72rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: rgba(124, 58, 16, 0.74);
+      font-weight: 700;
+    }
+
+    .category-header h3 {
+      font-size: clamp(28px, 4vw, 38px);
+      line-height: 1.08;
+    }
+
+    .category-header p {
+      max-width: 360px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .product-card {
+      overflow: hidden;
+      transition:
+        transform 0.28s ease,
+        box-shadow 0.28s ease,
+        border-color 0.28s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 28px 56px rgba(0, 0, 0, 0.1);
+      border-color: rgba(124, 58, 16, 0.18);
+    }
+
+    .product-media {
+      position: relative;
+      background: #f3e7d6;
+      overflow: hidden;
+    }
+
+    .product-media img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .product-card:hover .product-media img {
+      transform: scale(1.04);
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(37, 24, 14, 0.78);
+      color: #fff;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .product-body {
+      padding: 22px;
+    }
+
+    .product-label {
+      display: inline-block;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(124, 58, 16, 0.72);
+      font-weight: 700;
+    }
+
+    .product-card h4 {
+      margin: 10px 0 10px;
+      font-family: "Playfair Display", serif;
+      font-size: 1.42rem;
+      line-height: 1.2;
+      color: var(--millet-bark);
+    }
+
+    .product-card p {
+      margin: 0;
+      color: var(--millet-muted);
+    }
+
+    .product-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin: 18px 0;
+      flex-wrap: wrap;
+    }
+
+    .price-placeholder {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .product-note {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(208, 160, 91, 0.16);
+      color: var(--millet-muted);
+      font-size: 0.82rem;
+    }
+
+    .benefits-shell {
+      background: linear-gradient(180deg, #f1e5d5 0%, #faf3e9 100%);
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 30px;
+    }
+
+    .benefit-card {
+      padding: 22px;
+    }
+
+    .benefit-card h3 {
+      font-size: 1.06rem;
+      margin-top: 0;
+    }
+
+    .benefit-icon {
+      margin-bottom: 16px;
+    }
+
+    .story-mural {
+      background: linear-gradient(180deg, rgba(255, 250, 245, 0.55), rgba(233, 215, 194, 0.6));
+    }
+
+    .story-layout {
+      gap: 28px;
+    }
+
+    .story-copy {
+      padding: clamp(26px, 3vw, 38px);
+    }
+
+    .story-copy p + p {
+      margin-top: 16px;
+    }
+
+    .story-quote {
+      margin-top: 20px;
+      padding: 18px 20px;
+      border-left: 3px solid var(--millet-gold);
+      border-radius: 18px;
+      background: rgba(208, 160, 91, 0.1);
+      color: #5d4636;
+      font-style: italic;
+    }
+
+    .story-visual {
+      position: relative;
+    }
+
+    .story-visual::after {
+      content: "";
+      position: absolute;
+      right: -18px;
+      bottom: -18px;
+      width: 58%;
+      height: 58%;
+      background: radial-gradient(circle, rgba(208, 160, 91, 0.18), transparent 70%);
+      pointer-events: none;
+    }
+
+    .story-visual img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      border-radius: 30px;
+      border: 1px solid rgba(76, 45, 27, 0.1);
+      box-shadow: 0 26px 56px rgba(0, 0, 0, 0.14);
+    }
+
+    .cta-shell {
+      padding-bottom: 90px;
+    }
+
+    .cta-panel {
+      gap: 0;
+      border-radius: 36px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #4b2c1c 0%, #6a4329 48%, #835634 100%);
+      box-shadow: 0 28px 66px rgba(76, 45, 27, 0.22);
+    }
+
+    .cta-copy {
+      padding: clamp(28px, 4vw, 48px);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .cta-copy h2 {
+      color: #fff;
+      margin: 0 0 14px;
+    }
+
+    .cta-copy p {
+      margin: 0 0 20px;
+      color: rgba(255, 255, 255, 0.84);
+    }
+
+    .cta-points {
+      margin-bottom: 24px;
+    }
+
+    .cta-points span {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.12);
+      color: #fff;
+      box-shadow: none;
+    }
+
+    @keyframes floatCard {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @media (max-width: 1080px) {
+      .about-grid,
+      .special-card,
+      .story-layout,
+      .cta-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .special-copy {
+        order: 2;
+      }
+
+      .special-image {
+        order: 1;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .benefit-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .category-header {
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .category-header p {
+        max-width: none;
+      }
+    }
+
+    @media (max-width: 720px) {
+
+      .mini-stat-grid,
+      .product-grid,
+      .benefit-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .special-image img,
+      .cta-visual img {
+        min-height: 320px;
+      }
+
+      .about-pillar {
+        grid-template-columns: 50px 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .section-kicker,
+      .category-label {
+        letter-spacing: 0.22em;
+      }
+
+      .grain-chip-grid span,
+      .cta-points span {
+        width: 100%;
+      }
+
+      .panel,
+      .story-copy,
+      .product-body,
+      .cta-copy,
+      .special-copy {
+        padding: 24px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+
+      .hero-floating,
+      .product-media img,
+      .millet-btn,
+      .millet-btn .arrow,
+      .product-card {
+        animation: none;
+        transition: none;
+      }
+    }
+  </style>
+</head>
+
+<body class="page-millets">
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand-box">
+        <div class="brand-name"><span style="color:var(--primary)">Svād</span><span style="color:var(--accent)">otsava</span><sup class="tm">&trade;</sup></div>
+        <div class="brand-tagline">A Celebration of Taste</div>
+      </a>
+      <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Toggle Menu" aria-expanded="false" onclick="(function(b){const n=document.getElementById('nav-links'),d=document.getElementById('nav-backdrop'),o=n.classList.toggle('open');d.classList.toggle('open',o);b.setAttribute('aria-expanded',o);})(this)">☰</button>
+      <div id="nav-backdrop" class="nav-backdrop" onclick="document.getElementById('nav-links').classList.remove('open');document.getElementById('mobile-toggle').setAttribute('aria-expanded','false');this.classList.remove('open');"></div>
+      <nav id="nav-links" class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="cafe.html">Cafe</a>
+        <a class="active" href="millets.html">Millet Marvels</a>
+        <a href="story.html">Our Story</a>
+        <a href="farmers.html">Our Farmers</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-watermark" aria-hidden="true">
+        <img src="assets/images/brand/black_logo_circle_nobg.png" alt="" />
+      </div>
+
+      <div class="container hero-inner">
+        <div class="label reveal" data-delay="0">MILLET MARVELS</div>
+        <h1 class="reveal" data-delay="100">Ancient Grains.<br />Modern Taste.<br />Pure Wellness.</h1>
+        <p class="tagline reveal" data-delay="200">Svādotsava Signature Collection</p>
+
+        <div class="trinity reveal" data-delay="300">
+          <div class="tri-item">
+            <div class="tri-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M8 6c0 2-2 4-4 4M8 10c0 2-2 4-4 4M8 14c0 2-2 4-4 4M16 6c0 2 2 4 4 4M16 10c0 2 2 4 4 4M16 14c0 2 2 4 4 4"/></svg></div>
+            <div class="tri-label">Heritage Millets</div>
+          </div>
+          <div class="tri-item">
+            <div class="tri-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3 7h7l-5.5 4.5 2 7-6.5-5-6.5 5 2-7-5.5-4.5h7z"/></svg></div>
+            <div class="tri-label">Pure Wellness</div>
+          </div>
+          <div class="tri-item">
+            <div class="tri-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg></div>
+            <div class="tri-label">Cafe Craft</div>
+          </div>
+        </div>
+
+        <p class="sub reveal" data-delay="400" style="margin-top:20px;">Handcrafted millet biscuits &amp; laddus — healthy, traditional, and made with love.</p>
+        <div class="goldline reveal" data-delay="500" style="margin-top:20px;">— TASTE TRADITION. LIVE HEALTHY. —</div>
+
+        <div class="btn-row reveal" data-delay="600" style="margin-top:28px;">
+          <a class="btn primary" href="#products">Discover the Collection <span class="arrow">→</span></a>
+          <a class="btn outline" href="#about">Why Millets?</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="grain-glow">
+      <div class="container">
+        <div class="section-head center reveal">
+          <div class="section-kicker">Nourishment, reimagined</div>
+          <h2>Why Millets?</h2>
+          <p>Millets are ancient Indian grains treasured for their resilience, natural fiber, and everyday nourishment. At Svādotsava, we bring them into a refined modern cafe setting with small-batch recipes that feel comforting, elegant, and deeply wholesome.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="panel reveal" data-delay="120">
+            <div class="about-pillar-list">
+              <div class="about-pillar">
+                <div class="about-icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2v20M8 6c0 2-2 4-4 4M8 10c0 2-2 4-4 4M8 14c0 2-2 4-4 4M16 6c0 2 2 4 4 4M16 10c0 2 2 4 4 4M16 14c0 2 2 4 4 4"/></svg>
+                </div>
+                <div>
+                  <h3>Ancient wisdom</h3>
+                  <p>Time-honoured grains that have nourished Indian homes across generations.</p>
+                </div>
+              </div>
+
+              <div class="about-pillar">
+                <div class="about-icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21c4.4 0 8-3.6 8-8 0-5.5-8-10-8-10S4 7.5 4 13c0 4.4 3.6 8 8 8Z"/><path d="M12 7c1.7 1.7 3 3.8 3 6.2A3 3 0 0 1 12 16a3 3 0 0 1-3-2.8C9 10.8 10.3 8.7 12 7Z"/></svg>
+                </div>
+                <div>
+                  <h3>Fiber-rich comfort</h3>
+                  <p>Gently satisfying bites that support mindful eating without compromising pleasure.</p>
+                </div>
+              </div>
+
+              <div class="about-pillar">
+                <div class="about-icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 14c5.3 0 6.5 6 8 6s2.7-6 8-6"/><path d="M4 10c5.3 0 6.5-6 8-6s2.7 6 8 6"/></svg>
+                </div>
+                <div>
+                  <h3>Earth-friendly grain</h3>
+                  <p>Millets thrive with less water, making them a thoughtful choice for a kinder future.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel grain-board reveal" data-delay="220">
+            <div class="section-kicker">Everyday wellness</div>
+            <h3>Ancient grains for a lighter, lovelier teatime.</h3>
+            <p>From earthy ragi to delicate foxtail millet and rustic jowar, each grain brings subtle flavor, steady nourishment, and an unmistakably rooted sense of home.</p>
+            <div class="grain-chip-grid">
+              <span>Ragi</span>
+              <span>Jowar</span>
+              <span>Foxtail Millet</span>
+              <span>Multi-Millet</span>
+              <span>Jaggery-sweetened</span>
+            </div>
+            <div class="mini-stat-grid">
+              <div class="mini-stat">
+                <strong>Wholesome</strong>
+                <span>Balanced recipes designed for mindful indulgence.</span>
+              </div>
+              <div class="mini-stat">
+                <strong>Rooted</strong>
+                <span>Inspired by Indian kitchens and seasonal rituals.</span>
+              </div>
+              <div class="mini-stat">
+                <strong>Crafted</strong>
+                <span>Small-batch bakes and laddus made with care.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="special-band">
+      <div class="container">
+        <div class="special-card reveal">
+          <div class="special-copy">
+            <div class="section-kicker light">Weekly Special</div>
+            <h2>Tea-Time Wellness Hamper</h2>
+            <p>A beautifully curated assortment of millet biscuits, laddus, herbal tea pairings, and jaggery treats designed for gifting, festive hosting, or a slow afternoon pause.</p>
+            <div class="special-points">
+              <div class="special-point">
+                <strong>Giftable presentation</strong>
+                <span>Botanical styling, earthy textures, and premium artisanal packaging.</span>
+              </div>
+              <div class="special-point">
+                <strong>Balanced indulgence</strong>
+                <span>A thoughtful mix of crunchy biscuits, laddus, dry fruits, and warm tea moments.</span>
+              </div>
+              <div class="special-point">
+                <strong>Seasonal by spirit</strong>
+                <span>Created for celebrations, welcome hampers, and heartfelt everyday gifting.</span>
+              </div>
+            </div>
+            <a class="millet-btn is-gold" href="mailto:svadotsava.in@gmail.com?subject=Weekly%20Special%20Millet%20Hamper&body=Hi%20Sv%C4%81dotsava%2C%20I%20would%20love%20to%20know%20more%20about%20the%20Tea-Time%20Wellness%20Hamper.">Reserve This Week’s Box <span class="arrow">→</span></a>
+          </div>
+
+          <div class="special-image">
+            <img src="assets/images/millets/weekly_special.png" alt="Premium millet gift hamper with biscuits and laddus styled in warm natural light" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="products">
+      <div class="container">
+        <div class="section-head center reveal">
+          <div class="section-kicker">Handcrafted selections</div>
+          <h2>Millet Biscuits &amp; Laddus</h2>
+          <p>Two comforting collections, each thoughtfully made to celebrate the nutty depth, rustic elegance, and nourishing character of heritage millets.</p>
+        </div>
+
+        <div class="category-block">
+          <div class="category-header reveal" data-delay="80">
+            <div>
+              <span class="category-label">Category A</span>
+              <h3>Millet Biscuits</h3>
+            </div>
+            <p>Crumbly, crisp, and made for slow tea breaks with a contemporary cafe touch.</p>
+          </div>
+
+          <div class="product-grid">
+            <article class="product-card reveal" data-delay="120">
+              <div class="product-media">
+                <img src="assets/images/millets/ragi_butter_biscuits.png" alt="Ragi butter biscuits dusted lightly and styled on a rustic wooden board" loading="lazy" />
+                <span class="product-badge">Biscuit</span>
+              </div>
+              <div class="product-body">
+                <span class="product-label">Tea-time favorite</span>
+                <h4>Ragi Butter Biscuits</h4>
+                <p>Buttery, crumbly biscuits made with ragi flour for a roasted, nutty finish that pairs beautifully with tea.</p>
+                <div class="product-meta">
+                  <span class="price-placeholder">₹ --- / tin</span>
+                  <span class="product-note">Small-batch bake</span>
+                </div>
+                <a class="millet-btn is-dark full" href="mailto:svadotsava.in@gmail.com?subject=Order%20Ragi%20Butter%20Biscuits&body=Hi%20Sv%C4%81dotsava%2C%20I%27d%20like%20to%20enquire%20about%20Ragi%20Butter%20Biscuits.">Order Now <span class="arrow">→</span></a>
+              </div>
+            </article>
+
+            <article class="product-card reveal" data-delay="180">
+              <div class="product-media">
+                <img src="assets/images/millets/jowar_crunch_cookies.png" alt="Jowar crunch cookies stacked on a dark serving stone with grains around them" loading="lazy" />
+                <span class="product-badge">Biscuit</span>
+              </div>
+              <div class="product-body">
+                <span class="product-label">Crisp &amp; rustic</span>
+                <h4>Jowar Crunch Cookies</h4>
+                <p>Golden cookies with a light crunch, toasty jowar notes, and a satisfying texture made for mindful snacking.</p>
+                <div class="product-meta">
+                  <span class="price-placeholder">₹ --- / box</span>
+                  <span class="product-note">Best with chai</span>
+                </div>
+                <a class="millet-btn is-dark full" href="mailto:svadotsava.in@gmail.com?subject=Order%20Jowar%20Crunch%20Cookies&body=Hi%20Sv%C4%81dotsava%2C%20I%27d%20like%20to%20enquire%20about%20Jowar%20Crunch%20Cookies.">Order Now <span class="arrow">→</span></a>
+              </div>
+            </article>
+
+            <article class="product-card reveal" data-delay="240">
+              <div class="product-media">
+                <img src="assets/images/millets/multimillet_digestive_bites.png" alt="Multi-millet digestive bites served on a ceramic plate beside natural grain bundles" loading="lazy" />
+                <span class="product-badge">Biscuit</span>
+              </div>
+              <div class="product-body">
+                <span class="product-label">Everyday goodness</span>
+                <h4>Multi-Millet Digestive Bites</h4>
+                <p>Wholesome seed-studded bites with gentle sweetness, subtle grain texture, and easy everyday appeal.</p>
+                <div class="product-meta">
+                  <span class="price-placeholder">₹ --- / pack</span>
+                  <span class="product-note">Fiber-forward</span>
+                </div>
+                <a class="millet-btn is-dark full" href="mailto:svadotsava.in@gmail.com?subject=Order%20Multi-Millet%20Digestive%20Bites&body=Hi%20Sv%C4%81dotsava%2C%20I%27d%20like%20to%20enquire%20about%20Multi-Millet%20Digestive%20Bites.">Order Now <span class="arrow">→</span></a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="category-block">
+          <div class="category-header reveal" data-delay="80">
+            <div>
+              <span class="category-label">Category B</span>
+              <h3>Millet Laddus</h3>
+            </div>
+            <p>Soft, traditional, and lovingly rolled for festive comfort and wholesome sweetness.</p>
+          </div>
+
+          <div class="product-grid">
+            <article class="product-card reveal" data-delay="120">
+              <div class="product-media">
+                <img src="assets/images/millets/ragi_laddu.png" alt="Ragi laddus with seeds and nuts plated on a copper tray with rose petals" loading="lazy" />
+                <span class="product-badge">Laddu</span>
+              </div>
+              <div class="product-body">
+                <span class="product-label">Classic comfort</span>
+                <h4>Ragi Laddu</h4>
+                <p>Earthy, comforting laddus rolled with natural sweetness and a traditional touch that feels instantly familiar.</p>
+                <div class="product-meta">
+                  <span class="price-placeholder">₹ --- / box</span>
+                  <span class="product-note">Traditional recipe</span>
+                </div>
+                <a class="millet-btn is-dark full" href="mailto:svadotsava.in@gmail.com?subject=Order%20Ragi%20Laddu&body=Hi%20Sv%C4%81dotsava%2C%20I%27d%20like%20to%20enquire%20about%20Ragi%20Laddu.">Order Now <span class="arrow">→</span></a>
+              </div>
+            </article>
+
+            <article class="product-card reveal" data-delay="180">
+              <div class="product-media">
+                <img src="assets/images/millets/foxtail_millet_laddu.png" alt="Foxtail millet laddus presented on a brass platter with saffron and cashews" loading="lazy" />
+                <span class="product-badge">Laddu</span>
+              </div>
+              <div class="product-body">
+                <span class="product-label">Festive gold</span>
+                <h4>Foxtail Millet Laddu</h4>
+                <p>Soft, fragrant laddus with foxtail millet richness, ghee warmth, and delicate festive saffron notes.</p>
+                <div class="product-meta">
+                  <span class="price-placeholder">₹ --- / box</span>
+                  <span class="product-note">Saffron-kissed</span>
+                </div>
+                <a class="millet-btn is-dark full" href="mailto:svadotsava.in@gmail.com?subject=Order%20Foxtail%20Millet%20Laddu&body=Hi%20Sv%C4%81dotsava%2C%20I%27d%20like%20to%20enquire%20about%20Foxtail%20Millet%20Laddu.">Order Now <span class="arrow">→</span></a>
+              </div>
+            </article>
+
+            <article class="product-card reveal" data-delay="240">
+              <div class="product-media">
+                <img src="assets/images/millets/jaggery_dryfruit_laddu.png" alt="Jaggery dry fruit millet laddus topped with nuts on an earthy clay plate" loading="lazy" />
+                <span class="product-badge">Laddu</span>
+              </div>
+              <div class="product-body">
+                <span class="product-label">Nourishing indulgence</span>
+                <h4>Jaggery Dry Fruit Millet Laddu</h4>
+                <p>Deep jaggery sweetness layered with dry fruits, seeds, and millet richness for a beautifully hearty bite.</p>
+                <div class="product-meta">
+                  <span class="price-placeholder">₹ --- / box</span>
+                  <span class="product-note">Naturally sweetened</span>
+                </div>
+                <a class="millet-btn is-dark full" href="mailto:svadotsava.in@gmail.com?subject=Order%20Jaggery%20Dry%20Fruit%20Millet%20Laddu&body=Hi%20Sv%C4%81dotsava%2C%20I%27d%20like%20to%20enquire%20about%20Jaggery%20Dry%20Fruit%20Millet%20Laddu.">Order Now <span class="arrow">→</span></a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="benefits" class="benefits-shell">
+      <div class="container">
+        <div class="section-head center reveal">
+          <div class="section-kicker">Wellness in every bite</div>
+          <h2>Goodness in Every Bite</h2>
+          <p>Millet Marvels is designed to feel as good as it tastes, with ingredients chosen for nourishment, balance, and gentle everyday energy.</p>
+        </div>
+
+        <div class="benefit-grid">
+          <article class="benefit-card reveal" data-delay="100">
+            <div class="benefit-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3v18"/><path d="M6 7c0 1.7-1.3 3-3 3"/><path d="M6 11c0 1.7-1.3 3-3 3"/><path d="M6 15c0 1.7-1.3 3-3 3"/><path d="M18 7c0 1.7 1.3 3 3 3"/><path d="M18 11c0 1.7 1.3 3 3 3"/><path d="M18 15c0 1.7 1.3 3 3 3"/></svg>
+            </div>
+            <h3>High fiber</h3>
+            <p>Made with grains that naturally support fuller, more satisfying snacking.</p>
+          </article>
+
+          <article class="benefit-card reveal" data-delay="140">
+            <div class="benefit-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 8c2.5 0 3.5 2 5 2s2.5-2 5-2 3.5 2 5 2"/><path d="M4 16c2.5 0 3.5-2 5-2s2.5 2 5 2 3.5-2 5-2"/></svg>
+            </div>
+            <h3>Gluten-free</h3>
+            <p>Millets offer a naturally gluten-free base for wholesome traditional treats.</p>
+          </article>
+
+          <article class="benefit-card reveal" data-delay="180">
+            <div class="benefit-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M8 4c0 4-4 4-4 8a4 4 0 1 0 8 0c0-4-4-4-4-8Z"/><path d="M16 4c0 4-4 4-4 8a4 4 0 1 0 8 0c0-4-4-4-4-8Z"/></svg>
+            </div>
+            <h3>Easy digestion</h3>
+            <p>Comforting recipes with warm, familiar grains that fit beautifully into everyday routines.</p>
+          </article>
+
+          <article class="benefit-card reveal" data-delay="220">
+            <div class="benefit-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2l2.8 5.7L21 8.6l-4.5 4.4 1 6.2L12 16.5 6.5 19.2l1-6.2L3 8.6l6.2-.9L12 2Z"/></svg>
+            </div>
+            <h3>Nutrient-rich</h3>
+            <p>Ancient grains bring natural minerals and goodness to each handcrafted bite.</p>
+          </article>
+
+          <article class="benefit-card reveal" data-delay="260">
+            <div class="benefit-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 16c2.4-1.5 4.8-2.2 7.3-2.2S16.2 14.5 20 16"/><path d="M7 12c.8-2.7 2.5-5.2 5-7 2.5 1.8 4.2 4.3 5 7"/><path d="M12 5v14"/></svg>
+            </div>
+            <h3>Low glycemic index</h3>
+            <p>A thoughtful grain choice for steadier energy and mindful wellness-led snacking.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="story" class="story-mural">
+      <div class="container">
+        <div class="story-layout">
+          <div class="story-copy reveal">
+            <div class="section-kicker">The Svādotsava way</div>
+            <h2>Rooted in Memory, Served with Grace</h2>
+            <p>Millet Marvels is our tribute to the wisdom of Indian homes where nourishment was never separate from taste. It is the memory of laddus rolled by hand, grains roasted patiently, and teatime made sacred through care.</p>
+            <p>At Svādotsava, we carry that warmth into a modern cafe ritual. The collection feels familiar yet refined — heritage grains, artisanal presentation, and a quiet promise that wellness can still feel indulgent.</p>
+            <p>Every biscuit and laddu is an offering of tradition made contemporary: rooted in soil, softened by memory, and plated for today’s mindful table.</p>
+            <div class="story-quote">“Millet Marvels brings the soul of grandmother’s kitchen into the calm, beautiful rhythm of the modern cafe.”</div>
+          </div>
+
+          <div class="story-visual reveal" data-delay="140">
+            <img src="assets/images/millets/brand_story.png" alt="Traditional Indian kitchen portrait holding a bowl of handcrafted millet laddus" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cta" class="cta-shell">
+      <div class="container">
+        <div class="cta-panel reveal">
+          <div class="cta-visual">
+            <img src="assets/images/millets/cta_spread.png" alt="Millet laddus, biscuits, tea, dry fruits and flowers arranged on a large rustic serving tray" loading="lazy" />
+          </div>
+          <div class="cta-copy">
+            <div class="section-kicker light">Millet Marvels by Svādotsava</div>
+            <h2>Taste Tradition. Live Healthy.</h2>
+            <p>From elegant gifting to slow daily rituals, our millet collection brings together nourishment, heritage, and premium handcrafted flavor in every beautifully presented bite.</p>
+            <div class="cta-points">
+              <span>Handcrafted in small batches</span>
+              <span>Inspired by Indian tradition</span>
+              <span>Made for modern tea-time</span>
+            </div>
+            <div class="btn-row">
+              <a class="millet-btn is-gold" href="menu.html">Explore Menu <span class="arrow">→</span></a>
+              <a class="millet-btn is-outline" href="mailto:svadotsava.in@gmail.com?subject=Millet%20Marvels%20Order%20Enquiry&body=Hi%20Sv%C4%81dotsava%2C%20I%20would%20love%20to%20know%20more%20about%20ordering%20from%20the%20Millet%20Marvels%20collection.">Order Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="f-brand"><span style="color:var(--primary)">Svād</span><span style="color:var(--accent)">otsava</span><sup class="tm">&trade;</sup></div>
+          <div class="f-small">A Celebration of Taste</div>
+          <div class="f-small" style="margin-top:10px;">Golden Grains · Heart of Coffee · Spirit of Tea</div>
+          <div class="social-links">
+            <a href="https://instagram.com/svadotsava" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="18" cy="6" r="1" fill="currentColor" stroke="none"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <div class="f-label">Quick Links</div>
+          <div class="f-links">
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="cafe.html">Cafe</a>
+            <a href="millets.html">Millet Marvels</a>
+            <a href="story.html">Our Story</a>
+            <a href="farmers.html">Our Farmers</a>
+          </div>
+        </div>
+        <div>
+          <div class="f-label">Opening Summer 2027</div>
+          <div class="f-small">We’re preparing something extraordinary…</div>
+          <div class="f-small" style="margin-top:10px;">
+            Email: <a href="mailto:svadotsava.in@gmail.com" style="color:var(--primary);font-weight:600;">svadotsava.in@gmail.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">© 2026 Svādotsava™️. All rights reserved.</div>
+      <div class="visitor-counter reveal" data-delay="300">
+        <a href="https://hits.dwyl.com/cmnaveen/cmnaveen.github.io">
+          <img src="https://hits.dwyl.com/cmnaveen/cmnaveen.github.io.svg?style=flat-square&show=unique&label=Svadotsava+Visitors&color=7c3a10" alt="Hits Counter" />
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const revealEls = [...document.querySelectorAll('.reveal')];
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const delay = parseInt(el.getAttribute('data-delay') || '0', 10);
+        setTimeout(() => el.classList.add('in'), delay);
+        io.unobserve(el);
+      });
+    }, { threshold: 0.1 });
+
+    revealEls.forEach((el) => io.observe(el));
+
+    window.addEventListener('load', () => {
+      revealEls.forEach((el) => {
+        if (el.getBoundingClientRect().top < window.innerHeight * 0.95) {
+          const delay = parseInt(el.getAttribute('data-delay') || '0', 10);
+          setTimeout(() => el.classList.add('in'), delay);
+        }
+      });
+    });
+  </script>
+
+  <script src="assets/js/festivals.js"></script>
+</body>
+
+</html>
