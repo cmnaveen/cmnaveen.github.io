@@ -85,6 +85,23 @@ document.addEventListener("DOMContentLoaded", function () {
   </div>`
     },
     {
+      id: 'narasimha-jayanti',
+      start: '2026-04-29T00:00:00+05:30',
+      end: '2026-04-30T23:59:59+05:30',
+      html: `
+  <div id="narasimha-jayanti-modal" class="festival-modal" style="display: none;">
+    <div class="festival-modal-content">
+      <button class="festival-close-btn" onclick="closeFestivalModal('narasimha-jayanti-modal')" aria-label="Close">&times;</button>
+      <img src="assets/images/festivals/narasimha_jayanti.png" alt="Lord Narasimha" class="festival-img" />
+      <div class="festival-gold-subtitle">✦ PROTECTION · DEVOTION · COURAGE ✦</div>
+      <h2 class="festival-title">Happy Narasimha Jayanti</h2>
+      <p class="festival-msg">Thursday, April 30, 2026, marks the auspicious occasion of Narasimha Jayanti.<br/>May the divine protector shield you from all negativity and bless your family with strength, courage, and ultimate peace. 🙏</p>
+      <div class="festival-chant">॥ ॐ नमो भगवते नरसिंहाय ॥</div>
+      <button class="festival-enter-btn" onclick="closeFestivalModal('narasimha-jayanti-modal')">Enter Site</button>
+    </div>
+  </div>`
+    },
+    {
       id: 'rath-yatra',
       start: '2026-07-15T00:00:00+05:30',
       end: '2026-07-16T23:59:59+05:30',
@@ -171,7 +188,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const navratriDay = Math.min(9, Math.max(1, dayDiff + 1));
     const deities = ["Maa Shailputri", "Maa Brahmacharini", "Maa Chandraghanta", "Maa Kushmanda", "Maa Skandamata", "Maa Katyayani", "Maa Kalaratri", "Maa Mahagauri", "Maa Siddhidatri"];
     const todayDeity = deities[navratriDay - 1];
-    
+
     activeModalId = 'navratri-modal';
     activeFestivalHtml = `
   <div id="navratri-modal" class="festival-modal" style="display: none;">
