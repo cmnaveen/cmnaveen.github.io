@@ -25,8 +25,8 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     {
       id: 'hanuman-jayanthi',
-      start: '2026-04-01T00:00:00+05:30',
-      end: '2026-04-02T23:59:59+05:30',
+      start: '2026-05-11T00:00:00+05:30',
+      end: '2026-05-13T23:59:59+05:30',
       html: `
   <div id="hanuman-jayanthi-modal" class="festival-modal" style="display: none;">
     <div class="festival-modal-content">
