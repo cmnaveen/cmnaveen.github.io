@@ -14,7 +14,7 @@ The three pillars of the brand are:
 - 🍃 **Spirit of Tea** — Artisan teas and calming ritual
 
 **Domain:** https://cmnaveen.github.io (also CNAME'd to svadotsava domain)  
-**Contact:** svadotsava.in@gmail.com  
+**Contact:** svadotsava.cafe@gmail.com  
 **Instagram:** @svadotsava  
 **Status:** Coming Soon — Opening Summer 2027
 
