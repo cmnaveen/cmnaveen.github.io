@@ -140,12 +140,17 @@ footer {
   line-height: 1.1;
 }
 
+/* Darken accent span ("otsava") in nav brand for contrast on cream bg */
+.brand-name span[style*="--accent"] {
+  color: #a06830 !important;
+}
+
 .brand-tagline {
   margin-top: 2px;
   font-size: 0.65rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #e1b46b;
+  color: #9a6c30;
   font-weight: 700;
 }
 
