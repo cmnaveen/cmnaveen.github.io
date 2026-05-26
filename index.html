@@ -10,8 +10,8 @@
   <meta property="og:title" content="Svādotsava™️ — A Celebration of Taste" />
   <meta property="og:description"
     content="Experience authentic South Indian flavors, specialty coffee, and artisan teas. Opening Summer 2027." />
-  <meta property="og:image" content="https://cmnaveen.github.io/assets/images/brand/black_logo_circle_nobg.png" />
-  <meta property="og:url" content="https://cmnaveen.github.io/" />
+  <meta property="og:image" content="https://svadotsava.com/assets/images/brand/black_logo_circle_nobg.png" />
+  <meta property="og:url" content="https://svadotsava.com/" />
   <link rel="icon" type="image/png" href="assets/images/brand/black_logo_circle_nobg.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -571,7 +571,6 @@
     <!-- HERO -->
     <section class="hero">
       <div class="hero-watermark" aria-hidden="true">
-        <!-- Put your logo as "logo.png" in the same folder -->
         <img src="assets/images/brand/black_logo_circle_nobg.png" alt="" />
       </div>
 
@@ -810,16 +809,17 @@
             'Accept': 'application/json'
           }
         }).then(response => {
-          // In production, we check response.ok. 
-          // For this visual preview, we'll show success regardless.
-          signupForm.style.display = 'none';
-          signupSuccess.style.display = 'block';
-          setTimeout(() => signupSuccess.classList.add('in'), 50);
-        }).catch(error => {
-          // Same here - showing success for preview purposes
-          signupForm.style.display = 'none';
-          signupSuccess.style.display = 'block';
-          setTimeout(() => signupSuccess.classList.add('in'), 50);
+          if (response.ok) {
+            signupForm.style.display = 'none';
+            signupSuccess.style.display = 'block';
+            setTimeout(() => signupSuccess.classList.add('in'), 50);
+          } else {
+            signupForm.classList.remove('submitting');
+            signupError.style.display = 'block';
+          }
+        }).catch(() => {
+          signupForm.classList.remove('submitting');
+          signupError.style.display = 'block';
         });
       });
     }
@@ -849,7 +849,7 @@
     <div class="cart-footer">
       <div class="cart-subtotal-row">
         <span>Subtotal</span>
-        <strong id="cart-subtotal">S$0.00</strong>
+        <strong id="cart-subtotal">₹0.00</strong>
       </div>
       <button class="cart-checkout-btn" id="cart-checkout-btn" onclick="handleCheckout()" disabled>
         Proceed to Checkout

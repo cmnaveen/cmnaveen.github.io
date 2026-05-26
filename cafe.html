@@ -8,8 +8,8 @@
   <meta name="description" content="Discover the Svādotsava™️ Cafe. Enjoy fine specialty coffee, artisanal tea, and fresh bakery in a serene, celebratory setting." />
   <meta property="og:title" content="Svādotsava™️ — Cafe" />
   <meta property="og:description" content="Enjoy fine specialty coffee, artisanal tea, and fresh bakery." />
-  <meta property="og:image" content="https://cmnaveen.github.io/assets/images/brand/black_logo_circle_nobg.png" />
-  <meta property="og:url" content="https://cmnaveen.github.io/cafe.html" />
+  <meta property="og:image" content="https://svadotsava.com/assets/images/brand/black_logo_circle_nobg.png" />
+  <meta property="og:url" content="https://svadotsava.com/cafe.html" />
   <link rel="icon" type="image/png" href="assets/images/brand/black_logo_circle_nobg.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -332,7 +332,7 @@
         </div>
 
       <!-- Divider: Filter Coffee -->
-      <div style="display:flex;align-items:center;gap:16px;margin:48px 0 24px;grid-column:1/-1;" class="reveal">
+      <div style="display:flex;align-items:center;gap:16px;margin:48px 0 24px;grid-column:1/-1;" class="reveal drinks-divider">
         <div style="flex:1;height:1px;background:var(--accent,#c09050);opacity:0.4;"></div>
         <span style="font-family:'Playfair Display',serif;font-size:1rem;color:var(--accent,#c09050);white-space:nowrap;">✦ Filter Coffee</span>
         <div style="flex:1;height:1px;background:var(--accent,#c09050);opacity:0.4;"></div>
@@ -384,7 +384,7 @@
         </div>
 
       <!-- Divider: Specialty Espresso -->
-      <div style="display:flex;align-items:center;gap:16px;margin:48px 0 24px;grid-column:1/-1;" class="reveal">
+      <div style="display:flex;align-items:center;gap:16px;margin:48px 0 24px;grid-column:1/-1;" class="reveal drinks-divider">
         <div style="flex:1;height:1px;background:var(--accent,#c09050);opacity:0.4;"></div>
         <span style="font-family:'Playfair Display',serif;font-size:1rem;color:var(--accent,#c09050);white-space:nowrap;">✦ Specialty Espresso</span>
         <div style="flex:1;height:1px;background:var(--accent,#c09050);opacity:0.4;"></div>
@@ -451,7 +451,7 @@
         </div>
 
       <!-- Divider: Cold Coffee -->
-      <div style="display:flex;align-items:center;gap:16px;margin:48px 0 24px;grid-column:1/-1;" class="reveal">
+      <div style="display:flex;align-items:center;gap:16px;margin:48px 0 24px;grid-column:1/-1;" class="reveal drinks-divider">
         <div style="flex:1;height:1px;background:var(--accent,#c09050);opacity:0.4;"></div>
         <span style="font-family:'Playfair Display',serif;font-size:1rem;color:var(--accent,#c09050);white-space:nowrap;">✦ Cold Coffee</span>
         <div style="flex:1;height:1px;background:var(--accent,#c09050);opacity:0.4;"></div>
@@ -518,7 +518,7 @@
         </div>
 
       <!-- Divider: Tea -->
-      <div style="display:flex;align-items:center;gap:16px;margin:48px 0 24px;grid-column:1/-1;" class="reveal">
+      <div style="display:flex;align-items:center;gap:16px;margin:48px 0 24px;grid-column:1/-1;" class="reveal drinks-divider">
         <div style="flex:1;height:1px;background:var(--accent,#c09050);opacity:0.4;"></div>
         <span style="font-family:'Playfair Display',serif;font-size:1rem;color:var(--accent,#c09050);white-space:nowrap;">✦ Tea</span>
         <div style="flex:1;height:1px;background:var(--accent,#c09050);opacity:0.4;"></div>
@@ -592,6 +592,7 @@
     document.addEventListener('DOMContentLoaded', () => {
       const tabs = document.querySelectorAll('.tab-bar .tab');
       const cards = document.querySelectorAll('.menu-grid .menu-card');
+      const drinksDividers = document.querySelectorAll('.menu-grid .drinks-divider');
 
       tabs.forEach(tab => {
         tab.addEventListener('click', () => {
@@ -606,6 +607,9 @@
               card.style.display = 'none';
             }
           });
+
+          const showDividers = filter === 'all' || filter === 'drinks';
+          drinksDividers.forEach(d => { d.style.display = showDividers ? '' : 'none'; });
         });
       });
     });
@@ -711,7 +715,7 @@
     <div class="cart-footer">
       <div class="cart-subtotal-row">
         <span>Subtotal</span>
-        <strong id="cart-subtotal">S$0.00</strong>
+        <strong id="cart-subtotal">₹0.00</strong>
       </div>
       <button class="cart-checkout-btn" id="cart-checkout-btn" onclick="handleCheckout()" disabled>
         Proceed to Checkout

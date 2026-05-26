@@ -108,7 +108,7 @@ function updateCartUI() {
     cartItemsContainer.innerHTML = '';
     if(cartEmptyState) cartEmptyState.style.display = 'flex';
     if(checkoutBtn) checkoutBtn.disabled = true;
-    if(cartSubtotalEl) cartSubtotalEl.textContent = 'S$0.00';
+    if(cartSubtotalEl) cartSubtotalEl.textContent = '₹0.00';
   } else {
     if(cartEmptyState) cartEmptyState.style.display = 'none';
     if(checkoutBtn) checkoutBtn.disabled = false;
