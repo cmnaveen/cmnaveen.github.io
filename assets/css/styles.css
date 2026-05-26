@@ -1452,7 +1452,8 @@ footer {
   border: 1px solid rgba(0,0,0,0.05);
 }
 
-.cart-item-img img {
+.cart-item-img img,
+.cart-item-img video {
   width: 100%;
   height: 100%;
   object-fit: cover;
