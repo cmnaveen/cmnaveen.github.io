@@ -1,3 +1,6 @@
+// NOTE: This file is intentionally NOT loaded in any HTML page.
+// cart.js handles handleCheckout() with the live Instagram redirect flow.
+// This file is kept as a reference for a mock payment gateway simulation.
 function handleCheckout() {
   if (cart.length === 0) return;
   

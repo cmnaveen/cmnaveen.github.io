@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     {
       id: 'rama-navami',
       start: '2026-03-26T00:00:00+05:30',
-      end: '2026-03-27T23:59:00+05:30',
+      end: '2026-03-27T23:59:59+05:30',
       html: `
   <div id="rama-navami-modal" class="festival-modal" style="display: none;">
     <div class="festival-modal-content">

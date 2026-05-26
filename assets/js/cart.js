@@ -13,7 +13,7 @@ function addToCart(id, name, price, image, currency) {
   const existingItem = cart.find(item => item.id === id);
   if (existingItem) {
     if (id === 'svadotsava-podi' && existingItem.quantity >= 4) {
-      alert("Only 4 packets of Svadotsava PODI left in stock!");
+      alert("Only 4 packets of Svādotsava Signature Podi left in stock!");
       return;
     }
     existingItem.quantity += 1;
@@ -39,7 +39,7 @@ function updateQuantity(id, change) {
   const item = cart.find(item => item.id === id);
   if (item) {
     if (id === 'svadotsava-podi' && change > 0 && item.quantity >= 4) {
-      alert("Only 4 packets of Svadotsava PODI left in stock!");
+      alert("Only 4 packets of Svādotsava Signature Podi left in stock!");
       return;
     }
     item.quantity += change;
@@ -108,7 +108,7 @@ function updateCartUI() {
     cartItemsContainer.innerHTML = '';
     if(cartEmptyState) cartEmptyState.style.display = 'flex';
     if(checkoutBtn) checkoutBtn.disabled = true;
-    if(cartSubtotalEl) cartSubtotalEl.textContent = 'S$0.00';
+    if(cartSubtotalEl) cartSubtotalEl.textContent = '₹0.00';
   } else {
     if(cartEmptyState) cartEmptyState.style.display = 'none';
     if(checkoutBtn) checkoutBtn.disabled = false;

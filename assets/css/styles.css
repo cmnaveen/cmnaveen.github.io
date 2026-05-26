@@ -172,6 +172,7 @@ footer {
   background: rgba(124, 58, 16, 0.08);
   transform: translateY(-1px);
   color: var(--primary);
+  text-decoration: none;
 }
 
 .nav-links a.active {
