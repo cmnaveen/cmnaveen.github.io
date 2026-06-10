@@ -320,6 +320,12 @@ footer {
   font-weight: 600;
 }
 
+/* Keep emphasised words readable on the dark hero
+   (colors_and_type.css colours em dark brown for light sections) */
+.hero em {
+  color: #e1b46b;
+}
+
 .hero .goldline,
 .hero .label,
 .hero .eyebrow,
@@ -548,6 +554,17 @@ h2 {
 .btn:hover {
   transform: translateY(-1px);
   filter: brightness(1.05);
+}
+
+/* Anchors styled as buttons/controls shouldn't get the global a:hover underline */
+.btn:hover,
+.outline-btn:hover,
+.millet-btn:hover,
+.social-link:hover,
+.nav-links a:hover,
+.f-links a:hover,
+.brand-box:hover {
+  text-decoration: none;
 }
 
 .btn.white {
@@ -1588,6 +1605,19 @@ footer {
   transform: none;
 }
 
+/* Low-stock blinking dot (menu.html stock warning) */
+@keyframes stockBlink {
+  0% {
+    opacity: 0.4;
+    transform: scale(0.9);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
 /* Visitor Counter */
 .visitor-counter {
   margin-top: 24px;
@@ -1628,6 +1658,15 @@ footer {
   color: var(--muted);
   margin: 0;
   font-size: 0.95rem;
+}
+
+/* Success message is shown inside the dark hero — lighten its text */
+.hero .success-message h3 {
+  color: #e1b46b;
+}
+
+.hero .success-message p {
+  color: rgba(255, 255, 255, 0.78);
 }
 
 .error-message {
