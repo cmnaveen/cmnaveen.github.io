@@ -727,6 +727,182 @@
         transition: none;
       }
     }
+
+    /* How To Modal */
+    .howto-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(45, 33, 24, 0.55);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      z-index: 9998;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .howto-overlay.open { opacity: 1; pointer-events: auto; }
+
+    .howto-modal {
+      position: fixed;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%) scale(0.92);
+      width: min(94vw, 620px);
+      max-height: 88vh;
+      overflow-y: auto;
+      background: linear-gradient(180deg, #fffaf2 0%, #f4e6d5 100%);
+      border: 1px solid rgba(76, 45, 27, 0.12);
+      border-radius: 30px;
+      box-shadow: 0 32px 80px rgba(76, 45, 27, 0.28);
+      z-index: 9999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .howto-modal.open { opacity: 1; pointer-events: auto; transform: translate(-50%, -50%) scale(1); }
+
+    .howto-header {
+      position: sticky; top: 0;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 22px 28px 16px;
+      background: rgba(255, 250, 242, 0.95);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(76, 45, 27, 0.08);
+      border-radius: 30px 30px 0 0;
+      z-index: 2;
+    }
+    .howto-header h3 {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--millet-bark);
+    }
+    .howto-close {
+      width: 38px; height: 38px;
+      border: 1px solid rgba(76, 45, 27, 0.12);
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.8);
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: grid; place-items: center;
+      color: var(--millet-bark);
+      transition: background 0.2s, transform 0.2s;
+    }
+    .howto-close:hover { background: #fff; transform: scale(1.08); }
+
+    .howto-body { padding: 24px 28px 32px; }
+
+    .howto-section-label {
+      display: inline-block;
+      margin-bottom: 12px;
+      font-size: 0.7rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: rgba(124, 58, 16, 0.72);
+      font-weight: 700;
+    }
+
+    .howto-ingredients {
+      display: grid;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+    .howto-ingredient {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 10px;
+      align-items: start;
+      padding: 10px 14px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(76, 45, 27, 0.06);
+      font-size: 0.88rem;
+      color: var(--millet-ink);
+      line-height: 1.5;
+    }
+    .howto-ingredient .num {
+      width: 24px; height: 24px;
+      border-radius: 50%;
+      background: rgba(208, 160, 91, 0.22);
+      color: var(--millet-bark);
+      font-size: 0.72rem;
+      font-weight: 700;
+      display: grid; place-items: center;
+    }
+    .howto-ingredient strong { color: var(--millet-bark); }
+
+    .howto-steps {
+      display: grid;
+      gap: 14px;
+      counter-reset: step;
+    }
+    .howto-step {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 12px;
+      align-items: start;
+      counter-increment: step;
+    }
+    .howto-step-num {
+      width: 42px; height: 42px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--millet-bark), #6f4328);
+      color: #fff;
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      display: grid; place-items: center;
+    }
+    .howto-step-text {
+      padding-top: 8px;
+      font-size: 0.9rem;
+      color: var(--millet-ink);
+      line-height: 1.6;
+    }
+    .howto-step-text strong { color: var(--millet-bark); }
+
+    .howto-tip {
+      margin-top: 22px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      border-left: 3px solid var(--millet-gold);
+      background: rgba(208, 160, 91, 0.1);
+      font-size: 0.86rem;
+      color: #5d4636;
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    .howto-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      width: 100%;
+      padding: 12px 16px;
+      margin-bottom: 8px;
+      border-radius: 14px;
+      border: 1.5px solid rgba(208, 160, 91, 0.35);
+      background: rgba(208, 160, 91, 0.1);
+      color: var(--millet-bark);
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    }
+    .howto-btn:hover {
+      background: rgba(208, 160, 91, 0.2);
+      border-color: rgba(208, 160, 91, 0.5);
+      transform: translateY(-2px);
+    }
+    .howto-btn svg { flex-shrink: 0; }
+
+    @media (max-width: 520px) {
+      .howto-body { padding: 20px 20px 28px; }
+      .howto-header { padding: 18px 20px 14px; }
+      .howto-modal { border-radius: 22px; }
+      .howto-header { border-radius: 22px 22px 0 0; }
+    }
   </style>
 </head>
 
@@ -930,6 +1106,10 @@
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--millet-gold);"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                   Pre-order &bull; Singapore only
                 </div>
+                <button class="howto-btn" onclick="openHowTo('ragi-almond-butter')">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                  How To Bake
+                </button>
                 <button class="millet-btn is-dark full add-to-cart-btn" onclick="addToCart('ragi-almond-butter-biscuits', 'Ragi Almond Butter Biscuits', 6.00, 'assets/images/millets/ragi_almond_butter_biscuits.png', 'SGD')">
                   Add to Cart <span class="arrow">→</span>
                 </button>
@@ -953,6 +1133,10 @@
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--millet-gold);"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                   Pre-order &bull; Singapore only
                 </div>
+                <button class="howto-btn" onclick="openHowTo('jowar-crunch')">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                  How To Bake
+                </button>
                 <button class="millet-btn is-dark full add-to-cart-btn" onclick="addToCart('jowar-crunch-cookies', 'Jowar Crunch Cookies', 6.00, 'assets/images/millets/jowar_crunch_cookies.png', 'SGD')">
                   Add to Cart <span class="arrow">→</span>
                 </button>
@@ -976,6 +1160,10 @@
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--millet-gold);"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                   Pre-order &bull; Singapore only
                 </div>
+                <button class="howto-btn" onclick="openHowTo('multi-millet-digestive')">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                  How To Bake
+                </button>
                 <button class="millet-btn is-dark full add-to-cart-btn" onclick="addToCart('multi-millet-digestive-bites', 'Multi-Millet Digestive Bites', 3.00, 'assets/images/millets/multimillet_digestive_bites.png', 'SGD')">
                   Add to Cart <span class="arrow">→</span>
                 </button>
@@ -999,7 +1187,42 @@
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--millet-gold);"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                   Pre-order &bull; Singapore only
                 </div>
+                <button class="howto-btn" onclick="openHowTo('heritage-millet-nut')">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                  How To Bake
+                </button>
                 <button class="millet-btn is-dark full add-to-cart-btn" onclick="addToCart('heritage-millet-roasted-nut-crunch', 'Heritage Millet &amp; Roasted Nut Crunch', 6.00, 'assets/images/millets/heritage_millet_roasted_nut_crunch.png', 'SGD')">
+                  Add to Cart <span class="arrow">→</span>
+                </button>
+              </div>
+            </article>
+
+            <article class="product-card reveal" data-delay="360">
+              <div class="product-media">
+                <img src="assets/images/millets/oat_dryfruit_cookies.png" alt="Homemade oat and dry fruit cookies studded with almonds, cashews, pumpkin seeds, walnuts and raisins on a rustic wooden board" loading="lazy" />
+                <span class="product-badge">Cookie</span>
+              </div>
+              <div class="product-body">
+                <span class="product-label">Wholesome &amp; chewy</span>
+                <h4>Oat &amp; Dry Fruit Cookies</h4>
+                <p>Hearty, chewy cookies made with rolled oats, wheat flour, jaggery, and generously loaded with almonds, cashews, pumpkin seeds, walnuts &amp; raisins — finished with a warm hint of cinnamon and cardamom.</p>
+                <div style="margin: 14px 0 10px; padding: 14px 16px; border-radius: 18px; background: rgba(208,160,91,0.08); border: 1px solid rgba(208,160,91,0.14); font-size: 0.82rem; color: var(--millet-muted); line-height: 1.7;">
+                  <strong style="display:block; color: var(--millet-bark); margin-bottom: 6px; font-size: 0.84rem;">Key Ingredients</strong>
+                  Rolled Oats (2 cups) · Wheat Flour (¾ cup) · Butter (½ cup) · Coconut Oil (¼ cup) · Jaggery Powder (½ cup) · Almonds · Cashews · Pumpkin Seeds · Walnuts · Raisins · Cinnamon · Cardamom · A pinch of salt
+                </div>
+                <div class="product-meta">
+                  <span class="price-placeholder">S$6.00 / 200g box</span>
+                  <span class="product-note">Loaded with dry fruits</span>
+                </div>
+                <div style="margin-bottom: 14px; font-size: 0.78rem; font-weight: 600; color: var(--millet-muted); display: flex; align-items: center; gap: 6px;">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--millet-gold);"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Pre-order &bull; Singapore only
+                </div>
+                <button class="howto-btn" onclick="openHowTo('oat-dryfruit')">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                  How To Bake
+                </button>
+                <button class="millet-btn is-dark full add-to-cart-btn" onclick="addToCart('oat-dryfruit-cookies', 'Oat &amp; Dry Fruit Cookies', 6.00, 'assets/images/millets/oat_dryfruit_cookies.png', 'SGD')">
                   Add to Cart <span class="arrow">→</span>
                 </button>
               </div>
@@ -1336,6 +1559,183 @@
 
   <script src="assets/js/cart.js"></script>
   <script src="assets/js/festivals.js"></script>
+
+  <!-- HOW TO BAKE MODAL -->
+  <div class="howto-overlay" id="howto-overlay" onclick="closeHowTo()"></div>
+  <div class="howto-modal" id="howto-modal">
+    <div class="howto-header">
+      <h3 id="howto-title">How To Bake</h3>
+      <button class="howto-close" onclick="closeHowTo()" aria-label="Close">&times;</button>
+    </div>
+    <div class="howto-body" id="howto-body"></div>
+  </div>
+
+  <script>
+    const howToRecipes = {
+      'oat-dryfruit': {
+        title: 'Oat & Dry Fruit Cookies',
+        ingredients: [
+          { name: 'Rolled Oats', qty: '2 cups', note: 'traditional whole rolled oats give the best chewy texture' },
+          { name: 'Wheat Flour', qty: '¾ cup', note: '' },
+          { name: 'Butter', qty: '½ cup', note: 'melted or softened at room temperature' },
+          { name: 'Coconut Oil', qty: '¼ cup', note: '' },
+          { name: 'Jaggery Powder', qty: '½ cup', note: 'regular sugar works too' },
+          { name: 'Dry Fruits', qty: '1 cup finely chopped', note: '¼ cup almonds, ¼ cup cashews, ¼ cup pumpkin seeds, ¼ cup mix of walnuts & raisins' },
+          { name: 'Milk', qty: '2–3 tablespoons', note: 'just enough to bring the dough together' },
+          { name: 'Baking Powder', qty: '½ teaspoon', note: '' },
+          { name: 'Cinnamon Powder', qty: '½ teaspoon', note: 'optional, for aroma' },
+          { name: 'Cardamom (Elaichi) Powder', qty: '¼ teaspoon', note: '' },
+          { name: 'Salt', qty: 'A pinch', note: '' }
+        ],
+        steps: [
+          { title: 'Prep the dry mix', text: 'In a large bowl, combine <strong>rolled oats, wheat flour, baking powder, cinnamon powder, cardamom powder,</strong> and <strong>a pinch of salt</strong>. Whisk together until evenly mixed.' },
+          { title: 'Cream the wet ingredients', text: 'In another bowl, mix <strong>melted butter, coconut oil,</strong> and <strong>jaggery powder</strong> until smooth and well combined. Stir until the jaggery dissolves fully.' },
+          { title: 'Combine wet & dry', text: 'Pour the wet mixture into the dry mix. Fold gently with a spatula until just combined — do not over-mix.' },
+          { title: 'Add the dry fruits', text: 'Fold in the <strong>finely chopped almonds, cashews, pumpkin seeds, walnuts,</strong> and <strong>raisins</strong>. Add <strong>2–3 tablespoons of milk</strong> gradually until the dough holds together when pressed.' },
+          { title: 'Shape the cookies', text: 'Take small portions of dough (about 1.5 tablespoons each) and roll into balls. Place on a parchment-lined baking tray and flatten gently to about ½ inch thickness. Leave 2 inches of space between each cookie.' },
+          { title: 'Bake', text: 'Preheat oven to <strong>175°C (350°F)</strong>. Bake for <strong>15–18 minutes</strong> until the edges turn golden brown. The centers will still look slightly soft — they\'ll firm up as they cool.' },
+          { title: 'Cool & enjoy', text: 'Let the cookies cool on the tray for <strong>5 minutes</strong>, then transfer to a wire rack. They\'ll become perfectly chewy once completely cooled. Store in an airtight container for up to a week.' }
+        ],
+        tip: 'For extra crunch, lightly toast the oats and nuts in a dry pan for 3–4 minutes before mixing. The jaggery adds a deep caramel flavor that pairs beautifully with the cardamom.'
+      },
+      'ragi-almond-butter': {
+        title: 'Ragi Almond Butter Biscuits',
+        ingredients: [
+          { name: 'Ragi (Finger Millet) Flour', qty: '1½ cups', note: 'sifted for a smoother texture' },
+          { name: 'Almond Flour', qty: '½ cup', note: 'adds richness and nutty depth' },
+          { name: 'Butter', qty: '½ cup', note: 'cold, cubed — for crumbly texture' },
+          { name: 'Jaggery Powder', qty: '⅓ cup', note: 'or powdered sugar' },
+          { name: 'Almond Butter', qty: '2 tablespoons', note: 'smooth, unsweetened' },
+          { name: 'Milk', qty: '2–3 tablespoons', note: 'to bind the dough' },
+          { name: 'Baking Powder', qty: '½ teaspoon', note: '' },
+          { name: 'Cardamom Powder', qty: '¼ teaspoon', note: '' },
+          { name: 'Salt', qty: 'A pinch', note: '' },
+          { name: 'Sliced Almonds', qty: '2 tablespoons', note: 'for topping' }
+        ],
+        steps: [
+          { title: 'Mix dry ingredients', text: 'Sift together <strong>ragi flour, almond flour, baking powder, cardamom powder,</strong> and <strong>salt</strong> in a large bowl.' },
+          { title: 'Cut in the butter', text: 'Add <strong>cold cubed butter</strong> and rub into the flour using your fingertips until the mixture resembles coarse breadcrumbs. Stir in <strong>jaggery powder</strong>.' },
+          { title: 'Add almond butter & bind', text: 'Mix in <strong>almond butter</strong> and add <strong>milk</strong> one tablespoon at a time. Bring together into a smooth, non-sticky dough. Wrap and chill for <strong>15 minutes</strong>.' },
+          { title: 'Roll & cut', text: 'Roll the dough to <strong>½ cm thickness</strong> on a lightly floured surface. Cut into rounds using a cookie cutter. Place on a parchment-lined tray and press <strong>sliced almonds</strong> gently on top.' },
+          { title: 'Bake', text: 'Preheat oven to <strong>170°C (340°F)</strong>. Bake for <strong>14–16 minutes</strong> until edges are firm and the base is lightly golden.' },
+          { title: 'Cool & serve', text: 'Cool on the tray for <strong>5 minutes</strong>, then transfer to a wire rack. The biscuits will crisp up as they cool. Store in an airtight tin for up to 10 days.' }
+        ],
+        tip: 'The ragi flour gives these biscuits a beautiful dark, earthy hue. Pair with hot masala chai for the perfect afternoon tea experience.'
+      },
+      'jowar-crunch': {
+        title: 'Jowar Crunch Cookies',
+        ingredients: [
+          { name: 'Jowar (Sorghum) Flour', qty: '1½ cups', note: 'gives a toasty, nutty base' },
+          { name: 'Wheat Flour', qty: '¼ cup', note: 'for binding' },
+          { name: 'Butter', qty: '½ cup', note: 'softened at room temperature' },
+          { name: 'Jaggery Powder', qty: '⅓ cup', note: '' },
+          { name: 'Coconut Oil', qty: '2 tablespoons', note: '' },
+          { name: 'Roasted Sesame Seeds', qty: '2 tablespoons', note: '' },
+          { name: 'Milk', qty: '2 tablespoons', note: '' },
+          { name: 'Baking Powder', qty: '½ teaspoon', note: '' },
+          { name: 'Vanilla Extract', qty: '½ teaspoon', note: 'optional' },
+          { name: 'Salt', qty: 'A pinch', note: '' }
+        ],
+        steps: [
+          { title: 'Toast the jowar flour', text: 'Dry-roast <strong>jowar flour</strong> in a pan on low heat for <strong>3–4 minutes</strong>, stirring constantly until fragrant. Let it cool completely.' },
+          { title: 'Cream butter & jaggery', text: 'Beat <strong>softened butter, coconut oil,</strong> and <strong>jaggery powder</strong> together until light and fluffy. Add <strong>vanilla extract</strong> if using.' },
+          { title: 'Combine the dough', text: 'Add the cooled <strong>jowar flour, wheat flour, baking powder,</strong> and <strong>salt</strong> to the butter mixture. Mix until a crumbly dough forms. Add <strong>milk</strong> to bring it together. Fold in <strong>sesame seeds</strong>.' },
+          { title: 'Shape', text: 'Roll dough into small balls (about 1 tablespoon each). Flatten into discs on a parchment-lined tray. Press lightly with a fork for a classic criss-cross pattern.' },
+          { title: 'Bake', text: 'Preheat oven to <strong>170°C (340°F)</strong>. Bake for <strong>16–18 minutes</strong> until the edges are golden and the cookies feel firm to touch.' },
+          { title: 'Cool completely', text: 'Let cookies rest on the tray for <strong>8 minutes</strong> — they\'re delicate when hot. Once cool, they become wonderfully crunchy. Store in an airtight box for up to 2 weeks.' }
+        ],
+        tip: 'Toasting the jowar flour is the secret to unlocking its deep, nutty flavor. Don\'t skip this step — it transforms the entire cookie.'
+      },
+      'multi-millet-digestive': {
+        title: 'Multi-Millet Digestive Bites',
+        ingredients: [
+          { name: 'Multi-Millet Flour', qty: '1 cup', note: 'mix of ragi, jowar, and bajra flours in equal parts' },
+          { name: 'Whole Wheat Flour', qty: '½ cup', note: '' },
+          { name: 'Rolled Oats', qty: '½ cup', note: 'lightly ground for texture' },
+          { name: 'Butter', qty: '⅓ cup', note: 'cold, cubed' },
+          { name: 'Jaggery Powder', qty: '¼ cup', note: 'for gentle sweetness' },
+          { name: 'Mixed Seeds', qty: '3 tablespoons', note: 'flax, sunflower, and pumpkin seeds' },
+          { name: 'Honey', qty: '1 tablespoon', note: 'for binding and shine' },
+          { name: 'Milk', qty: '3–4 tablespoons', note: '' },
+          { name: 'Baking Powder', qty: '½ teaspoon', note: '' },
+          { name: 'Ajwain (Carom Seeds)', qty: '¼ teaspoon', note: 'aids digestion' },
+          { name: 'Salt', qty: 'A pinch', note: '' }
+        ],
+        steps: [
+          { title: 'Blend the flours', text: 'In a large bowl, whisk together <strong>multi-millet flour, whole wheat flour, ground oats, baking powder, ajwain,</strong> and <strong>salt</strong>.' },
+          { title: 'Rub in butter', text: 'Add <strong>cold cubed butter</strong> and rub into the flour mix using your fingertips until it resembles coarse sand. Stir in <strong>jaggery powder</strong> and <strong>mixed seeds</strong>.' },
+          { title: 'Bind the dough', text: 'Drizzle <strong>honey</strong> and add <strong>milk</strong> a tablespoon at a time. Knead gently into a firm, non-sticky dough. Do not overwork. Rest for <strong>10 minutes</strong>.' },
+          { title: 'Roll & cut', text: 'Roll the dough to about <strong>5mm thickness</strong>. Cut into small rounds or squares. Prick each biscuit with a fork (classic digestive style). Place on a lined baking tray.' },
+          { title: 'Bake', text: 'Preheat oven to <strong>165°C (330°F)</strong>. Bake for <strong>18–20 minutes</strong> until firm and golden. The edges should be slightly darker than the center.' },
+          { title: 'Cool & store', text: 'Cool on the tray completely — they crisp up beautifully as they cool. Store in an airtight container. These stay fresh for up to <strong>2 weeks</strong>.' }
+        ],
+        tip: 'The ajwain adds a subtle warmth and helps digestion — a traditional Indian touch that makes these biscuits truly special. Perfect with a cup of herbal tea.'
+      },
+      'heritage-millet-nut': {
+        title: 'Heritage Millet & Roasted Nut Crunch',
+        ingredients: [
+          { name: 'Bajra (Pearl Millet) Flour', qty: '1 cup', note: 'for rustic depth' },
+          { name: 'Ragi Flour', qty: '½ cup', note: '' },
+          { name: 'Wheat Flour', qty: '¼ cup', note: 'for structure' },
+          { name: 'Butter', qty: '½ cup', note: 'softened' },
+          { name: 'Jaggery Powder', qty: '⅓ cup', note: '' },
+          { name: 'Roasted Almonds', qty: '¼ cup', note: 'roughly chopped' },
+          { name: 'Roasted Cashews', qty: '¼ cup', note: 'roughly chopped' },
+          { name: 'Ghee', qty: '1 tablespoon', note: 'for richness' },
+          { name: 'Milk', qty: '2–3 tablespoons', note: '' },
+          { name: 'Baking Powder', qty: '½ teaspoon', note: '' },
+          { name: 'Cardamom Powder', qty: '¼ teaspoon', note: '' },
+          { name: 'Salt', qty: 'A pinch', note: '' }
+        ],
+        steps: [
+          { title: 'Roast the nuts', text: 'Dry-roast <strong>almonds and cashews</strong> in a pan on medium heat for <strong>4–5 minutes</strong> until fragrant and golden. Let cool, then roughly chop.' },
+          { title: 'Mix dry ingredients', text: 'Combine <strong>bajra flour, ragi flour, wheat flour, baking powder, cardamom powder,</strong> and <strong>salt</strong> in a large bowl.' },
+          { title: 'Cream wet ingredients', text: 'In another bowl, beat <strong>softened butter, ghee,</strong> and <strong>jaggery powder</strong> until smooth and creamy.' },
+          { title: 'Make the dough', text: 'Add the dry mix to the wet mixture in two batches, folding gently. Add <strong>roasted nuts</strong> and mix. Add <strong>milk</strong> as needed to form a firm dough. Chill for <strong>15 minutes</strong>.' },
+          { title: 'Shape & arrange', text: 'Roll dough into walnut-sized balls and flatten to about <strong>1 cm thickness</strong>. Place on parchment-lined tray. Optionally press a few nut pieces on top for decoration.' },
+          { title: 'Bake', text: 'Preheat oven to <strong>170°C (340°F)</strong>. Bake for <strong>16–18 minutes</strong> until the edges are firm and the base is lightly golden.' },
+          { title: 'Cool & enjoy', text: 'Cool on the tray for <strong>5 minutes</strong>, then transfer to a wire rack. These biscuits have a satisfying crunch with a deep, nutty millet flavor. Store in an airtight tin for up to <strong>10 days</strong>.' }
+        ],
+        tip: 'The combination of bajra and ragi gives these cookies a beautiful dark color and earthy complexity. The ghee adds a subtle richness that makes them irresistible.'
+      }
+    };
+
+    function renderIngredient(ing, idx) {
+      const note = ing.note ? ' <span style="color:var(--millet-muted);">(' + ing.note + ')</span>' : '';
+      return '<div class="howto-ingredient"><div class="num">' + (idx + 1) + '</div><div><strong>' + ing.name + '</strong>: ' + ing.qty + note + '</div></div>';
+    }
+
+    function renderStep(step, idx) {
+      return '<div class="howto-step"><div class="howto-step-num">' + (idx + 1) + '</div><div class="howto-step-text"><strong>' + step.title + '</strong><br>' + step.text + '</div></div>';
+    }
+
+    function openHowTo(id) {
+      const recipe = howToRecipes[id];
+      if (!recipe) return;
+      document.getElementById('howto-title').textContent = 'How To Bake: ' + recipe.title;
+      let html = '<div class="howto-section-label">Ingredients & Measurements</div>';
+      html += '<div class="howto-ingredients">' + recipe.ingredients.map(renderIngredient).join('') + '</div>';
+      html += '<div class="howto-section-label">Baking Process</div>';
+      html += '<div class="howto-steps">' + recipe.steps.map(renderStep).join('') + '</div>';
+      if (recipe.tip) {
+        html += '<div class="howto-tip">💡 <strong>Tip:</strong> ' + recipe.tip + '</div>';
+      }
+      document.getElementById('howto-body').innerHTML = html;
+      document.getElementById('howto-overlay').classList.add('open');
+      document.getElementById('howto-modal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeHowTo() {
+      document.getElementById('howto-overlay').classList.remove('open');
+      document.getElementById('howto-modal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeHowTo();
+    });
+  </script>
 </body>
 
 </html>
